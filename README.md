@@ -1,0 +1,1 @@
+# plugins-events-search-addon-for-the-events-calendar
