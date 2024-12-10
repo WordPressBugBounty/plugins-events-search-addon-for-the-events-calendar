@@ -364,6 +364,9 @@ if ( !class_exists('cool_plugins_events_addons')) {
             'events-search-addon-for-the-events-calendar' => 'events-search-icon.svg',
             'events-widgets-pro'=>'events-widgets-icon.svg',
             'event-single-page-builder-pro' => 'event-single-page-icon.svg',
+            'events-calendar-modules-for-divi'=> 'events-calendar-modules-for-divi.svg',
+            'events-calendar-modules-for-divi-pro'=> 'events-calendar-modules-for-divi.svg',
+            'events-speakers-and-sponsors'=> 'events-speakers-sponsors-icon.png',
             
         ];
         if(isset($logos_arr[$slug])){

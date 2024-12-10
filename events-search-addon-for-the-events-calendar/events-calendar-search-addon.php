@@ -3,11 +3,11 @@
  * Plugin Name: The Events Calendar Search Addon
  * Description: A simple events search box to find any event quickly for The Events Calendar Free Plugin (by MODERN TRIBE) - <strong>[events-calendar-search placeholder="Search Events" show-events="5" disable-past-events="false" layout="medium" content-type="advance" ]</strong>
  * Plugin URI: https://eventscalendaraddons.com/
- * Version: 1.2.8
- * Requires at least: 4.5
- * Tested up to: 6.3.1
+ * Version: 1.2.9
+ * Requires at least: 5.0
+ * Tested up to: 6.7.1
  * Requires PHP: 5.6
- * Stable tag: 1.2.8
+ * Stable tag: 1.2.9
  * Author: Cool Plugins
  * Author URI: https://coolplugins.net
  * License: GPL2
@@ -23,7 +23,7 @@ if ( defined( 'ECSA_VERSION' ) ) {
 	return;
 }
 
-define( 'ECSA_VERSION', '1.2.8' );
+define( 'ECSA_VERSION', '1.2.9' );
 define( 'ECSA_FILE', __FILE__ );
 define( 'ECSA_PATH', plugin_dir_path( ECSA_FILE ) );
 define( 'ECSA_URL', plugin_dir_url( ECSA_FILE ) );
@@ -56,6 +56,7 @@ if ( ! class_exists( 'EventsCalendarSearchAddon' ) ) :
 		|--------------------------------------------------------------------------
 		*/
 		private function __construct() {
+			add_action( 'init', array( $this, 'ecsa_load_textdomain' ) );
 			add_action( 'plugins_loaded', array( $this, 'ecsa_check_event_calender_installed' ) );
 			add_action( 'plugins_loaded', array( $this, 'includes' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'ecsa_register_scripts' ) );
@@ -80,11 +81,11 @@ if ( ! class_exists( 'EventsCalendarSearchAddon' ) ) :
 		public function ecsa_Install_ECT_Notice() {
 			if ( current_user_can( 'activate_plugins' ) ) {
 				$url   = 'plugin-install.php?tab=plugin-information&plugin=the-events-calendar&TB_iframe=true';
-				$title = __( 'The Events Calendar', 'tribe-events-ical-importer' );
+				$title = __( 'The Events Calendar', 'ecsa' );
 					printf(
 						'<div class="error CTEC_Msz"><p>' .
-						esc_html( __( '%1$s %2$s', 'tecc1' ) ),
-						wp_kses_post( __( 'In order to use <strong> The Events Calendar Search Addon </strong>plugin, Please first install the latest version of', 'tecc1' ) ),
+						esc_html( __( '%1$s %2$s', 'ecsa' ) ),
+						wp_kses_post( __( 'In order to use <strong> The Events Calendar Search Addon </strong>plugin, Please first install the latest version of', 'ecsa' ) ),
 						sprintf(
 							'<a href="%s" class="thickbox" title="%s">%s</a>',
 							esc_url( $url ),
@@ -154,6 +155,14 @@ if ( ! class_exists( 'EventsCalendarSearchAddon' ) ) :
 			}
 		}
 
+		/*
+		|----------------------------------------------------------------------------
+		| Loads the plugin's translated strings.
+		|----------------------------------------------------------------------------
+		*/
+		public function ecsa_load_textdomain() {
+			load_plugin_textdomain( 'ecsa', false, basename( dirname( __FILE__ ) ) . '/languages/' );
+		}
 
 		/*
 		|----------------------------------------------------------------------------
@@ -161,7 +170,6 @@ if ( ! class_exists( 'EventsCalendarSearchAddon' ) ) :
 		|----------------------------------------------------------------------------
 		*/
 		public function includes() {
-			load_plugin_textdomain( 'ecsa', false, basename( dirname( __FILE__ ) ) . '/languages/' );
 			if ( is_admin() ) {
 
 				require_once __DIR__ . '/admin/events-addon-page/events-addon-page.php';

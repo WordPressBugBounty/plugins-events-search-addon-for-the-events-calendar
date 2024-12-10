@@ -71,7 +71,7 @@ if ( ! class_exists( 'ecsaFeedbackNotice' ) ) {
 			$p_name             = 'The Events Calendar Search Addon';
 			$like_it_text       = 'Rate Now! ★★★★★';
 			$already_rated_text = esc_html__( 'I already rated it', 'esca' );
-			$not_like_it_text   = esc_html__( 'No, not good enough, i do not like to rate it!', 'cool-timeline' );
+			$not_like_it_text   = esc_html__( 'No, not good enough, i do not like to rate it!', 'ecsa' );
 			$p_link             = esc_url( 'https://wordpress.org/plugins/events-search-addon-for-the-events-calendar/reviews/#new-post' );
 			$pro_url            = esc_url( 'https://1.envato.market/c/1258464/275988/4415?u=https%3A%2F%2Fcodecanyon.net%2Fitem%2Fthe-events-calendar-templates-and-shortcode-wordpress-plugin%2F20143286' );
 
