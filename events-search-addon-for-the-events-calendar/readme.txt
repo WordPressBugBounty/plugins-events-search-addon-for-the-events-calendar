@@ -3,9 +3,9 @@ Contributors: narinder-singh,satindersingh,coolplugins
 Donate link: https://paypal.me/CoolPlugins/50USD/
 Tags: the events calendar, events addons, event, search, calendar, modern tribe, events addons, the events calendar, events search, calendar addon, the events calendar addon, events block
 Requires at least: 5.0
-Tested up to: 6.7.1
+Tested up to: 6.8.1
 Requires PHP: 5.6
-Stable tag: 1.2.9
+Stable tag: 1.2.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -86,6 +86,12 @@ If you want to customize the addon according to your own requirements, you can h
 1. The Events Calendar Search Addon Shortcode and Sidebar Widget View.
 
 == Changelog ==
+
+= Version 1.2.11 | 06 May 2025 =
+* Minor textual change in plugin header.
+
+= Version 1.2.10 | 06 May 2025 =
+* Tested upto WordPress version 6.8.1
 
 = Version 1.2.9 | 10 December 2023 =
 * Fixed: Load Text domain issue.
