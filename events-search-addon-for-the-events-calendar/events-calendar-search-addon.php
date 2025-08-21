@@ -3,11 +3,11 @@
  * Plugin Name: The Events Calendar Search Addon
  * Description: A simple events search box to find any event quickly for The Events Calendar Free Plugin (by MODERN TRIBE) - <strong>[events-calendar-search placeholder="Search Events" show-events="5" disable-past-events="false" layout="medium" content-type="advance" ]</strong>
  * Plugin URI: https://eventscalendaraddons.com/
- * Version: 1.2.12
+ * Version: 1.2.14
  * Requires at least: 5.0
- * Tested up to: 6.7.1
+ * Tested up to: 6.8.2
  * Requires PHP: 5.6
- * Stable tag: 1.2.12
+ * Stable tag: 1.2.14
  * Author: Cool Plugins
  * Author URI: https://coolplugins.net
  * License: GPL2
@@ -24,7 +24,7 @@ if ( defined( 'ECSA_VERSION' ) ) {
 	return;
 }
 
-define( 'ECSA_VERSION', '1.2.12' );
+define( 'ECSA_VERSION', '1.2.14' );
 define( 'ECSA_FILE', __FILE__ );
 define( 'ECSA_PATH', plugin_dir_path( ECSA_FILE ) );
 define( 'ECSA_URL', plugin_dir_url( ECSA_FILE ) );

@@ -66,8 +66,6 @@ if (!class_exists('ECSA_cronjob')) {
             ));
             
             if (is_wp_error($response)) {
-
-                error_log('ECSA Feedback Send Failed: ' . $response->get_error_message());
                 return;
             }
             

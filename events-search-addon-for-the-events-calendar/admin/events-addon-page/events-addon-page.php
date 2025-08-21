@@ -161,8 +161,8 @@ if ( !class_exists('cool_plugins_events_addons')) {
 
                     require $this->addon_dir . '/includes/dashboard-header.php';
 
-                    echo '<div class="cool-body-left">
-                    <div class="plugins-list installed-addons" data-empty-message="You have not installed any addon at the moment"><h3>Currently Installed Addons</h3>';
+                    echo wp_kses_post( '<div class="cool-body-left">' );
+                    echo wp_kses_post( '<div class="plugins-list installed-addons" data-empty-message="' . esc_attr( 'You have not installed any addon at the moment' ) . '"><h3>Currently Installed Addons</h3>' );
 
                     foreach($plugins as $plugin ){
 
@@ -178,9 +178,9 @@ if ( !class_exists('cool_plugins_events_addons')) {
                         }
 
                     }
-                    echo "</div>";
+                    echo wp_kses_post( '</div>' );
 
-                    echo "<div class='plugins-list more-addons' data-empty-message='No more free addons available at the moment'><h3>More Addons</h3>";
+                    echo wp_kses_post( '<div class="plugins-list more-addons" data-empty-message="' . esc_attr( 'No more free addons available at the moment' ) . '"><h3>More Addons</h3>' );
                     foreach($plugins as $plugin ){
 
                         if( $plugin['download_link'] == null ){
@@ -198,12 +198,12 @@ if ( !class_exists('cool_plugins_events_addons')) {
                         }
 
                     }
-                    echo '</div>';
+                    echo wp_kses_post( '</div>' );
                     if( !empty($this->pro_plugins) && count($this->pro_plugins) >0 ):
                         /**
                          * Load this Pro Plugin container only if there are any pro plugins available
                          */
-                    echo "<div class='plugins-list pro-addons' data-empty-message='No more Pro plugins available at the moment'><h3>Pro Addons</h3>";
+                    echo wp_kses_post( '<div class="plugins-list pro-addons" data-empty-message="' . esc_attr( 'No more Pro plugins available at the moment' ) . '"><h3>Pro Addons</h3>' );
                         foreach($this->pro_plugins as $plugin ){
                              $plugin_name = $plugin['name'];
                             $plugin_desc = $plugin['desc'];
@@ -218,9 +218,9 @@ if ( !class_exists('cool_plugins_events_addons')) {
                             }
 
                         }
-                        echo '</div>';
+                        echo wp_kses_post( '</div>' );
                     endif;
-                    echo '</div>';  // end of .cool-body-left
+                    echo wp_kses_post( '</div>' );  // end of .cool-body-left
                     require $this->addon_dir . '/includes/dashboard-sidebar.php';
                     
 
