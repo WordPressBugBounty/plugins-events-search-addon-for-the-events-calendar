@@ -1,67 +1,67 @@
 === Events Search For The Events Calendar ===
 Contributors: narinder-singh,satindersingh,coolplugins
 Donate link: https://paypal.me/CoolPlugins/50USD/
-Tags: the events calendar, events addons, event, search, calendar, modern tribe, events addons, the events calendar, events search, calendar addon, the events calendar addon, events block
+Tags: the events calendar, events addons, event, search, calendar, StellarWP, events addons, the events calendar, events search, calendar addon, the events calendar addon, events block
 Requires at least: 5.0
 Tested up to: 6.8.2
 Requires PHP: 5.6
-Stable tag: 1.2.14
+Stable tag: 1.2.15
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Events Search addon provides a simple ajax based search box to find any event quickly for The Events Calendar Free Plugin (by MODERN TRIBE)
+Events Search Addon adds a simple Ajax-based search bar to quickly find any event created with The Events Calendar (by StellarWP)
 
 == Description ==
-Add **[The Events Calendar Search Addon ⇗](https://eventscalendaraddons.com/demos/events-search-and-filters-pro/?utm_source=ecsa_plugin&utm_medium=readme&utm_campaign=demo&utm_content=view_demo)** simple ajax based search box to find any event quickly.
-Add **events search widget** anywhere using simple shortcode and search any event quickly, published by WordPress most powerful **calendar plugin** - [The Events Calendar](https://wordpress.org/plugins/the-events-calendar/) - **800,000+ Active Users**.
 
-### 🔥The Events Calendar Search Addon Demo
+The **[Events Calendar Search Addon](https://coolplugins.net/product/events-search-addon-for-the-events-calendar/?utm_source=ecsa_plugin&utm_medium=readme&utm_campaign=view_plugin&utm_content=top_description)** helps your visitors find events instantly with a live Ajax search box. Instead of scrolling through event lists, they can simply type in a keyword (like event name, location, or other text), and the addon will show matching events instantly.
 
-[Events Search Bar ⇗](https://eventscalendaraddons.com/demos/events-search-and-filters-pro/?utm_source=ecsa_plugin&utm_medium=readme&utm_campaign=demo&utm_content=view_demo)
+You can place this search bar anywhere on your website with a simple shortcode. It works directly with the popular **[The Events Calendar plugin](https://wordpress.org/plugins/the-events-calendar/)**, which already powers over 800,000+ WordPress websites.
 
-### ❴ ❵ Plugin Shortcode
-`[events-calendar-search placeholder="Search Events" show-events="5" disable-past-events="false" layout="medium" content-type="advance"]`
+**[View Plugin Demo](https://eventscalendaraddons.com/demos/events-search-and-filters-pro/?utm_source=ecsa_plugin&utm_medium=readme&utm_campaign=demo&utm_content=view_demo)**
 
-### ⚡ Plugin Features
-* Ajax based seach event
-* 3 different layouts available i.e large,small,medium.
-* 2 different content-type available i.e advance,basic.
-* you can show only future events in search box.
 
-### 💪 More Add-ons For The Events Calendar
+### Key Features
+* **The Events Calendar Compatibility:** This addon is fully compatible with The Events Calendar plugin. It extends the functionality of The Events Calendar with advanced customization options.
 
-In addition to the **Events Search Addon** plugin, there are more addons available to extend the features of The Events Calendar plugin:
-* [**The Events Calendar shortcode ⇗**](https://eventscalendaraddons.com/plugin/events-shortcodes-pro/?utm_source=ecsa_plugin&utm_medium=readme&utm_campaign=get_pro&utm_content=ect_plugin)** provided by this addon on any page or post to show your upcoming events list in a beautiful layout - [View Demos ⇗](https://eventscalendaraddons.com/demos/events-shortcodes-pro/?utm_source=ecsa_plugin&utm_medium=readme&utm_campaign=demo&utm_content=ect_plugin)
-* [**Events Single Page Builder Pro ⇗**](https://eventscalendaraddons.com/plugin/event-single-page-builder-pro/?utm_source=ecsa_plugin&utm_medium=readme&utm_campaign=get_pro&utm_content=espbp_plugin) - Design single event page templates easily in Elementor - [View Demos ⇗](https://eventscalendaraddons.com/demos/event-single-page-builder-pro/?utm_source=ecsa_plugin&utm_medium=readme&utm_campaign=demo&utm_content=espbp_plugin)
-* [**Events Widgets Pro ⇗**](https://eventscalendaraddons.com/plugin/events-widgets-pro/?utm_source=ecsa_plugin&utm_medium=readme&utm_campaign=get_pro&utm_content=ectbe_plugin) - Show events list, grid, carousel and more in Elementor pages easily using **The Events Calendar Elementor Widgets** - [View Demos ⇗](https://eventscalendaraddons.com/demos/events-widgets-pro/?utm_source=ecsa_plugin&utm_medium=readme&utm_campaign=demo&utm_content=ectbe_plugin)
+* **Simple Shortcode:** The search bar can be added anywhere on your website using a simple shortcode. Just copy and paste the shortcode into a page, post, or widget.
+ * `[events-calendar-search placeholder="Search Events" show-events="5" disable-past-events="false" layout="medium" content-type="advance"]`
 
-### 😎 The Events Calendar Addon by Cool Plugins
+* **Multiple Layout Options:** Choose from 3 different search box layouts: Small, Medium, Large.
 
-**[Cool Plugins ⇗](https://coolplugins.net/?utm_source=ecsa_plugin&utm_medium=readme&utm_campaign=coolplugins&utm_content=whos_behind)** is a team of experienced WordPress plugin developers who manage this addon/plugin. Here's some information about the company:
+* **Content Styles:** The search results can be displayed in two different styles: Basic or Advance, choose one according to your preferences.
 
-* 7+ years of experience in WordPress plugin development.
-* Released 20+ free and premium WordPress plugins.
-* Over one million plugin downloads.
-* More than 200,000 active websites are utilizing our plugins.
+* **Show Only Upcoming Events:** Hide past events from search results by setting the option disable-past-events="true". This ensures visitors only see events that are still relevant.
+
+### More Addons For The Events Calendar
+
+* **[Events Single Page Builder Pro](https://eventscalendaraddons.com/plugin/event-single-page-builder-pro/?utm_source=ecsa_plugin&utm_medium=readme&utm_campaign=get_pro&utm_content=epta_more_addons)** - Design stunning single event pages with Elementor using pre-built templates and 20+ customizable widgets.
+
+* **[Events Shortcodes Pro](https://eventscalendaraddons.com/plugin/events-shortcodes-pro/?utm_source=ecsa_plugin&utm_medium=readme&utm_campaign=get_pro&utm_content=ect_more_addons)** - Events Shortcodes Pro For The Events Calendar adds the missing shortcode functionality to The Events Calendar plugin. With this plugin, you can easily display your events on any page or post in a list, grid, carousel, slider, masonry, accordion, or even a timeline format.
+
+* **[Events Calendar Modules for Divi](https://wordpress.org/plugins/events-calendar-modules-for-divi/)** - Display The Events Calendar Events directly inside Divi with Customizable List or Grid Layouts.
+
+* **[Events Widgets Pro](https://eventscalendaraddons.com/plugin/events-widgets-pro/?utm_source=ecsa_plugin&utm_medium=readme&utm_campaign=get_pro&utm_content=ectbe_more_addons)** - Show events list, grid, carousel, and more in Elementor pages using The Events Calendar Elementor Widgets.
 
 > **DISCLAIMER:** Events Search Addon For The Events Calendar plugin is developed by **Cool Plugins** team and is not affiliated with or developed by the official team of **The Events Calendar** plugin, which is a part of **StellarWP**, the software arm of **Liquid Web**. Some of the links in this content may be affiliate links, which means we may earn a commission at no extra cost to you if you make a purchase through these links.
 
-### ✍ Special Thanks!
+### Special Thanks!
 
-Special thanks to the famous **[The Events Calendar ⇗](https://theeventscalendar.pxf.io/plugin)** plugin authors for creating an awesome plugin for events management.
+Special thanks to the famous **[The Events Calendar](https://theeventscalendar.pxf.io/plugin)** plugin authors for creating an awesome plugin for events management.
 
 == Installation ==
 
-1. Install the **The Events Calendar Search Addon** plugin by searching for "events search" in your website's WP-admin dashboard under Plugins > Add New. You can also upload the plugin-zip unzipped folder to the /wp-content/plugins directory. Note that you must first install the free plugin **The Events Calendar** to use this plugin's features.
+1. Install the **The Events Calendar Search Addon** plugin by searching for **"events search"** in your website's WP-admin dashboard under **Plugins > Add New**. You can also upload the plugin-zip unzipped folder to the **/wp-content/plugins directory**. Note that you must first install the free plugin **The Events Calendar** to use this plugin's features.
 
-2. Activate the plugin by going to Plugins > Installed Plugin menu inside your wp-admin dashboard.
+2. Activate the plugin by going to **Plugins > Installed Plugin** menu inside your wp-admin dashboard.
 
-> Note that you must create/post events using the **The Events Calendar** plugin before displaying your events list in searchbox through this addon shortcode.
+> Note that you must create/post events using the **The Events Calendar** plugin before displaying your events list in the searchbox through this addon shortcode.
 
 == Frequently Asked Questions ==
 
-= What is plugin shortcode? =
-`[events-calendar-search placeholder="Search Events" show-events="5" disable-past-events="false" layout="medium" content-type="advance"]`
+= How do I add the search bar to my site? =
+ You just need to copy and paste the shortcode:
+
+[events-calendar-search placeholder="Search Events" show-events="5" disable-past-events="false" layout="medium" content-type="advance"]
 
 **Shortcode Attributes:-**
 
@@ -73,11 +73,21 @@ Special thanks to the famous **[The Events Calendar ⇗](https://theeventscalend
 
 You can also contact us at **https://eventscalendaraddons.com/support/** for any pre-sale query.
 
+= Can I hide past events from the search results? =
+Yes. Use the option disable-past-events="true" inside the shortcode, and only future events will show in search results.
+
+= What is the difference between “basic” and “advance” content types? =
+* Basic → Displays only the event title.
+* Advance → Displays event title + date + extra details.
+
+= Can I customize the style of the search bar? =
+Yes. The plugin comes with layout options, and you can also add custom CSS if you need further design control.
+
 = Will this plugin comply with GDPR? =
 Yes, our plugin is GDPR compliant. We do not save any data from your website visitors, and we never save any data from plugin users without their permission. We provide a feedback form on plugin deactivation request where users can share their feedback and email with us or skip this step altogether.
 
 = Do you provide addon customization services? =
-We offer free fixes for plugin issues and minor style changes. You can submit your feedback on our support page at **https://eventscalendaraddons.com/support/**.
+We offer free fixes for plugin issues and minor style changes. You can submit your feedback on our **[support](https://eventscalendaraddons.com/support/utm_source=ecsa_plugin&utm_medium=readme&utm_campaign=support&utm_content=faqs)**.
 
 If you want to customize the addon according to your own requirements, you can hire our developer. The cost and timeline of the project will depend on the type of customization. Please contact us with full details to get started.
 
@@ -86,6 +96,9 @@ If you want to customize the addon according to your own requirements, you can h
 1. The Events Calendar Search Addon Shortcode and Sidebar Widget View.
 
 == Changelog ==
+
+= Version 1.2.15 | September 02, 2025 =
+* Updated: Internal Links.
 
 = Version 1.2.14 | August 21, 2025 =
 * Fixed: Minor Changes.
@@ -152,3 +165,9 @@ If you want to customize the addon according to your own requirements, you can h
 
 = Version 1.0 | 1st FEB 2019 =
 * Initial Release
+
+== Upgrade Notice ==
+= Version 1.2.12 | June 13, 2025 =
+* Added: User opt-in option in plugin.
+* Added: Deactivate feedback notice.
+* Tested upto: WordPress version 6.8.1
