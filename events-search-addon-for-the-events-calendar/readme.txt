@@ -5,7 +5,7 @@ Tags: the events calendar, events addons, event, search, calendar, StellarWP, ev
 Requires at least: 5.0
 Tested up to: 6.8.2
 Requires PHP: 5.6
-Stable tag: 1.2.15
+Stable tag: 1.2.16
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,6 +96,11 @@ If you want to customize the addon according to your own requirements, you can h
 1. The Events Calendar Search Addon Shortcode and Sidebar Widget View.
 
 == Changelog ==
+
+= Version 1.2.16 | September 05, 2025 =
+* Fixed: Review notice.
+* Fixed: Addressed security vulnerabilities.
+* Tested upto: The Events Calendar version v6.15.1.1
 
 = Version 1.2.15 | September 02, 2025 =
 * Updated: Internal Links.

@@ -3,11 +3,11 @@
  * Plugin Name: The Events Calendar Search Addon
  * Description: A simple events search box to find any event quickly for The Events Calendar Free Plugin (by MODERN TRIBE) - <strong>[events-calendar-search placeholder="Search Events" show-events="5" disable-past-events="false" layout="medium" content-type="advance" ]</strong>
  * Plugin URI: https://eventscalendaraddons.com/
- * Version: 1.2.15
+ * Version: 1.2.16
  * Requires at least: 5.0
  * Tested up to: 6.8.2
  * Requires PHP: 5.6
- * Stable tag: 1.2.15
+ * Stable tag: 1.2.16
  * Author: Cool Plugins
  * Author URI: https://coolplugins.net/?utm_source=ecsa_plugin&utm_medium=inside&utm_campaign=author_page&utm_content=plugins_list
  * License: GPL2
@@ -24,7 +24,7 @@ if ( defined( 'ECSA_VERSION' ) ) {
 	return;
 }
 
-define( 'ECSA_VERSION', '1.2.15' );
+define( 'ECSA_VERSION', '1.2.16' );
 define( 'ECSA_FILE', __FILE__ );
 define( 'ECSA_PATH', plugin_dir_path( ECSA_FILE ) );
 define( 'ECSA_URL', plugin_dir_url( ECSA_FILE ) );
@@ -80,9 +80,6 @@ if ( ! class_exists( 'EventsCalendarSearchAddon' ) ) :
 		*/
 
 		public function ecsa_check_event_calender_installed() {
-			if ( ! class_exists( 'Tribe__Events__Main' ) or ! defined( 'Tribe__Events__Main::VERSION' ) ) {
-				 add_action( 'admin_notices', array( $this, 'ecsa_Install_ECT_Notice' ) );
-			}
 			if (is_admin()) {
 				require_once ECSA_PATH . '/admin/feedback/admin-feedback-form.php';
 			}
@@ -120,25 +117,6 @@ if ( ! class_exists( 'EventsCalendarSearchAddon' ) ) :
 					ECSA_cronjob::ecsa_send_data();
 				}
 			});
-		}
-
-		public function ecsa_Install_ECT_Notice() {
-			if ( current_user_can( 'activate_plugins' ) ) {
-				$url   = 'plugin-install.php?tab=plugin-information&plugin=the-events-calendar&TB_iframe=true';
-				$title = __( 'The Events Calendar', 'ecsa' );
-					printf(
-						'<div class="error CTEC_Msz"><p>' .
-						esc_html( __( '%1$s %2$s', 'ecsa' ) ),
-						wp_kses_post( __( 'In order to use <strong> The Events Calendar Search Addon </strong>plugin, Please first install the latest version of', 'ecsa' ) ),
-						sprintf(
-							'<a href="%s" class="thickbox" title="%s">%s</a>',
-							esc_url( $url ),
-							esc_html( $title ),
-							esc_html( $title ),
-						) . '</p></div>'
-					);
-
-			}
 		}
 
 

@@ -83,12 +83,15 @@ function ecsa_get_searchdata()
         wp_send_json_error('Invalid security token.');
     }
 
-    if (isset($_REQUEST['display']) && $_REQUEST['display'] == 'upcoming') {
-        $list_order = 'ASC';
-    } elseif (isset($_REQUEST['display']) && $_REQUEST['display'] == 'past') {
-        $list_order = 'DESC';
+    if ( isset( $_REQUEST['display'] ) ) {
+        $display = sanitize_text_field( wp_unslash( $_REQUEST['display'] ) );
+    
+        if ( 'upcoming' === $display ) {
+            $list_order = 'ASC';
+        } elseif ( 'past' === $display ) {
+            $list_order = 'DESC';
+        }
     }
-
     $all_events = tribe_get_events(
         apply_filters(
             'ect_args_filter',
@@ -111,7 +114,7 @@ function ecsa_get_searchdata()
             $url = esc_url(tribe_get_event_link());
             $event_ID = $post->ID;
 
-            $event_title = html_entity_decode(get_the_title());
+            $event_title = esc_html(get_the_title());
             $feat_img_url = wp_get_attachment_image_src(get_post_thumbnail_id($event_ID), 'thumbnail', false);
 
             if (is_array($feat_img_url) && !empty($feat_img_url)) {
@@ -125,7 +128,7 @@ function ecsa_get_searchdata()
             $event_end_date = strtotime(tribe_get_end_date($event_ID, false, 'Y-m-dTg:i'));
             $current_date = strtotime(gmdate('Y-m-dTg:i'));
             $venue_details = tribe_get_venue_details($event_ID);
-            $event_venue = strip_tags($venue_details['address']);
+            $event_venue =  wp_strip_all_tags($venue_details['address']);
 
             if ($event_start_date < $current_date && $current_date > $event_end_date) {
                 $event_search_arr[] = array(

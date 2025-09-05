@@ -28,9 +28,9 @@ if ( ! class_exists( 'ecsaFeedbackNotice' ) ) {
 		}
 		// ajax callback for review notice
 		public function ecsa_dismiss_review_notice() {
-			$rs = update_option( 'ecsa-ratingDiv', 'yes' );
-			echo json_encode( array( 'success' => 'true' ) );
-			exit;
+			check_ajax_referer( 'ecsa_dismiss_notice_nonce', 'security' );
+			update_option( 'ecsa-ratingDiv', 'yes' );
+			wp_send_json_success();
 		}
 		// admin notice
 		public function ecsa_admin_notice_for_reviews() {
@@ -56,7 +56,8 @@ if ( ! class_exists( 'ecsaFeedbackNotice' ) ) {
 
 			// check if installation days is greator then week
 			if ( isset( $diff_days ) && $diff_days >= 3 ) {
-				  echo wp_kses_post( $this->create_notice_content() );
+				$content = wp_kses_post( $this->create_notice_content() );
+				printf( '%s', $content );
 			}
         
 		}
@@ -64,33 +65,38 @@ if ( ! class_exists( 'ecsaFeedbackNotice' ) ) {
 		// generated review notice HTML
 		function create_notice_content() {
 
-			$ajax_url           = admin_url( 'admin-ajax.php' );
-			$ajax_callback      = 'ecsa_dismiss_notice';
-			$wrap_cls           = 'notice notice-info is-dismissible';
-			$img_path           = ECSA_URL . 'assets/images/logo.png';
-			$p_name             = 'The Events Calendar Search Addon';
-			$like_it_text       = 'Rate Now! ★★★★★';
-			$already_rated_text = esc_html__( 'I already rated it', 'esca' );
+			$ajax_url           = esc_url( admin_url( 'admin-ajax.php' ) );
+			$ajax_callback      = esc_attr( 'ecsa_dismiss_notice' );
+			$wrap_cls           = esc_attr( 'notice notice-info is-dismissible' );
+			$img_path           = esc_url( ECSA_URL . 'assets/images/logo.svg' );
+			$p_name             = esc_html( 'The Events Calendar Search Addon' );
+			$like_it_text       = esc_html__( 'Rate Now! ★★★★★', 'ecsa' );
+			$already_rated_text = esc_html__( 'I already rated it', 'ecsa' );
 			$not_like_it_text   = esc_html__( 'No, not good enough, i do not like to rate it!', 'ecsa' );
-			$p_link             = esc_url( 'https://wordpress.org/plugins/events-search-addon-for-the-events-calendar/reviews/#new-post' );
-			$pro_url            = esc_url( 'https://1.envato.market/c/1258464/275988/4415?u=https%3A%2F%2Fcodecanyon.net%2Fitem%2Fthe-events-calendar-templates-and-shortcode-wordpress-plugin%2F20143286' );
+			$p_link             = esc_url( 'https://wordpress.org/support/plugin/events-search-addon-for-the-events-calendar/reviews/' );
+			$nonce              = esc_attr( wp_create_nonce( 'ecsa_dismiss_notice_nonce' ) );
+			$message_raw = sprintf(
+				'Thanks for using <b>%s</b> WordPress plugin. We hope it meets your expectations! <br/>Please give us a quick rating, it works as a boost for us to keep working on more <a href="%s" target="_blank"><strong>Cool Plugins</strong></a>!<br/>',
+				$p_name,
+				esc_url( 'https://coolplugins.net/?utm_source=ecsa_plugin&utm_medium=inside&utm_campaign=author_page&utm_content=review_notice' )
+			);
 
-			$message = "Thanks for using <b>$p_name</b> WordPress plugin. We hope it meets your expectations! <br/>Please give us a quick rating, it works as a boost for us to keep working on more <a href='https://coolplugins.net' target='_blank'><strong>Cool Plugins</strong></a>!<br/>";
-
-			$html = '<div data-ajax-url="%8$s"  data-ajax-callback="%9$s" class="cool-feedback-notice-wrapper %1$s">
-        <div class="logo_container"><a href="%5$s"><img src="%2$s" alt="%3$s"></a></div>
-        <div class="message_container">%4$s
-        <div class="callto_action">
-        <ul>
-            <li class="love_it"><a href="%5$s" class="like_it_btn button button-primary" target="_new" title="%6$s">%6$s</a></li>
-            <li class="already_rated"><a href="#" class="already_rated_btn button ecsa_dismiss_notice" title="%7$s">%7$s</a></li>      
-			     
-        </ul>
-        <div class="clrfix"></div>
-        </div>
-        </div>
-        </div>';
-
+			// allow safe tags in message
+			$message = wp_kses_post( $message_raw );
+		
+			$html = '<div data-ajax-url="%8$s" data-ajax-callback="%9$s" data-nonce="%10$s" class="cool-feedback-notice-wrapper %1$s">
+				<div class="logo_container"><a href="%5$s"><img src="%2$s" alt="%3$s"></a></div>
+				<div class="message_container">%4$s
+				<div class="callto_action">
+				<ul>
+					<li class="love_it"><a href="%5$s" class="like_it_btn button button-primary" target="_new" title="%6$s">%6$s</a></li>
+					<li class="already_rated"><a href="#" class="already_rated_btn button ecsa_dismiss_notice" title="%7$s">%7$s</a></li>      
+				</ul>
+				<div class="clrfix"></div>
+				</div>
+				</div>
+				</div>';
+		
 			return sprintf(
 				$html,
 				$wrap_cls,
@@ -100,12 +106,11 @@ if ( ! class_exists( 'ecsaFeedbackNotice' ) ) {
 				$p_link,
 				$like_it_text,
 				$already_rated_text,
-				$ajax_url, // 8
+				$ajax_url,     // 8
 				$ajax_callback, // 9
-				$pro_url
+				$nonce
 			);
-
-		}
+		}		
 
 	} //class end
 

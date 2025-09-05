@@ -161,13 +161,15 @@ class EventsCalendarSearchAddonWidget extends WP_Widget {
 
 	// Updating widget replacing old instances with new
 	public function update( $new_instance, $old_instance ) {
-		$instance                        = array();
-		$instance['title']               = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-		$instance['placeholder']         = strip_tags( $new_instance['placeholder'] );
-		$instance['show_events']         = strip_tags( $new_instance['show_events'] );
-		$instance['disable_past_events'] = strip_tags( $new_instance['disable_past_events'] );
-		$instance['layout']              = strip_tags( $new_instance['layout'] );
-		$instance['content_type']              = strip_tags( $new_instance['content_type'] );
+		$instance = array();
+	
+		$instance['title']               = ! empty( $new_instance['title'] ) ? sanitize_text_field( $new_instance['title'] ) : '';
+		$instance['placeholder']         = sanitize_text_field( $new_instance['placeholder'] );
+		$instance['show_events']         = sanitize_text_field( $new_instance['show_events'] );
+		$instance['disable_past_events'] = sanitize_text_field( $new_instance['disable_past_events'] );
+		$instance['layout']              = sanitize_text_field( $new_instance['layout'] );
+		$instance['content_type']        = sanitize_text_field( $new_instance['content_type'] );
+	
 		return $instance;
 	}
 

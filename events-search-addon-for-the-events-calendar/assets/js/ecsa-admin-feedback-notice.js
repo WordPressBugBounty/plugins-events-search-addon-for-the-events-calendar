@@ -4,10 +4,16 @@ jQuery(document).ready(function ($) {
 		var wrapper=$this.parents('.cool-feedback-notice-wrapper');
 		var ajaxURL=wrapper.data('ajax-url');
 		var ajaxCallback=wrapper.data('ajax-callback');
+		var nonce=wrapper.data('nonce');
 		
-		$.post(ajaxURL, { 'action':ajaxCallback }, function( data ) {
-			wrapper.slideUp('fast');
-		  }, "json");
+		$.post(ajaxURL, { 
+            'action': ajaxCallback,
+            'security': nonce
+        }, function(data) {
+            if (data.success) {
+                wrapper.slideUp('fast');
+            }
+        }, "json");
 
 	});
 });
