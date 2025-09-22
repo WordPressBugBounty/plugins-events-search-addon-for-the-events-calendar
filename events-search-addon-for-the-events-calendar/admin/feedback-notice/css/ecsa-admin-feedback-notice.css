@@ -1,0 +1,36 @@
+.cool-feedback-notice-wrapper.notice.notice-info.is-dismissible {
+    padding: 10px 22px 10px 9px;
+    max-width: 870px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.cool-feedback-notice-wrapper .logo_container {
+    width:80px;
+    display:inline-block;
+    margin-right: 10px;
+    vertical-align: top;
+}
+.cool-feedback-notice-wrapper .logo_container img {
+    width:100%;
+    height:auto;
+}
+.cool-feedback-notice-wrapper .message_container {
+    width: calc(100% - 120px);
+    display: inline-block;
+    margin: 0;
+    vertical-align: top;
+}
+.cool-feedback-notice-wrapper ul li.already_rated a:before {
+    color: #f12945;
+    content: "\f153";
+    font: normal 18px / 21px dashicons;
+    display: inline-block;
+    vertical-align: sub;
+}
+.cool-feedback-notice-wrapper ul li {
+    float: left;
+    margin: 0px 5px;
+}
+.clrfix{
+    clear:both;
+}
