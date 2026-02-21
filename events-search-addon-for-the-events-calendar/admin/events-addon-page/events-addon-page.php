@@ -606,7 +606,13 @@ if ( !class_exists('cool_plugins_events_addons')) {
                 // Use logo from plugin data if available, otherwise fallback
                 $plugin_logo = '';
                 if ( ! empty( $plugin['logo'] ) ) {
-                    $plugin_logo = plugin_dir_url( __FILE__ ) . 'assets/images/' . sanitize_file_name( $plugin['logo'] );
+                    // Check if logo is already a full external URL
+                    if ( strpos( $plugin['logo'], 'http' ) !== false ) {
+                        $plugin_logo = $plugin['logo'];
+                    } else {
+                        // Treat as relative path within plugin assets
+                        $plugin_logo = plugin_dir_url( __FILE__ ) . 'assets/images/' . ( $plugin['logo'] );
+                    }
                 }
                 if ( empty( $plugin_logo ) ) {
                     $plugin_logo = $this->event_addon_plugins_logo( $plugin_slug );
