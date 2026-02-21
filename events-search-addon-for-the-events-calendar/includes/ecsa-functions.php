@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 /*
 |-------------------------------------------------------------
 | Function to generate HTML
@@ -11,12 +12,12 @@ function ecsa_generate_html($placeholder, $show_events, $disable_past, $content_
     wp_enqueue_script('ecsa-handlebars');
     wp_enqueue_script('ecsa-script');
 
-    $no_up_result = __('There is no Upcoming Event', 'ecsa');
-    $no_past_result = ($disable_past == 'true') ? '' : __('There is no Past Event', 'ecsa');
+    $no_up_result = __('There is no Upcoming Event', 'events-search-addon-for-the-events-calendar');
+    $no_past_result = ($disable_past == 'true') ? '' : __('There is no Past Event', 'events-search-addon-for-the-events-calendar');
 
     $html = '';
-    $up_ev_heading = __('Upcoming Events', 'ecsa');
-    $past_ev_heading = __('Past Events', 'ecsa');
+    $up_ev_heading = __('Upcoming Events', 'events-search-addon-for-the-events-calendar');
+    $past_ev_heading = __('Past Events', 'events-search-addon-for-the-events-calendar');
 
     $html .= '<div class="ecsa-search-box-skelton layout-' . esc_attr($layout) . '" id="ecsa-search">
         <input id="ecsa-search-box" type="text" disabled="disabled">
@@ -94,12 +95,12 @@ function ecsa_get_searchdata()
     }
     $all_events = tribe_get_events(
         apply_filters(
-            'ect_args_filter',
+            'ect_args_filter',//phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
             array(
                 'post_status' => 'publish',
                 'posts_per_page' => -1,
                 'eventDisplay' => 'custom',
-                'tax_query' => 'slug',
+                'tax_query' => 'slug',//phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
                 'orderby' => 'event_date',
                 'order' => $list_order,
             ),

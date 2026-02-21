@@ -3,17 +3,17 @@
  * Plugin Name: The Events Calendar Search Addon
  * Description: A simple events search box to find any event quickly for The Events Calendar Free Plugin (by MODERN TRIBE) - <strong>[events-calendar-search placeholder="Search Events" show-events="5" disable-past-events="false" layout="medium" content-type="advance" ]</strong>
  * Plugin URI: https://eventscalendaraddons.com/
- * Version: 1.2.18
+ * Version: 1.3.0
  * Requires at least: 5.0
  * Tested up to: 6.9
  * Requires PHP: 5.6
- * Stable tag: 1.2.18
+ * Stable tag: 1.3.0
  * Author: Cool Plugins
  * Author URI: https://coolplugins.net/?utm_source=ecsa_plugin&utm_medium=inside&utm_campaign=author_page&utm_content=plugins_list
  * License: GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: ecsa
- * Domain Path: languages
+ * Text Domain: events-search-addon-for-the-events-calendar
+ * Domain Path: /languages
  * Requires Plugins: the-events-calendar
  */
 
@@ -24,7 +24,7 @@ if ( defined( 'ECSA_VERSION' ) ) {
 	return;
 }
 
-define( 'ECSA_VERSION', '1.2.18' );
+define( 'ECSA_VERSION', '1.3.0' );
 define( 'ECSA_FILE', __FILE__ );
 define( 'ECSA_PATH', plugin_dir_path( ECSA_FILE ) );
 define( 'ECSA_URL', plugin_dir_url( ECSA_FILE ) );
@@ -40,6 +40,7 @@ register_deactivation_hook( ECSA_FILE, array( 'EventsCalendarSearchAddon', 'ecsa
 |--------------------------------------------------------------------------
 */
 if ( ! class_exists( 'EventsCalendarSearchAddon' ) ) :
+	//phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedClassFound
 	final class EventsCalendarSearchAddon {
 
 		private static $instance = null;
@@ -66,6 +67,7 @@ if ( ! class_exists( 'EventsCalendarSearchAddon' ) ) :
 			add_shortcode( 'events-calendar-search', array( $this, 'ecsa_shortcode' ) );
 			add_action( 'wp_ajax_ecsa_search_data', 'ecsa_get_searchdata' );
 			add_action( 'wp_ajax_nopriv_ecsa_search_data', 'ecsa_get_searchdata' );
+			add_action( 'admin_enqueue_scripts', array( $this, 'ecsa_enqueue_scripts' ) );
 		}
 
 
@@ -94,8 +96,8 @@ if ( ! class_exists( 'EventsCalendarSearchAddon' ) ) :
 					return;
 				}
 				$notice = [
-					'title' => __('Cool Plugins Events Addons', 'ecsa'),
-					'message' => __('Help us make this plugin more compatible with your site by sharing non-sensitive site data.', 'ecsa'),
+					'title' => __('Cool Plugins Events Addons', 'events-search-addon-for-the-events-calendar'),
+					'message' => __('Help us make this plugin more compatible with your site by sharing non-sensitive site data.', 'events-search-addon-for-the-events-calendar'),
 					'pages' => ['cool-plugins-events-addon'],
 					'always_show_on' => ['cool-plugins-events-addon'], // This enables auto-show
 					'plugin_name'=>'ecsa',
@@ -105,10 +107,10 @@ if ( ! class_exists( 'EventsCalendarSearchAddon' ) ) :
 				CPFM_Feedback_Notice::cpfm_register_notice('cool_events', $notice);
 	
 					if (!isset($GLOBALS['cool_plugins_feedback'])) {
-						$GLOBALS['cool_plugins_feedback'] = [];
+						$GLOBALS['cool_plugins_feedback'] = [];//phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 					}
 				
-					$GLOBALS['cool_plugins_feedback']['cool_events'][] = $notice;
+					$GLOBALS['cool_plugins_feedback']['cool_events'][] = $notice;//phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 		   
 			});
 			add_action('cpfm_after_opt_in_ecsa', function($category) {
@@ -138,7 +140,7 @@ if ( ! class_exists( 'EventsCalendarSearchAddon' ) ) :
 				'ecsa'
 			);
 
-			$placeholder   = ( ( $attributes['placeholder'] != '' ) ? $attributes['placeholder'] : __( 'Search Events', 'ecsa' ) );
+			$placeholder   = ( ( $attributes['placeholder'] != '' ) ? $attributes['placeholder'] : __( 'Search Events', 'events-search-addon-for-the-events-calendar' ) );
 			$show_events   = ( ( $attributes['show-events'] != '' ) ? $attributes['show-events'] : '10' );
 			$disable_past  = ( ( $attributes['disable-past-events'] != '' ) ? $attributes['disable-past-events'] : 'false' );
 			$layout        = ( ( $attributes['layout'] != '' ) ? $attributes['layout'] : 'medium' );
@@ -176,14 +178,95 @@ if ( ! class_exists( 'EventsCalendarSearchAddon' ) ) :
 
 			}
 		}
+		public static function ecsa_display_header() {
+			// Required plugins list (path + minimum version)
+			$required_plugins = [
+				'countdown-for-the-events-calendar/countdown-for-events-calendar.php' => '1.4.16',
+				'cp-events-calendar-modules-for-divi-pro/cp-events-calendar-modules-for-divi-pro.php' => '2.0.2',
+				'event-page-templates-addon-for-the-events-calendar/the-events-calendar-event-details-page-templates.php' => '1.7.15',
+				'events-block-for-the-events-calendar/events-block-for-the-event-calender.php' => '1.3.12',
+				'event-single-page-builder-pro/event-single-page-builder-pro.php' => '2.0.1',
+				'events-search-addon-for-the-events-calendar/events-calendar-search-addon.php' => '1.2.18',
+				'events-speakers-and-sponsors/events-speakers-and-sponsors.php' => '1.1.1',
+				'events-widgets-for-elementor-and-the-events-calendar/events-widgets-for-elementor-and-the-events-calendar.php' => '1.6.28',
+				'events-widgets-pro/events-widgets-pro.php' => '3.0.1',
+				'template-events-calendar/events-calendar-templates.php' => '2.5.4',
+				'the-events-calendar-templates-and-shortcode/the-events-calendar-templates-and-shortcode.php' => '4.0.1',
+			];
 
+			$show_header = true;
+
+			// Loop through all plugins
+			foreach ($required_plugins as $plugin_path => $min_version) {
+
+				// Plugin active hai?
+				if (is_plugin_active($plugin_path)) {
+
+					// Plugin data get karo
+					$plugin_data = get_plugin_data(WP_PLUGIN_DIR . '/' . $plugin_path);
+					$current_version = $plugin_data['Version'];
+
+					// Version check
+					if (version_compare($current_version, $min_version, '<=')) {
+						$show_header = false;
+						break;
+					}
+				}
+			}
+			return $show_header;
+		}
+		public function ecsa_enqueue_scripts() {
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$screen = get_current_screen();
+			$screen_id = $screen ? $screen->id : '';
+			$parent_file = ['events-addons_page_tribe-events-shortcode-template-settings',
+						'events-addons_page_tribe_events-events-template-settings',
+						'toplevel_page_cool-plugins-events-addon',
+						'events-addons_page_cool-events-registration',
+						'events-addons_page_countdown_for_the_events_calendar',
+						'edit-epta',
+						'edit-esas_speaker',
+						'edit-esas_sponsor',
+						'events-addons_page_esas-speaker-sponsor-settings',
+						'edit-ewpe'];
+			if (self::ecsa_display_header() && in_array($screen_id, $parent_file)) {
+				// Common admin notice filter script (runs only on our target pages)
+				wp_enqueue_script(
+					'ecsa-admin-notice-filter',
+					ECSA_URL . 'assets/js/ecsa-admin-notice-filter.js',
+					array( 'jquery' ),
+					ECSA_VERSION,
+					true
+				);
+
+				wp_localize_script(
+					'ecsa-admin-notice-filter',
+					'ecsa_notice_filter',
+					array(
+						'nonce'             => wp_create_nonce( 'ecsa_notice_filter' ),
+						'allowedBodyClasses' => array(
+							'events-addons_page_tribe-events-shortcode-template-settings',
+							'events-addons_page_tribe_events-events-template-settings',
+							'toplevel_page_cool-plugins-events-addon',
+							'events-addons_page_cool-events-registration',
+							'events-addons_page_countdown_for_the_events_calendar',
+							'post-type-epta',
+							'post-type-esas_speaker',
+							'post-type-esas_sponsor',
+							'events-addons_page_esas-speaker-sponsor-settings',
+							'post-type-ewpe',
+						),
+					)
+				);
+			}
+		}
 		/*
 		|----------------------------------------------------------------------------
 		| Loads the plugin's translated strings.
 		|----------------------------------------------------------------------------
 		*/
 		public function ecsa_load_textdomain() {
-			load_plugin_textdomain( 'ecsa', false, basename( dirname( __FILE__ ) ) . '/languages/' );
+			load_plugin_textdomain( 'ecsa', false, basename( dirname( __FILE__ ) ) . '/languages/' );//phpcs:ignore PluginCheck.CodeAnalysis.DiscouragedFunctions.load_plugin_textdomainFound
 			
 			if (!get_option( 'ecsa_initial_save_version' ) ) {
                 add_option( 'ecsa_initial_save_version', ECSA_VERSION );
@@ -255,11 +338,11 @@ if ( ! class_exists( 'EventsCalendarSearchAddon' ) ) :
 		}
 
 	}
-
+//phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedFunctionFound
 	function EventsCalendarSearchAddon() {
 		return EventsCalendarSearchAddon::get_instance();
 	}
 
-	$GLOBALS['EventsCalendarSearchAddon'] = EventsCalendarSearchAddon();
+	$GLOBALS['EventsCalendarSearchAddon'] = EventsCalendarSearchAddon();//phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 
 endif;

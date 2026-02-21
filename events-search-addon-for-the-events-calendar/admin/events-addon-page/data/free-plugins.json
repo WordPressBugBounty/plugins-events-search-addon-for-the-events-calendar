@@ -1,0 +1,93 @@
+{
+  "event-page-templates-addon-for-the-events-calendar": {
+    "slug": "event-page-templates-addon-for-the-events-calendar",
+    "name": "Event Single Page Builder",
+    "info": "This is used to replace the default event single page layout with custom design.",
+    "version": "1.7.15",
+    "latest_version": "{{EPTA_PLUGIN_CURRENT_VERSION}}",
+    "image_url": "event-single-page-icon.svg",
+    "tag": "the-events-calendar",
+    "type": "free",
+    "download_url": "https://downloads.wordpress.org/plugin/event-page-templates-addon-for-the-events-calendar.zip",
+    "demo_url": "https://eventscalendaraddons.com/demos/event-single-page-builder-pro/?utm_source=ecsa_plugin&utm_medium=inside&utm_campaign=demo&utm_content=dashboard",
+    "docs_url": "https://wordpress.org/plugins/event-page-templates-addon-for-the-events-calendar/"
+  },
+  "events-block-for-the-events-calendar": {
+    "slug": "events-block-for-the-events-calendar",
+    "name": "Events Block For Gutenberg",
+    "info": "Display events in List or Minimal List layout directly in the Gutenberg Editor.",
+    "version": "1.3.12",
+    "latest_version": "{{EBEC_VERSION}}",
+    "image_url": "events-block-icon.svg",
+    "tag": "the-events-calendar",
+    "type": "free",
+    "download_url": "https://downloads.wordpress.org/plugin/events-block-for-the-events-calendar.zip",
+    "demo_url": "https://eventscalendaraddons.com/demos/events-block-for-the-events-calendar/?utm_source=ecsa_plugin&utm_medium=inside&utm_campaign=demo&utm_content=dashboard",
+    "docs_url": "https://wordpress.org/plugins/events-block-for-the-events-calendar/"
+  },
+  "events-search-addon-for-the-events-calendar": {
+    "slug": "events-search-addon-for-the-events-calendar",
+    "name": "Events Search Box",
+    "info": "Search events from The Events Calendar using a powerful Ajax-based search box.",
+    "version": "1.2.18",
+    "latest_version": "{{ECSA_VERSION}}",
+    "image_url": "events-search-icon.svg",
+    "tag": "the-events-calendar",
+    "type": "free",
+    "download_url": "https://downloads.wordpress.org/plugin/events-search-addon-for-the-events-calendar.zip",
+    "demo_url": "https://eventscalendaraddons.com/demos/events-search-and-filters-pro/?utm_source=ecsa_plugin&utm_medium=inside&utm_campaign=demo&utm_content=dashboard",
+    "docs_url": "https://wordpress.org/plugins/events-search-addon-for-the-events-calendar/"
+  },
+  "template-events-calendar": {
+    "slug": "template-events-calendar",
+    "name": "Events Shortcodes",
+    "info": "Use shortcodes to display events list, timeline or minimal list layout anywhere.",
+    "version": "2.5.4",
+    "latest_version": "{{ECT_VERSION}}",
+    "image_url": "events-shortcodes-icon.svg",
+    "tag": "the-events-calendar",
+    "type": "free",
+    "download_url": "https://downloads.wordpress.org/plugin/template-events-calendar.zip",
+    "demo_url": "https://eventscalendaraddons.com/demos/events-shortcodes-pro/?utm_source=ecsa_plugin&utm_medium=inside&utm_campaign=demo&utm_content=dashboard",
+    "docs_url": "https://wordpress.org/plugins/template-events-calendar/"
+  },
+  "events-widgets-for-elementor-and-the-events-calendar": {
+    "slug": "events-widgets-for-elementor-and-the-events-calendar",
+    "name": "Events Widgets For Elementor",
+    "info": "Elementor widgets to show The Events Calendar events list and calendar.",
+    "version": "1.6.28",
+    "latest_version": "{{ECTBE_VERSION}}",
+    "image_url": "events-widgets-icon.svg",
+    "tag": "the-events-calendar",
+    "type": "free",
+    "download_url": "https://downloads.wordpress.org/plugin/events-widgets-for-elementor-and-the-events-calendar.zip",
+    "demo_url": "https://eventscalendaraddons.com/demos/events-widgets-pro/?utm_source=ecsa_plugin&utm_medium=inside&utm_campaign=demo&utm_content=dashboard",
+    "docs_url": "https://wordpress.org/plugins/events-widgets-for-elementor-and-the-events-calendar/"
+  },
+  "countdown-for-the-events-calendar": {
+    "slug": "countdown-for-the-events-calendar",
+    "name": "Event Countdown",
+    "info": "Show upcoming event with a countdown timer anywhere using shortcode.",
+    "version": "1.4.16",
+    "latest_version": "{{TECC_VERSION_CURRENT}}",
+    "image_url": "event-countdown-icon.svg",
+    "tag": "the-events-calendar",
+    "type": "free",
+    "download_url": "https://downloads.wordpress.org/plugin/countdown-for-the-events-calendar.zip",
+    "demo_url": "https://eventscalendaraddons.com/demos/event-countdown/?utm_source=ecsa_plugin&utm_medium=inside&utm_campaign=demo&utm_content=dashboard",
+    "docs_url": "https://wordpress.org/plugins/countdown-for-the-events-calendar/"
+  },
+  "events-calendar-modules-for-divi": {
+    "slug": "events-calendar-modules-for-divi",
+    "name": "Events Calendar for Divi",
+    "info": "Divi modules to display events list, grid layout on any divi page.",
+    "version": "1.1.3",
+    "latest_version": "{{ECMD_V}}",
+    "image_url": "events-calendar-modules-for-divi.svg",
+    "tag": "the-events-calendar",
+    "type": "free",
+    "download_url": "https://downloads.wordpress.org/plugin/events-calendar-modules-for-divi.zip",
+    "demo_url": "https://eventscalendaraddons.com/demos/the-events-calendar-modules-for-divi/?utm_source=ecsa_plugin&utm_medium=inside&utm_campaign=demo&utm_content=dashboard",
+    "docs_url": "https://wordpress.org/plugins/events-calendar-modules-for-divi/"
+  }
+}

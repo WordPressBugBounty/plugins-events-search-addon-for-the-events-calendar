@@ -1,5 +1,5 @@
 <?php
-
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! class_exists( 'ecsaFeedbackNotice' ) ) {
 	class ecsaFeedbackNotice {
 		/**
@@ -9,6 +9,7 @@ if ( ! class_exists( 'ecsaFeedbackNotice' ) ) {
 			// register actions
 
 			if ( is_admin() ) {
+				add_action('admin_enqueue_scripts', array($this, 'add_notice_positioning_inline'), 20);
 				add_action( 'admin_notices', array( $this, 'ecsa_admin_notice_for_reviews' ) );
 				add_action( 'wp_ajax_ecsa_dismiss_notice', array( $this, 'ecsa_dismiss_review_notice' ) );
 			}
@@ -43,11 +44,11 @@ if ( ! class_exists( 'ecsaFeedbackNotice' ) ) {
 			$diff_days    = $difference->days;
 
 			// check if installation days is greator then week
-			if ( isset( $diff_days ) && $diff_days <= 3 ) {
+			if ( isset( $diff_days ) && $diff_days >= 3 ) {
 				wp_enqueue_script( 'ecsa-feedback-notice-script', ECSA_URL . 'admin/feedback-notice/js/ecsa-admin-feedback-notice.js', array( 'jquery' ), ECSA_VERSION, true );
 				wp_enqueue_style( 'ecsa-feedback-notice-styles', ECSA_URL . 'admin/feedback-notice/css/ecsa-admin-feedback-notice.css',array(),ECSA_VERSION);
 				$content = wp_kses_post( $this->create_notice_content() );
-				printf( '%s', $content );
+				printf( '%s', $content );//phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
         
 		}
@@ -56,10 +57,10 @@ if ( ! class_exists( 'ecsaFeedbackNotice' ) ) {
 		function create_notice_content() {
 			$ajax_url      = admin_url( 'admin-ajax.php' );
 			$ajax_callback = 'ecsa_dismiss_notice';
-			$wrap_cls      = 'notice notice-info is-dismissible';
+			$wrap_cls      = 'notice notice-info is-dismissible ect-required-plugin-notice';
 			$p_name        = 'The Events Calendar Search Addon';
-			$like_it_text  = esc_html__( 'Rate Now! ★★★★★', 'ecsa' );
-			$already_rated = esc_html__( 'Already Reviewed', 'ecsa' );
+			$like_it_text  = esc_html__( 'Rate Now! ★★★★★', 'events-search-addon-for-the-events-calendar' );
+			$already_rated = esc_html__( 'Already Reviewed', 'events-search-addon-for-the-events-calendar' );
 			$p_link        = 'https://wordpress.org/support/plugin/events-search-addon-for-the-events-calendar/reviews/';
 			$nonce         = wp_create_nonce( 'ecsa_dismiss_notice_nonce' );
 		
@@ -96,6 +97,149 @@ if ( ! class_exists( 'ecsaFeedbackNotice' ) ) {
 				esc_attr( $nonce )         // %8$s
 			);
 		}	
+
+		/**
+         * Check if we're on the plugin admin pages
+         *
+         * @since 1.0.0
+         *
+         * @return bool
+         */
+        private function is_ect_plugin_page() {
+            $screen = get_current_screen();
+            if ( empty( $screen ) ) {
+                return false;
+            }
+            
+            // Check if we're on plugin pages that use the header
+            $plugin_pages = array(
+                'toplevel_page_cool-plugins-events-addon',
+                'events-addons_page_tribe-events-shortcode-template-settings',
+                'events-addons_page_cool-events-registration',
+            );
+            
+            return in_array( $screen->id, $plugin_pages, true );
+        }
+
+        /**
+         * Add inline CSS and JavaScript for notice positioning on plugin pages
+         *
+         * @since 1.0.0
+         *
+         * @return void
+         */
+        public function add_notice_positioning_inline() {
+            if ( ! $this->is_ect_plugin_page() ) {
+                return;
+            }
+
+            // Ensure jQuery is enqueued
+            wp_enqueue_script( 'jquery' );
+
+            // Add inline CSS
+            $css = "
+			/* Notice positioning for plugin pages */
+			body.toplevel_page_cool-plugins-events-addon .notice,
+			body.toplevel_page_cool-plugins-events-addon .error,
+			body.toplevel_page_cool-plugins-events-addon .updated,
+			body.toplevel_page_cool-plugins-events-addon .notice-error,
+			body.toplevel_page_cool-plugins-events-addon .notice-warning,
+			body.toplevel_page_cool-plugins-events-addon .notice-info,
+			body.toplevel_page_cool-plugins-events-addon .notice-success,
+			body.events-addons_page_tribe-events-shortcode-template-settings .notice,
+			body.events-addons_page_tribe-events-shortcode-template-settings .error,
+			body.events-addons_page_tribe-events-shortcode-template-settings .updated,
+			body.events-addons_page_tribe-events-shortcode-template-settings .notice-error,
+			body.events-addons_page_tribe-events-shortcode-template-settings .notice-warning,
+			body.events-addons_page_tribe-events-shortcode-template-settings .notice-info,
+			body.events-addons_page_tribe-events-shortcode-template-settings .notice-success,
+			body.events-addons_page_cool-events-registration .notice,
+			body.events-addons_page_cool-events-registration .error,
+			body.events-addons_page_cool-events-registration .updated,
+			body.events-addons_page_cool-events-registration .notice-error,
+			body.events-addons_page_cool-events-registration .notice-warning,
+			body.events-addons_page_cool-events-registration .notice-info,
+			body.events-addons_page_cool-events-registration .notice-success {
+				display: none !important;
+				margin-left: 2rem;
+			}
+
+			/* Keep inline notices inside license box visible (do NOT move them) */
+			body.toplevel_page_cool-plugins-events-addon [class*=\"license-box\"] .notice,
+			body.toplevel_page_cool-plugins-events-addon [class*=\"license-box\"] .error,
+			body.toplevel_page_cool-plugins-events-addon [class*=\"license-box\"] .updated,
+			body.toplevel_page_cool-plugins-events-addon [class*=\"license-box\"] .notice-error,
+			body.toplevel_page_cool-plugins-events-addon [class*=\"license-box\"] .notice-warning,
+			body.toplevel_page_cool-plugins-events-addon [class*=\"license-box\"] .notice-info,
+			body.toplevel_page_cool-plugins-events-addon [class*=\"license-box\"] .notice-success,
+			body.events-addons_page_tribe-events-shortcode-template-settings [class*=\"license-box\"] .notice,
+			body.events-addons_page_tribe-events-shortcode-template-settings [class*=\"license-box\"] .error,
+			body.events-addons_page_tribe-events-shortcode-template-settings [class*=\"license-box\"] .updated,
+			body.events-addons_page_tribe-events-shortcode-template-settings [class*=\"license-box\"] .notice-error,
+			body.events-addons_page_tribe-events-shortcode-template-settings [class*=\"license-box\"] .notice-warning,
+			body.events-addons_page_tribe-events-shortcode-template-settings [class*=\"license-box\"] .notice-info,
+			body.events-addons_page_tribe-events-shortcode-template-settings [class*=\"license-box\"] .notice-success,
+			body.events-addons_page_cool-events-registration [class*=\"license-box\"] .notice,
+			body.events-addons_page_cool-events-registration [class*=\"license-box\"] .error,
+			body.events-addons_page_cool-events-registration [class*=\"license-box\"] .updated,
+			body.events-addons_page_cool-events-registration [class*=\"license-box\"] .notice-error,
+			body.events-addons_page_cool-events-registration [class*=\"license-box\"] .notice-warning,
+			body.events-addons_page_cool-events-registration [class*=\"license-box\"] .notice-info,
+			body.events-addons_page_cool-events-registration [class*=\"license-box\"] .notice-success {
+				display: block !important;
+				margin-left: 0;
+				margin-right: 0;
+				width: auto;
+			}
+
+			/* Show notices after they are moved */
+			body.toplevel_page_cool-plugins-events-addon .ect-moved-notice,
+			body.events-addons_page_tribe-events-shortcode-template-settings .ect-moved-notice,
+			body.events-addons_page_cool-events-registration .ect-moved-notice {
+				display: block !important;
+				margin-left: 2rem;
+				margin-right: 2rem;
+				width: auto;
+			}
+			";
+            
+            // Register and enqueue a style handle for notice positioning if not already done
+            if ( ! wp_style_is( 'ect-notice-positioning', 'registered' ) ) {
+                wp_register_style( 'ect-notice-positioning',null, array(), ECSA_VERSION, false );
+            }
+            wp_enqueue_style( 'ect-notice-positioning' );
+            wp_add_inline_style( 'ect-notice-positioning', $css );
+
+            // Add inline JavaScript
+            $js = "
+			jQuery(document).ready(function($) {
+				// Wait for the page to load
+				setTimeout(function() {
+					// Move ONLY top admin notices (page top) - do not touch inline/content notices
+					// Also: jis notice me yeh text aaye, usko move mat karo (neeche hi rahe)
+					var skipText = 'to continue receiving updates and priority support.';
+					var topNotices = $('#wpbody-content').find(
+						'> .notice, > .error, > .updated, > .notice-error, > .notice-warning, > .notice-info, > .notice-success,' +
+						'> .wrap > .notice, > .wrap > .error, > .wrap > .updated, > .wrap > .notice-error, > .wrap > .notice-warning, > .wrap > .notice-info, > .wrap > .notice-success'
+					);
+
+					var noticesToMove = topNotices.filter(function() {
+						var txt = $(this).text() || '';
+						return txt.indexOf(skipText) === -1;
+					});
+
+					if (noticesToMove.length > 0) {
+						var headerContainer = $('.ect-top-header');
+						if (headerContainer.length > 0) {
+							noticesToMove.detach().insertAfter(headerContainer);
+							noticesToMove.addClass('ect-moved-notice');
+						}
+					}
+				}, 100);
+			});
+			";
+            wp_add_inline_script( 'jquery', $js );
+        }
 
 	} //class end
 

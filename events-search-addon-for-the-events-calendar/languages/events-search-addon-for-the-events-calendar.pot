@@ -1,0 +1,379 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: The Events Calendar Search Addon\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-21 04:52+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.1; wp-6.9.1; php-8.1.29\n"
+"X-Domain: events-search-addon-for-the-events-calendar"
+
+#: admin/cpfm-feedback/cpfm-feedback-notice.php:202
+msgid " More info"
+msgstr ""
+
+#. %d: number of active addons
+#: admin/events-addon-page/includes/dashboard-page.php:45
+msgid "%d Active Addon"
+msgid_plural "%d Active Addons"
+msgstr[0] ""
+msgstr[1] ""
+
+#. Description of the plugin
+msgid ""
+"A simple events search box to find any event quickly for The Events Calendar "
+"Free Plugin (by MODERN TRIBE) - <strong>[events-calendar-search "
+"placeholder=\"Search Events\" show-events=\"5\" disable-past-"
+"events=\"false\" layout=\"medium\" content-type=\"advance\" ]</strong>"
+msgstr ""
+
+#: admin/events-addon-page/events-addon-page.php:696
+msgid "Activate Now"
+msgstr ""
+
+#: admin/events-addon-page/events-addon-page.php:747
+msgid "Activated"
+msgstr ""
+
+#: admin/events-addon-page/events-addon-page.php:673
+msgid "Active"
+msgstr ""
+
+#: admin/events-addon-page/includes/dashboard-sidebar.php:38
+msgid "Aim to resolve issues in 24 hrs."
+msgstr ""
+
+#: admin/feedback-notice/ecsa-feedback-notice.php:63
+msgid "Already Reviewed"
+msgstr ""
+
+#: admin/events-addon-page/includes/dashboard-page.php:77
+msgid "Available Addons"
+msgstr ""
+
+#: admin/events-addon-page/events-addon-page.php:707
+msgid "Buy Pro"
+msgstr ""
+
+#: admin/events-addon-page/includes/dashboard-header.php:55
+msgid "Check Docs"
+msgstr ""
+
+#: admin/cpfm-feedback/cpfm-feedback-notice.php:210
+msgid "Click here"
+msgstr ""
+
+#: admin/events-addon-page/includes/dashboard-sidebar.php:41
+msgid "Contact Support"
+msgstr ""
+
+#. Author of the plugin
+msgid "Cool Plugins"
+msgstr ""
+
+#: events-calendar-search-addon.php:99
+msgid "Cool Plugins Events Addons"
+msgstr ""
+
+#: admin/events-addon-page/includes/dashboard-page.php:43
+msgid "Currently Activated Addons"
+msgstr ""
+
+#: admin/events-addon-page/events-addon-page.php:261
+#: admin/events-addon-page/events-addon-page.php:262
+msgid "Dashboard"
+msgstr ""
+
+#: admin/events-addon-page/events-addon-page.php:578
+msgid "Demo"
+msgstr ""
+
+#: includes/ecsa-widget.php:145
+msgid "Disable Past Events :"
+msgstr ""
+
+#: admin/events-addon-page/events-addon-page.php:582
+msgid "Docs"
+msgstr ""
+
+#: admin/events-addon-page/events-addon-page.php:580
+msgid "Documentation"
+msgstr ""
+
+#: admin/events-addon-page/events-addon-page.php:251
+#: admin/events-addon-page/events-addon-page.php:252
+msgid "Events Addons"
+msgstr ""
+
+#: admin/events-addon-page/includes/dashboard-header.php:48
+msgid "Events Calendar Addons"
+msgstr ""
+
+#: admin/events-addon-page/includes/dashboard-sidebar.php:66
+msgid "EVENTS CALENDAR PRO"
+msgstr ""
+
+#: includes/ecsa-widget.php:123
+msgid "Events Search"
+msgstr ""
+
+#. Widget name will appear in UI
+#: includes/ecsa-widget.php:20
+msgid "Events Search Addon"
+msgstr ""
+
+#: includes/ecsa-widget.php:22
+msgid "Events Search Addon For The Events Calendar"
+msgstr ""
+
+#: admin/events-addon-page/includes/dashboard-sidebar.php:70
+msgid "Get Events Calendar Pro"
+msgstr ""
+
+#: admin/cpfm-feedback/cpfm-feedback-notice.php:176
+msgid "Help Improve Plugins"
+msgstr ""
+
+#: events-calendar-search-addon.php:100
+msgid ""
+"Help us make this plugin more compatible with your site by sharing non-"
+"sensitive site data."
+msgstr ""
+
+#. Author URI of the plugin
+msgid ""
+"https://coolplugins.net/?"
+"utm_source=ecsa_plugin&utm_medium=inside&utm_campaign=author_page&utm_content=plugins_list"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://eventscalendaraddons.com/"
+msgstr ""
+
+#: admin/feedback/admin-feedback-form.php:108
+msgid ""
+"I agree to share anonymous usage data and basic site details (such as server,"
+" PHP, and WordPress versions) to support The Events Calendar Search Addon "
+"improvement efforts. Additionally, I allow Cool Plugins to store all "
+"information provided through this form and to respond to my inquiry."
+msgstr ""
+
+#: admin/feedback/admin-feedback-form.php:195
+msgid "I found a better plugin"
+msgstr ""
+
+#: admin/feedback/admin-feedback-form.php:55
+msgid "I found a better plugin."
+msgstr ""
+
+#: admin/feedback/admin-feedback-form.php:87
+msgid ""
+"If you have a moment, please share the reason for deactivating this plugin."
+msgstr ""
+
+#: admin/events-addon-page/events-addon-page.php:696
+msgid "Install Now"
+msgstr ""
+
+#: admin/feedback/admin-feedback-form.php:63
+#: admin/feedback/admin-feedback-form.php:203
+msgid "It's a temporary deactivation."
+msgstr ""
+
+#: includes/ecsa-widget.php:153
+msgid "Layout :"
+msgstr ""
+
+#: admin/events-addon-page/includes/dashboard-sidebar.php:49
+msgid "LOVING OUR PLUGINS?"
+msgstr ""
+
+#: admin/events-addon-page/includes/dashboard-sidebar.php:37
+msgid "Mon–Fri, 9:30 AM–6:30 PM IST."
+msgstr ""
+
+#: admin/events-addon-page/events-addon-page.php:73
+msgid "No plugin specified."
+msgstr ""
+
+#: admin/events-addon-page/events-addon-page.php:476
+msgid "No plugins data available at the moment."
+msgstr ""
+
+#: admin/cpfm-feedback/cpfm-feedback-notice.php:217
+msgid "No, Thanks"
+msgstr ""
+
+#: admin/cpfm-feedback/cron/class-cron.php:91
+msgid "Once every 30 days"
+msgstr ""
+
+#: admin/cpfm-feedback/cpfm-feedback-notice.php:206
+msgid ""
+"Opt in to receive email updates about security improvements, new features, "
+"helpful tutorials, and occasional special offers. We'll collect:"
+msgstr ""
+
+#: admin/feedback/admin-feedback-form.php:207
+msgid "Other"
+msgstr ""
+
+#: admin/feedback/admin-feedback-form.php:67
+msgid "Other reason."
+msgstr ""
+
+#: admin/events-addon-page/includes/dashboard-sidebar.php:68
+msgid ""
+"Our addons works perfectly with both The Events Calendar free and official "
+"pro version."
+msgstr ""
+
+#: includes/ecsa-functions.php:20
+msgid "Past Events"
+msgstr ""
+
+#: admin/events-addon-page/events-addon-page.php:124
+msgid "Permission denied"
+msgstr ""
+
+#: includes/ecsa-widget.php:135
+msgid "Placeholder :"
+msgstr ""
+
+#: admin/feedback/admin-feedback-form.php:68
+#: admin/feedback/admin-feedback-form.php:208
+msgid "Please share the reason."
+msgstr ""
+
+#: admin/feedback/admin-feedback-form.php:56
+#: admin/feedback/admin-feedback-form.php:196
+msgid "Please share which plugin."
+msgstr ""
+
+#: admin/events-addon-page/events-addon-page.php:138
+msgid "Plugin activated successfully"
+msgstr ""
+
+#: admin/events-addon-page/includes/dashboard-page.php:61
+msgid "Premium Addons"
+msgstr ""
+
+#: admin/events-addon-page/includes/dashboard-sidebar.php:33
+msgid "PREMIUM SUPPORT"
+msgstr ""
+
+#: admin/events-addon-page/includes/dashboard-sidebar.php:36
+msgid "Priority fast support."
+msgstr ""
+
+#: admin/events-addon-page/events-addon-page.php:657
+msgid "Pro"
+msgstr ""
+
+#: admin/feedback/admin-feedback-form.php:78
+msgid "Quick Feedback"
+msgstr ""
+
+#: admin/feedback-notice/ecsa-feedback-notice.php:62
+msgid "Rate Now! ★★★★★"
+msgstr ""
+
+#: admin/events-addon-page/includes/dashboard-sidebar.php:57
+msgid "Rate us on WP.org"
+msgstr ""
+
+#: admin/events-addon-page/includes/dashboard-sidebar.php:55
+msgid "Review us on WP.org and share your feedback with the community."
+msgstr ""
+
+#: events-calendar-search-addon.php:143
+msgid "Search Events"
+msgstr ""
+
+#: includes/ecsa-widget.php:140
+msgid "Show Events :"
+msgstr ""
+
+#: admin/events-addon-page/events-addon-page.php:65
+msgid "Sorry, you are not allowed to install plugins on this site."
+msgstr ""
+
+#. Name of the plugin
+msgid "The Events Calendar Search Addon"
+msgstr ""
+
+#: admin/feedback/admin-feedback-form.php:191
+msgid "The plugin didn't work as expected"
+msgstr ""
+
+#: admin/feedback/admin-feedback-form.php:51
+msgid "The plugin didn't work as expected."
+msgstr ""
+
+#: admin/feedback/admin-feedback-form.php:199
+msgid "The plugin is not working"
+msgstr ""
+
+#: admin/feedback/admin-feedback-form.php:59
+msgid "The plugin is not working."
+msgstr ""
+
+#: includes/ecsa-functions.php:16
+msgid "There is no Past Event"
+msgstr ""
+
+#: includes/ecsa-functions.php:15
+msgid "There is no Upcoming Event"
+msgstr ""
+
+#: admin/events-addon-page/events-addon-page.php:99
+msgid "This plugin cannot be installed from here."
+msgstr ""
+
+#: includes/ecsa-widget.php:130
+msgid "Title :"
+msgstr ""
+
+#: admin/cpfm-feedback/cpfm-feedback-notice.php:209
+msgid ""
+"To check plugin compatibility, we will collect the following: list of active "
+"plugins and themes, server type, MySQL version, WordPress version, memory "
+"limit, site language and database prefix. "
+msgstr ""
+
+#: admin/events-addon-page/events-addon-page.php:212
+msgid "Unable to connect to the filesystem. Please confirm your credentials."
+msgstr ""
+
+#: includes/ecsa-functions.php:19
+msgid "Upcoming Events"
+msgstr ""
+
+#: admin/events-addon-page/events-addon-page.php:652
+#: admin/events-addon-page/events-addon-page.php:653
+msgid "Update available"
+msgstr ""
+
+#: admin/events-addon-page/events-addon-page.php:576
+msgid "View Demo"
+msgstr ""
+
+#: admin/events-addon-page/includes/dashboard-header.php:52
+msgid "View Demos"
+msgstr ""
+
+#: admin/cpfm-feedback/cpfm-feedback-notice.php:216
+msgid "Yes, I Agree"
+msgstr ""
+
+#: admin/cpfm-feedback/cpfm-feedback-notice.php:208
+msgid "Your website home URL and WordPress admin email."
+msgstr ""

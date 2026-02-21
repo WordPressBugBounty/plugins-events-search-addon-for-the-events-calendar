@@ -11,7 +11,9 @@ jQuery(document).ready(function ($) {
             'security': nonce
         }, function(data) {
             if (data.success) {
-                wrapper.slideUp('fast');
+                wrapper.slideUp('fast', function () {
+					$(this).remove(); // completely remove from DOM
+				});
             }
         }, "json");
 

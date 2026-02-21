@@ -1,0 +1,62 @@
+{
+  "the-events-calendar-templates-and-shortcode": {
+    "slug": "the-events-calendar-templates-and-shortcode",
+    "name": "Events Shortcodes (Pro)",
+    "info": "Use shortcodes to display events list, grid, carousel or slider layout anywhere.",
+    "version": "4.0.1",
+    "latest_version": "{{ECT_PRO_VERSION}}",
+    "image_url": "events-shortcodes-icon.svg",
+    "free_version": "template-events-calendar",
+    "buy_url": "https://eventscalendaraddons.com/plugin/events-shortcodes-pro/?utm_source=ect_plugin&utm_medium=inside&utm_campaign=get_pro&utm_content=dashboard_api",
+    "docs_url": "https://eventscalendaraddons.com/docs/events-shortcodes-pro/?utm_source=ecsa_plugin&utm_medium=inside&utm_campaign=docs&utm_content=dashboard",
+    "demo_url": "https://eventscalendaraddons.com/demos/events-shortcodes-pro/?utm_source=ecsa_plugin&utm_medium=inside&utm_campaign=demo&utm_content=dashboard"
+  },
+  "events-widgets-pro": {
+    "slug": "events-widgets-pro",
+    "name": "Events Widgets for Elementor (Pro)",
+    "info": "This plugins is used to display events in list, grid and more layouts in Elementor.",
+    "version": "3.0.1",
+    "latest_version": "{{EWPE_PLUGIN_CURRENT_VERSION}}",
+    "image_url": "events-widgets-icon.svg",
+    "free_version": "events-widgets-for-elementor-and-the-events-calendar",
+    "buy_url": "https://eventscalendaraddons.com/plugin/events-widgets-pro/?utm_source=ewpe_plugin&utm_medium=inside&utm_campaign=get_pro&utm_content=dashboard_api",
+    "docs_url": "https://eventscalendaraddons.com/docs/events-widgets-pro/?utm_source=ecsa_plugin&utm_medium=inside&utm_campaign=docs&utm_content=dashboard",
+    "demo_url": "https://eventscalendaraddons.com/demos/events-widgets-pro/?utm_source=ecsa_plugin&utm_medium=inside&utm_campaign=demo&utm_content=dashboard"
+  },
+  "event-single-page-builder-pro": {
+    "slug": "event-single-page-builder-pro",
+    "name": "Event Single Page Builder (Pro)",
+    "info": "Create custom single event page template both in Elementor and Non-Elementor sites.",
+    "version": "2.0.1",
+    "latest_version": "{{ESPBP_PLUGIN_CURRENT_VERSION}}",
+    "image_url": "event-single-page-icon.svg",
+    "free_version": "event-page-templates-addon-for-the-events-calendar",
+    "buy_url": "https://eventscalendaraddons.com/plugin/event-single-page-builder-pro/?utm_source=epta_plugin&utm_medium=inside&utm_campaign=get_pro&utm_content=dashboard_api",
+    "docs_url": "https://eventscalendaraddons.com/docs/event-single-page-builder-pro/?utm_source=ecsa_plugin&utm_medium=inside&utm_campaign=docs&utm_content=dashboard",
+    "demo_url": "https://eventscalendaraddons.com/demos/event-single-page-builder-pro/?utm_source=ecsa_plugin&utm_medium=inside&utm_campaign=demo&utm_content=dashboard"
+  },
+  "cp-events-calendar-modules-for-divi-pro": {
+    "slug": "cp-events-calendar-modules-for-divi-pro",
+    "name": "Events Calendar for Divi (Pro)",
+    "info": "Divi modules to display events list, grid or carousel layout on any divi page.",
+    "version": "1.3.2",
+    "latest_version": "{{ECMD_V_PRO}}",
+    "image_url": "events-calendar-modules-for-divi.svg",
+    "free_version": "events-calendar-modules-for-divi",
+    "buy_url": "https://eventscalendaraddons.com/plugin/the-events-calendar-modules-for-divi/?utm_source=ecmd_plugin&utm_medium=inside&utm_campaign=get_pro&utm_content=dashboard_api",
+    "docs_url": "https://eventscalendaraddons.com/docs/events-calendar-module-for-divi-pro/?utm_source=ecsa_plugin&utm_medium=inside&utm_campaign=docs&utm_content=dashboard",
+    "demo_url": "https://eventscalendaraddons.com/demos/the-events-calendar-modules-for-divi/?utm_source=ecsa_plugin&utm_medium=inside&utm_campaign=demo&utm_content=dashboard"
+  },
+  "events-speakers-and-sponsors": {
+    "slug": "events-speakers-and-sponsors",
+    "name": "Events Speakers And Sponsors",
+    "info": "Add speakers and sponsors section on your single event page or event listings.",
+    "version": "1.1.1",
+    "latest_version": "{{ESAS_PLUGIN_CURRENT_VERSION}}",
+    "image_url": "events-speakers-sponsors-icon.svg",
+    "free_version": "false",
+    "buy_url": "https://eventscalendaraddons.com/plugin/events-speakers-and-sponsors/?utm_source=esas_plugin&utm_medium=inside&utm_campaign=get_pro&utm_content=dashboard_api",
+    "docs_url": "https://eventscalendaraddons.com/docs/events-speakers-and-sponsors/?utm_source=ecsa_plugin&utm_medium=inside&utm_campaign=docs&utm_content=dashboard",
+    "demo_url": "https://eventscalendaraddons.com/demos/events-speakers-sponsors/?utm_source=ecsa_plugin&utm_medium=inside&utm_campaign=demo&utm_content=dashboard"
+  }
+}

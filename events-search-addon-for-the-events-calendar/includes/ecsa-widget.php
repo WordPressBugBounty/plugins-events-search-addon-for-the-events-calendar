@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 // Register and load the widget
 function ecsa_load_widget() {
 	register_widget( 'EventsCalendarSearchAddonWidget' );
@@ -7,6 +8,7 @@ function ecsa_load_widget() {
 add_action( 'widgets_init', 'ecsa_load_widget' );
 
 // Creating the widget
+//phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedClassFound
 class EventsCalendarSearchAddonWidget extends WP_Widget {
 
 	// this function registers widget with WordPress
@@ -15,9 +17,9 @@ class EventsCalendarSearchAddonWidget extends WP_Widget {
 		// Base ID of your widget
 			'EventsCalendarSearchAddonWidget',
 			// Widget name will appear in UI
-			__( 'Events Search Addon', 'ecsa' ),
+			__( 'Events Search Addon', 'events-search-addon-for-the-events-calendar' ),
 			// Widget description
-			array( 'description' => __( 'Events Search Addon For The Events Calendar', 'ecsa' ) )
+			array( 'description' => __( 'Events Search Addon For The Events Calendar', 'events-search-addon-for-the-events-calendar' ) )
 		);
 	}
 
@@ -55,7 +57,7 @@ class EventsCalendarSearchAddonWidget extends WP_Widget {
 				'data-disable-past'    => array(),
 				'data-up-ev-heading'   => array(),
 				'data-past-ev-heading' => array(),
-				'data-sug-style-full' => array(),
+				'data-sug-style-full'  => array(),
 
 			),
 			'span'   => array(
@@ -88,7 +90,7 @@ class EventsCalendarSearchAddonWidget extends WP_Widget {
 	// Widget Backend
 	public function form( $instance ) {
 		// Load css for widget only
-		wp_enqueue_style( 'ecsa-widget-style', ECSA_URL . 'assets/css/ecsa-widgets.css' );
+		wp_enqueue_style( 'ecsa-widget-style', ECSA_URL . 'assets/css/ecsa-widgets.css',array(), ECSA_VERSION );
 
 		if ( ! isset( $instance['placeholder'] ) || empty( $instance['placeholder'] ) ) {
 			$placeholder = 'Search Events';
@@ -118,29 +120,29 @@ class EventsCalendarSearchAddonWidget extends WP_Widget {
 				if ( isset( $instance['title'] ) ) {
 					$title = $instance['title'];
 				} else {
-					$title = __( 'Events Search', 'ecsa' );
+					$title = __( 'Events Search', 'events-search-addon-for-the-events-calendar' );
 				}
 
 				// Widget admin form
 				?>
 
 		<p>
-			<label class="ecsa-label" for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title :' ); ?></label> 
+			<label class="ecsa-label" for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title :', 'events-search-addon-for-the-events-calendar' ); ?></label> 
 			<input class="ecsa-input" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 
 		<p>
-			<label class="ecsa-label" for="<?php echo esc_attr( $this->get_field_id( 'placeholder' ) ); ?>"><?php esc_html_e( 'Placeholder :' ); ?></label>
+			<label class="ecsa-label" for="<?php echo esc_attr( $this->get_field_id( 'placeholder' ) ); ?>"><?php esc_html_e( 'Placeholder :', 'events-search-addon-for-the-events-calendar' ); ?></label>
 			<input class="ecsa-input" type="text" id="<?php echo esc_attr( $this->get_field_id( 'placeholder' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'placeholder' ) ); ?>" value="<?php echo esc_attr( $placeholder ); ?>">
 		</p>
 		   
 		<p>
-			<label class="ecsa-label" for="<?php echo esc_attr( $this->get_field_id( 'show_events' ) ); ?>"><?php esc_html_e( 'Show Events :' ); ?></label>
+			<label class="ecsa-label" for="<?php echo esc_attr( $this->get_field_id( 'show_events' ) ); ?>"><?php esc_html_e( 'Show Events :', 'events-search-addon-for-the-events-calendar' ); ?></label>
 			<input class="ecsa-input"  type="text" id="<?php echo esc_attr( $this->get_field_id( 'show_events' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'show_events' ) ); ?>" value="<?php echo esc_attr( $show_events ); ?>" >		
 		</p> 
 
 		<p>
-			<label class="ecsa-label" for="<?php echo esc_attr( $this->get_field_id( 'disable_past_events' ) ); ?>"><?php esc_attr_e( 'Disable Past Events :' ); ?></label>
+			<label class="ecsa-label" for="<?php echo esc_attr( $this->get_field_id( 'disable_past_events' ) ); ?>"><?php esc_attr_e( 'Disable Past Events :', 'events-search-addon-for-the-events-calendar'); ?></label>
 			<select class="ecsa-input" id="<?php echo esc_attr( $this->get_field_id( 'disable_past_events' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'disable_past_events' ) ); ?>" >
 				<option <?php selected( $instance['disable_past_events'], 'false' ); ?> value="false">False</option>
 				<option <?php selected( $instance['disable_past_events'], 'true' ); ?> value="true">True</option>	
@@ -148,7 +150,7 @@ class EventsCalendarSearchAddonWidget extends WP_Widget {
 		</p>
 
 		<p>
-			<label class="ecsa-label" for="<?php echo esc_attr( $this->get_field_id( 'layout' ) ); ?>"><?php esc_attr_e( 'Layout :' ); ?></label>
+			<label class="ecsa-label" for="<?php echo esc_attr( $this->get_field_id( 'layout' ) ); ?>"><?php esc_attr_e( 'Layout :', 'events-search-addon-for-the-events-calendar' ); ?></label>
 			<select class="ecsa-input" id="<?php echo esc_attr( $this->get_field_id( 'layout' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'layout' ) ); ?>" >
 				<option <?php selected( $instance['layout'], 'small' ); ?> value="small">Small</option>
 				<option <?php selected( $instance['layout'], 'medium' ); ?> value="medium">Medium</option>
