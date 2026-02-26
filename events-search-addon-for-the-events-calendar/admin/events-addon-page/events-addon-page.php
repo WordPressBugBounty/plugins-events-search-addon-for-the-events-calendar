@@ -725,23 +725,6 @@ if ( !class_exists('cool_plugins_events_addons')) {
              * Lets enqueue all the required CSS & JS
              */
             public function enqueue_required_scripts(){
-                // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-                $screen = get_current_screen();
-                $screen_id = $screen ? $screen->id : '';
-                $parent_file = ['events-addons_page_tribe-events-shortcode-template-settings',
-                            'events-addons_page_tribe_events-events-template-settings',
-                            'toplevel_page_cool-plugins-events-addon',
-                            'events-addons_page_cool-events-registration',
-                            'events-addons_page_countdown_for_the_events_calendar',
-                            'edit-epta',
-                            'edit-esas_speaker',
-                            'edit-esas_sponsor',
-                            'events-addons_page_esas-speaker-sponsor-settings',
-                            'edit-ewpe'];
-                if (in_array($screen_id, $parent_file)){
-                    // Enqueue CSS file (dynamically replace ECTBE with actual prefix)
-                    wp_enqueue_style('cool-plugins-events-addon', ECSA_URL .'admin/events-addon-page/assets/css/styles.min.css', array(), ECSA_VERSION, 'all');
-                }
                     // Enqueue JavaScript file
                     wp_enqueue_script( 'cool-plugins-events-addon', ECSA_URL .'admin/events-addon-page/assets/js/script.js', array('jquery'), ECSA_VERSION, true);
                     

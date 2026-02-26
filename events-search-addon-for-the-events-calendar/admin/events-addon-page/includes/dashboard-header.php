@@ -27,6 +27,7 @@ if (!isset($prefix)) {
 // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
     $prefix = 'ect';
 }
+wp_enqueue_style( 'cool-plugins-events-addon-latest-db', ECSA_URL . 'admin/events-addon-page/assets/css/styles.min.css', array(), ECSA_VERSION, 'all' );
 if (!isset($show_wrapper)) {
 // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
     $show_wrapper = false; // Default: no wrapper (for dashboard)
@@ -56,6 +57,13 @@ $prefix = sanitize_key($prefix);
         </a>
     </div>
 </header>
+
+<div class="<?php echo esc_attr($prefix); ?>-notices-wrapper">
+    <?php
+    // phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound  
+    do_action('ect_display_admin_notices');
+    ?>
+</div>
 
 <?php if ($show_wrapper): ?>
 <div class="<?php echo esc_attr($prefix); ?>-main-content-wrapper">
