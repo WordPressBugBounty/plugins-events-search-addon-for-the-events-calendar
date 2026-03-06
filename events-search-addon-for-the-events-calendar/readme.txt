@@ -1,5 +1,5 @@
-=== The Events Calendar Search Addon ===
-Contributors: satindersingh, narinder-singh, coolplugins, eventscalendaraddons
+=== Events Search For The Events Calendar ===
+Contributors: satindersingh, narinder-singh, coolplugins
 Donate link: https://donate.stripe.com/5kQdR92iBevO75WbPm6c00i
 Tags: the events calendar, event calendar, events, live search, ajax search
 Requires at least: 5.0
