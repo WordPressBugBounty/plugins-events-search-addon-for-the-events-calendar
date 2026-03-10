@@ -1,11 +1,11 @@
 === Events Search For The Events Calendar ===
-Contributors: satindersingh, narinder-singh, coolplugins
+Contributors: satindersingh, narinder-singh, coolplugins, eventscalendaraddons
 Donate link: https://donate.stripe.com/5kQdR92iBevO75WbPm6c00i
 Tags: the events calendar, event calendar, events, live search, ajax search
 Requires at least: 5.0
 Tested up to: 6.9
 Requires PHP: 5.6
-Stable tag: 1.3.3
+Stable tag: 1.3.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -146,6 +146,10 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 1. AJAX-based Events Search Bar for The Events Calendar
 
 == Changelog ==
+
+= 1.3.4 | MAR 10, 2026 =
+* Improved: Dashboard header usability.
+* Tested up to: The Events Calendar 6.15.17.1
 
 = 1.3.3 | FEB 26, 2026 =
 * Fixed: Minor styling issues for better UI consistency.

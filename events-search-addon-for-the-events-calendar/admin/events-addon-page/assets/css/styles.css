@@ -193,7 +193,7 @@ tr[data-slug="events-widgets-for-elementor-and-the-events-calendar"] .plugin-des
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 :root {
     --ect-bg: #f8fafc;
-    --ect-primary: #2563EB;
+    --ect-primary: #0693e3;
     --ect-purple: #6366f1;
     --ect-border: #e2e8f0;
     --ect-text-main: #1e293b;
@@ -282,7 +282,7 @@ body{
 }
 .ect-btn-outline { background: #fff; color: #475569; border: 1px solid var(--ect-border); }
 .ect-btn-primary { background: var(--ect-primary); color: #fff !important; border: 1px solid var(--ect-primary); }
-.ect-btn-primary:hover { color: white;}
+.ect-btn-primary:hover { background-color: #0077bb; border-color: #0077bb;}
 .ect-btn:hover { opacity: 0.9; }
 .ect-btn-outline:hover { color: #475569; }
 .ect-indicator { width: 4px; height: 18px; border-radius: 2px; margin-right: 12px; }
@@ -290,7 +290,7 @@ body{
 .ect-sidebar-card a.ect-button-primary,
 .ect-card button.ect-button-primary,
 .ect-card a.ect-button-primary {
-    background-color: #2563EB;
+    background-color: #0693e3;
     height: auto;
     line-height: 1.5;
     padding: 10px 22px;
@@ -302,13 +302,13 @@ body{
 .ect-sidebar-card a.ect-button-primary:focus,
 .ect-card button.ect-button-primar:focus,
 .ect-card a.ect-button-primary:focus{
-    background-color: #2563EB !important;
+    background-color: #0077bb !important;
     color: white !important;
 }
 .ect-button-primary:hover{
     opacity: 0.9;
-    background-color: #2563EB !important;
-    border-color: #2563EB !important;
+    background-color: #0077bb !important;
+    border-color: #0077bb !important;
 }
 .ect-btn-buy {
     background-color: #020E21 !important;
@@ -355,8 +355,8 @@ body{
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 .ect-premium-addons .ect-card {
-    background: linear-gradient(102.55deg, #FEFFFF 0%, #eef5ff 99.05%);
-    border-color: #D3E0FC;
+    background: linear-gradient(102.55deg, #feffff 0, #ebf8ff 99.05%);
+    border-color: #c7ebff;
 }
 .ect-info { flex: 1; }
 .ect-info h3 { margin: 0px 0px 10px 0px; font-size: 18px; font-weight: 700; line-height: 1.6;}
@@ -501,7 +501,7 @@ body{
     margin-bottom: 16px;
 }
 .ect-premium-support {
-    background: #EFF6FF;
+    background: #0693e30f;
 }
 .ect-trustpilot-rating .ect-stars img {
     width: 150px;
