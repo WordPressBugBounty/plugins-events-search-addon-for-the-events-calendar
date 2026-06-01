@@ -120,13 +120,13 @@ if ( !class_exists('cool_plugins_events_addons')) {
 
 			if ( in_array( $plugin_slug, $pro_plugins_slugs ) ) {
 
-				if ( ! current_user_can( 'activate_plugin', $plugin_slug ) ) {
+				$plugin_file = $plugin_slug . '/' . $plugin_slug . '.php';
+
+                if ( ! current_user_can( 'activate_plugin', $plugin_file ) ) {
 					wp_send_json_error( array( 'message' => __( 'Permission denied', 'events-search-addon-for-the-events-calendar' ) ) );
 				}
 
-				$plugin_file = $plugin_slug . '/' . $plugin_slug . '.php';
-
-				$pagenow        = isset($_POST['pagenow']) ? sanitize_key($_POST['pagenow']) : '';
+				$pagenow        = isset($_POST['pagenow']) ? sanitize_key( wp_unslash( $_POST['pagenow'] ) ) : '';
 				$network_wide = (is_multisite() && 'import' !== $pagenow);
 				$activation_result = activate_plugin($plugin_file, '', $network_wide);
 
@@ -173,7 +173,7 @@ if ( !class_exists('cool_plugins_events_addons')) {
 					if($skin->result->get_error_message() === 'Destination folder already exists.'){
 							
 						$install_status = install_plugin_install_status( $api );
-						$pagenow        = isset( $_POST['pagenow'] ) ? sanitize_key( $_POST['pagenow'] ) : '';
+						$pagenow        = isset( $_POST['pagenow'] ) ? sanitize_key( wp_unslash( $_POST['pagenow'] ) ) : '';
 
 						if ( current_user_can( 'activate_plugin', $install_status['file'] )) {
 
@@ -219,7 +219,7 @@ if ( !class_exists('cool_plugins_events_addons')) {
 				}
 
 				$install_status = install_plugin_install_status( $api );
-				$pagenow        = isset( $_POST['pagenow'] ) ? sanitize_key( $_POST['pagenow'] ) : '';
+				$pagenow        = isset( $_POST['pagenow'] ) ? sanitize_key( wp_unslash( $_POST['pagenow'] ) ) : '';
 
 				// 🔄 Auto-activate the plugin right after successful install
 				if ( current_user_can( 'activate_plugin', $install_status['file'] ) && is_plugin_inactive( $install_status['file'] ) ) {
@@ -706,7 +706,7 @@ if ( !class_exists('cool_plugins_events_addons')) {
                         <?php elseif ( $type === 'pro' ) : ?>
                             <div class="<?php echo esc_attr($prefix); ?>-card-footer">
                                 <?php $buy_link = ! empty( $plugin['buyLink'] ) ? esc_url( $plugin['buyLink'] ) : '#'; ?>
-                                <a href="<?php echo esc_attr( $buy_link ); ?>"
+                                <a href="<?php echo esc_url( $buy_link ); ?>"
                                    target="_blank"
                                    rel="noopener noreferrer"
                                    class="button <?php echo esc_attr($prefix); ?>-button-primary <?php echo esc_attr($prefix); ?>-btn-buy">
@@ -724,7 +724,8 @@ if ( !class_exists('cool_plugins_events_addons')) {
             /**
              * Lets enqueue all the required CSS & JS
              */
-            public function enqueue_required_scripts(){
+            public function enqueue_required_scripts($hook){
+                if ( isset( $hook ) && $hook === 'toplevel_page_' . $this->main_menu_slug ) {
                     // Enqueue JavaScript file
                     wp_enqueue_script( 'cool-plugins-events-addon', ECSA_URL .'admin/events-addon-page/assets/js/script.js', array('jquery'), ECSA_VERSION, true);
                     
@@ -736,6 +737,7 @@ if ( !class_exists('cool_plugins_events_addons')) {
                         'activated_label' => esc_html__( 'Activated', 'events-search-addon-for-the-events-calendar' )
                     ));
                 }
+            }
 
 
         /**
@@ -749,7 +751,18 @@ if ( !class_exists('cool_plugins_events_addons')) {
                 return array();
             }
             
-            $json_content = file_get_contents($json_file);
+            global $wp_filesystem;
+
+            if ( empty( $wp_filesystem ) ) {
+                require_once ABSPATH . 'wp-admin/includes/file.php';
+                WP_Filesystem();
+            }
+
+            $json_content = $wp_filesystem->get_contents( $json_file );
+
+            if ( false === $json_content ) {
+                return array();
+            }
            
             $version_constants = array(
                 'ECT_VERSION',

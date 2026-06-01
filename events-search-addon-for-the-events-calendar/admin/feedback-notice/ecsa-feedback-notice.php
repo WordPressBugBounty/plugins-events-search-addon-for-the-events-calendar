@@ -16,7 +16,12 @@ if ( ! class_exists( 'ecsaFeedbackNotice' ) ) {
 
 		// ajax callback for review notice
 		public function ecsa_dismiss_review_notice() {
+
+			if ( ! current_user_can( 'update_plugins' ) ) {
+				wp_send_json_error( 'Unauthorized' );
+			}
 			check_ajax_referer( 'ecsa_dismiss_notice_nonce', 'security' );
+			
 			update_option( 'ecsa-ratingDiv', 'yes' );
 			wp_send_json_success();
 		}

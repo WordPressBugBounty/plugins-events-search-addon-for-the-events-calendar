@@ -29,9 +29,9 @@ class EventsCalendarSearchAddonWidget extends WP_Widget {
 		$show_events         = ( ! empty( $instance['show_events'] ) ) ? ( $instance['show_events'] ) : '5';
 		$disable_past_events = ( isset( $instance['disable_past_events'] ) ) ? $instance['disable_past_events'] : 'false';
 		$layout              = ( isset( $instance['layout'] ) ) ? ( $instance['layout'] ) : 'small';
-		$title               = apply_filters( 'widget_title', $instance['title'] );
+		$title               = isset( $instance['title'] ) ? apply_filters( 'widget_title', sanitize_text_field( $instance['title'] ) ) : '';
 		$placeholder         = ( ! empty( $instance['placeholder'] ) ) ? ( $instance['placeholder'] ) : 'Search Events';
-		$style_full         = ( ! empty( $instance['content_type'] ) ) ? ( $instance['content_type'] ) : 'advance';
+		$style_full          = ( ! empty( $instance['content_type'] ) ) ? ( $instance['content_type'] ) : 'advance';
 		// before and after widget arguments are defined by themes
 		echo wp_kses_post( $args['before_widget'] );
 		if ( ! empty( $title ) ) {
@@ -82,7 +82,7 @@ class EventsCalendarSearchAddonWidget extends WP_Widget {
 
 		);
 		// echo "5";
-		echo wp_kses( ecsa_generate_html( $placeholder, $show_events, $disable_past_events, $content_type,$layout ), $allowed_html );
+		echo wp_kses( ecsa_generate_html( $placeholder, $show_events, $disable_past_events, $style_full, $layout ), $allowed_html );
 		// echo "6";
 		echo wp_kses_post( $args['after_widget'] );
 	}
@@ -166,11 +166,11 @@ class EventsCalendarSearchAddonWidget extends WP_Widget {
 		$instance = array();
 	
 		$instance['title']               = ! empty( $new_instance['title'] ) ? sanitize_text_field( $new_instance['title'] ) : '';
-		$instance['placeholder']         = sanitize_text_field( $new_instance['placeholder'] );
-		$instance['show_events']         = sanitize_text_field( $new_instance['show_events'] );
-		$instance['disable_past_events'] = sanitize_text_field( $new_instance['disable_past_events'] );
-		$instance['layout']              = sanitize_text_field( $new_instance['layout'] );
-		$instance['content_type']        = sanitize_text_field( $new_instance['content_type'] );
+		$instance['placeholder']         = isset( $new_instance['placeholder'] ) && '' !== $new_instance['placeholder'] ? sanitize_text_field( $new_instance['placeholder'] ) : 'Search Events';
+		$instance['show_events']         = isset( $new_instance['show_events'] ) ? absint( $new_instance['show_events'] ) : 5;
+		$instance['disable_past_events'] = isset( $new_instance['disable_past_events'] ) ? sanitize_key( $new_instance['disable_past_events'] ) : 'false';
+		$instance['layout']              = isset( $new_instance['layout'] ) && in_array( $new_instance['layout'], array( 'small', 'medium', 'large' ), true ) ? sanitize_key( $new_instance['layout'] ) : 'small';
+		$instance['content_type']        = isset( $new_instance['content_type'] ) && in_array( $new_instance['content_type'], array( 'basic', 'advance' ), true ) ? $new_instance['content_type'] : 'advance';
 	
 		return $instance;
 	}

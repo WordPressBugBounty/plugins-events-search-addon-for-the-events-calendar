@@ -32,7 +32,8 @@ class ecsa_feedback {
 		$screen = get_current_screen();
 		if ( isset( $screen ) && $screen->id == 'plugins' ) {
 			wp_enqueue_script( __NAMESPACE__ . 'feedback-script', $this->plugin_url . 'admin/feedback/js/admin-feedback.js', array( 'jquery' ), $this->plugin_version, true );
-			wp_enqueue_style( 'cool-plugins-feedback-css', $this->plugin_url . 'admin/feedback/css/admin-feedback.css', null, $this->plugin_version );
+			wp_localize_script( __NAMESPACE__ . 'feedback-script', 'ecsaFeedback', array( 'ajax_url' => admin_url( 'admin-ajax.php' ), ) );
+			wp_enqueue_style( 'cool-plugins-feedback-css', $this->plugin_url . 'admin/feedback/css/admin-feedback.css', array(), $this->plugin_version );
 		}
 	}
 
@@ -71,7 +72,7 @@ class ecsa_feedback {
 
 		?>
 		<div id="cool-plugins-feedback-<?php echo esc_attr( $this->plugin_slug ); ?>" class="hide-feedback-popup">
-						
+
 			<div class="cp-feedback-wrapper">
 
 			<div class="cp-feedback-header">
@@ -90,7 +91,7 @@ class ecsa_feedback {
 					wp_nonce_field( '_cool-plugins_deactivate_feedback_nonce' );
 					?>
 					<input type="hidden" name="action" value="cool-plugins_deactivate_feedback" />
-					
+
 					<?php foreach ( $deactivate_reasons as $reason_key => $reason ) : ?>
 						<div class="cp-feedback-input-wrapper">
 							<input id="cp-feedback-reason-<?php echo esc_attr( $reason_key ); ?>" class="cp-feedback-input" type="radio" name="reason_key" value="<?php echo esc_attr( $reason_key ); ?>" />
@@ -100,10 +101,10 @@ class ecsa_feedback {
 							<?php endif; ?>
 							<?php if ( ! empty( $reason['alert'] ) ) : ?>
 								<div class="cp-feedback-text"><?php echo esc_html( $reason['alert'] ); ?></div>
-							<?php endif; ?>	
+							<?php endif; ?>
 						</div>
 					<?php endforeach; ?>
-					
+
 					<div class="cp-feedback-terms">
 					<input class="cp-feedback-terms-input" id="cp-feedback-terms-input" type="checkbox"><label for="cp-feedback-terms-input"><?php echo esc_html__( 'I agree to share anonymous usage data and basic site details (such as server, PHP, and WordPress versions) to support The Events Calendar Search Addon improvement efforts. Additionally, I allow Cool Plugins to store all information provided through this form and to respond to my inquiry.', 'events-search-addon-for-the-events-calendar' ); ?></label>
 					</div>
@@ -124,7 +125,7 @@ class ecsa_feedback {
 	//  store the activate plugin version in the database
 	function cpfm_get_user_info() {
 		global $wpdb;
-	
+
 		// Server and WP environment details
 		$server_info = [
 			'server_software'        => isset($_SERVER['SERVER_SOFTWARE']) ? sanitize_text_field(wp_unslash($_SERVER['SERVER_SOFTWARE'])) : 'N/A',
@@ -139,7 +140,7 @@ class ecsa_feedback {
 			'wp_language'            => sanitize_text_field(get_option('WPLANG') ?: get_locale()),
 			'wp_prefix'              => isset($wpdb->prefix) ? sanitize_key($wpdb->prefix) : 'N/A',
 		];
-	
+
 		// Theme details
 		$theme = wp_get_theme();
 		$theme_data = [
@@ -147,7 +148,7 @@ class ecsa_feedback {
 			'version'   => sanitize_text_field($theme->get('Version')),
 			'theme_uri' => esc_url($theme->get('ThemeURI')),
 		];
-	
+
 
 		if (!function_exists('get_plugins')) {
 			require_once ABSPATH . 'wp-admin/includes/plugin.php';
@@ -155,11 +156,11 @@ class ecsa_feedback {
 		if (!function_exists('get_plugin_data')) {
 			require_once ABSPATH . 'wp-admin/includes/plugin.php';
 		}
-	
+
 
 		$plugin_data = [];
 		$active_plugins = get_option('active_plugins', []);
-	
+
 		foreach ( $active_plugins as $plugin_path ) {
 			$plugin_info = get_plugin_data(WP_PLUGIN_DIR . '/' . sanitize_text_field($plugin_path));
 			$author_url = ( isset( $plugin_info['AuthorURI'] ) && !empty( $plugin_info['AuthorURI'] ) ) ? esc_url( $plugin_info['AuthorURI'] ) : 'N/A';
@@ -170,7 +171,7 @@ class ecsa_feedback {
 				'plugin_uri' => !empty($plugin_url) ? $plugin_url : $author_url,
 			];
 		}
-	
+
 		return [
 			'server_info'   => $server_info,
 			'extra_details' => [
@@ -182,64 +183,74 @@ class ecsa_feedback {
 
 
 	function submit_deactivation_response() {
-		if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field(wp_unslash( $_POST['_wpnonce'] )), '_cool-plugins_deactivate_feedback_nonce' ) ) {
-			wp_send_json_error();
-		} else {
-			$reason             = isset( $_POST['reason'] ) ? sanitize_text_field(wp_unslash( $_POST['reason'] )) : '';
-			$deactivate_reasons = array(
-				'didnt_work_as_expected'         => array(
-					'title'             => __( 'The plugin didn\'t work as expected', 'events-search-addon-for-the-events-calendar' ),
-					'input_placeholder' => 'What did you expect?',
-				),
-				'found_a_better_plugin'          => array(
-					'title'             => __( 'I found a better plugin', 'events-search-addon-for-the-events-calendar' ),
-					'input_placeholder' => __( 'Please share which plugin.', 'events-search-addon-for-the-events-calendar' ),
-				),
-				'couldnt_get_the_plugin_to_work' => array(
-					'title'             => __( 'The plugin is not working', 'events-search-addon-for-the-events-calendar' ),
-					'input_placeholder' => 'Please share your issue. So we can fix that for other users.',
-				),
-				'temporary_deactivation'         => array(
-					'title'             => __( 'It\'s a temporary deactivation.', 'events-search-addon-for-the-events-calendar' ),
-					'input_placeholder' => '',
-				),
-				'other'                          => array(
-					'title'             => __( 'Other', 'events-search-addon-for-the-events-calendar' ),
-					'input_placeholder' => __( 'Please share the reason.', 'events-search-addon-for-the-events-calendar' ),
-				),
-			);
-
-			$plugin_initial =  get_option( 'ecsa_initial_save_version' );
-			$deativation_reason = array_key_exists( $reason, $deactivate_reasons ) ? $reason : 'other';
-			$sanitized_message = empty( $_POST['message'] ) || sanitize_text_field(wp_unslash( $_POST['message'] )) == '' ? 'N/A' : sanitize_text_field(wp_unslash( $_POST['message'] ));
-			$admin_email       = sanitize_email( get_option( 'admin_email' ) );
-			$site_url          = esc_url( site_url() );
-			$install_date 		= get_option('ecsa-install-date');
-			$unique_key     	= '29';  // Ensure this key is unique per plugin to prevent collisions when site URL and install date are the same across plugins
-            $site_id        	= $site_url . '-' . $install_date . '-' . $unique_key;
-			$feedback_url      = ECSA_FEEDBACK_API .'wp-json/coolplugins-feedback/v1/feedback';
-			$response          = wp_remote_post(
-				$feedback_url,
-				array(
-					'timeout' => 30,
-					'body'    => array(
-						'server_info' => serialize($this->cpfm_get_user_info()['server_info']), 
-						'extra_details' => serialize($this->cpfm_get_user_info()['extra_details']),
-						'plugin_initial'  => isset($plugin_initial) ? sanitize_text_field($plugin_initial) : 'N/A',
-						'plugin_version' => sanitize_text_field($this->plugin_version),
-						'plugin_name'    => sanitize_text_field($this->plugin_name),
-						'reason'         => sanitize_text_field($deativation_reason),
-						'review'         => $sanitized_message,
-						'email'          => $admin_email,
-						'domain'         => $site_url,
-						'site_id'    	 => md5($site_id),
-					),
-				)
-			);
-
-			die( json_encode( array( 'response' => $response ) ) );
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error( __( 'Unauthorized', 'events-search-addon-for-the-events-calendar' ), 403 );
+			wp_die( '0', 403 );
 		}
 
+		if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wpnonce'] ) ), '_cool-plugins_deactivate_feedback_nonce' ) ) {
+			wp_send_json_error();
+			return;
+		}
+
+		$reason             = isset( $_POST['reason'] ) ? sanitize_text_field( wp_unslash( $_POST['reason'] ) ) : '';
+		$deactivate_reasons = array(
+			'didnt_work_as_expected'         => array(
+				'title'             => __( 'The plugin didn\'t work as expected', 'events-search-addon-for-the-events-calendar' ),
+				'input_placeholder' => 'What did you expect?',
+			),
+			'found_a_better_plugin'          => array(
+				'title'             => __( 'I found a better plugin', 'events-search-addon-for-the-events-calendar' ),
+				'input_placeholder' => __( 'Please share which plugin.', 'events-search-addon-for-the-events-calendar' ),
+			),
+			'couldnt_get_the_plugin_to_work' => array(
+				'title'             => __( 'The plugin is not working', 'events-search-addon-for-the-events-calendar' ),
+				'input_placeholder' => 'Please share your issue. So we can fix that for other users.',
+			),
+			'temporary_deactivation'         => array(
+				'title'             => __( 'It\'s a temporary deactivation.', 'events-search-addon-for-the-events-calendar' ),
+				'input_placeholder' => '',
+			),
+			'other'                          => array(
+				'title'             => __( 'Other', 'events-search-addon-for-the-events-calendar' ),
+				'input_placeholder' => __( 'Please share the reason.', 'events-search-addon-for-the-events-calendar' ),
+			),
+		);
+
+		$plugin_initial     = get_option( 'ecsa_initial_save_version' );
+		$deativation_reason = array_key_exists( $reason, $deactivate_reasons ) ? $reason : 'other';
+		$sanitized_message  = empty( $_POST['message'] ) || sanitize_text_field( wp_unslash( $_POST['message'] ) ) == '' ? 'N/A' : sanitize_text_field( wp_unslash( $_POST['message'] ) );
+		$admin_email        = sanitize_email( get_option( 'admin_email' ) );
+		$site_url           = esc_url( site_url() );
+		$install_date       = get_option( 'ecsa-install-date' );
+		$unique_key         = '29';  // Ensure this key is unique per plugin to prevent collisions when site URL and install date are the same across plugins
+		$site_id            = $site_url . '-' . $install_date . '-' . $unique_key;
+		$feedback_url       = ECSA_FEEDBACK_API . 'wp-json/coolplugins-feedback/v1/feedback';
+		$user_info          = $this->cpfm_get_user_info();
+		$response           = wp_remote_post(
+			$feedback_url,
+			array(
+				'timeout' => 30,
+				'body'    => array(
+					'server_info'    => wp_json_encode( $user_info['server_info'] ),
+					'extra_details'  => wp_json_encode( $user_info['extra_details'] ),
+					'plugin_initial' => isset( $plugin_initial ) ? sanitize_text_field( $plugin_initial ) : 'N/A',
+					'plugin_version' => sanitize_text_field( $this->plugin_version ),
+					'plugin_name'    => sanitize_text_field( $this->plugin_name ),
+					'reason'         => sanitize_text_field( $deativation_reason ),
+					'review'         => $sanitized_message,
+					'email'          => $admin_email,
+					'domain'         => $site_url,
+					'site_id'        => md5( $site_id ),
+				),
+			)
+		);
+
+		if ( is_wp_error( $response ) ) {
+			wp_send_json_error( 'Feedback submission failed' );
+		}
+
+		wp_send_json_success( 'Feedback submitted successfully' );
 	}
 }
 new ecsa_feedback();

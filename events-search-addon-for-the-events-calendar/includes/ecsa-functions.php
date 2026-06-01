@@ -84,14 +84,18 @@ function ecsa_get_searchdata()
         wp_send_json_error('Invalid security token.');
     }
 
-    if ( isset( $_REQUEST['display'] ) ) {
-        $display = sanitize_text_field( wp_unslash( $_REQUEST['display'] ) );
-    
-        if ( 'upcoming' === $display ) {
-            $list_order = 'ASC';
-        } elseif ( 'past' === $display ) {
-            $list_order = 'DESC';
-        }
+    $display = isset( $_REQUEST['display'] )
+	? sanitize_key( wp_unslash( $_REQUEST['display'] ) )
+	: '';
+
+    if ( ! in_array( $display, array( 'upcoming', 'past' ), true ) ) {
+        wp_send_json_error( 'Invalid display' );
+    }
+
+    if ( 'upcoming' === $display ) {
+        $list_order = 'ASC';
+    } else {
+        $list_order = 'DESC';
     }
     $all_events = tribe_get_events(
         apply_filters(
@@ -151,10 +155,11 @@ function ecsa_get_searchdata()
 
         endforeach;
         wp_reset_postdata();
-        if ($_REQUEST['display'] == 'upcoming') {
-            die(json_encode($event_search_arr_future, JSON_UNESCAPED_SLASHES));
-        } elseif ($_REQUEST['display'] == 'past') {
-            die(json_encode($event_search_arr, JSON_UNESCAPED_SLASHES));
+       
+        if ( 'upcoming' === $display ) {
+            wp_send_json( $event_search_arr_future );
+        } elseif ( 'past' === $display ) {
+            wp_send_json( $event_search_arr );
         }
     }
 }

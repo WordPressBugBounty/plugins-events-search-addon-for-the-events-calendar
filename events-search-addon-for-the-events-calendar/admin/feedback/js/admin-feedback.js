@@ -60,7 +60,7 @@
                 }
 
                 $.ajax({
-                    url:ajaxurl,
+                    url:ecsaFeedback.ajax_url,
                     method:'POST',
                     data:{
                         'action':plugin_slug+'_submit_deactivation_response',

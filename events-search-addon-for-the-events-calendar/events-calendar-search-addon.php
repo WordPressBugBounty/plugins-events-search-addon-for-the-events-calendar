@@ -3,7 +3,7 @@
  * Plugin Name: The Events Calendar Search Addon
  * Description: A simple events search box to find any event quickly for The Events Calendar Free Plugin (by MODERN TRIBE) - <strong>[events-calendar-search placeholder="Search Events" show-events="5" disable-past-events="false" layout="medium" content-type="advance" ]</strong>
  * Plugin URI: https://eventscalendaraddons.com/
- * Version: 1.3.4
+ * Version: 1.3.5
  * Requires PHP: 5.6
  * Author: Cool Plugins
  * Author URI: https://coolplugins.net/?utm_source=ecsa_plugin&utm_medium=inside&utm_campaign=author_page&utm_content=plugins_list
@@ -21,7 +21,7 @@ if ( defined( 'ECSA_VERSION' ) ) {
 	return;
 }
 
-define( 'ECSA_VERSION', '1.3.4' );
+define( 'ECSA_VERSION', '1.3.5' );
 define( 'ECSA_FILE', __FILE__ );
 define( 'ECSA_PATH', plugin_dir_path( ECSA_FILE ) );
 define( 'ECSA_URL', plugin_dir_url( ECSA_FILE ) );
@@ -254,11 +254,11 @@ if ( ! class_exists( 'EventsCalendarSearchAddon' ) ) :
 				'ecsa'
 			);
 
-			$placeholder   = ( ( $attributes['placeholder'] != '' ) ? $attributes['placeholder'] : __( 'Search Events', 'events-search-addon-for-the-events-calendar' ) );
-			$show_events   = ( ( $attributes['show-events'] != '' ) ? $attributes['show-events'] : '10' );
-			$disable_past  = ( ( $attributes['disable-past-events'] != '' ) ? $attributes['disable-past-events'] : 'false' );
-			$layout        = ( ( $attributes['layout'] != '' ) ? $attributes['layout'] : 'medium' );
-			$content_type = ( ( $attributes['content-type'] != '' ) ? $attributes['content-type'] : 'advance' );
+			$placeholder  = isset( $attributes['placeholder'] ) && '' !== $attributes['placeholder'] ? sanitize_text_field( $attributes['placeholder'] ) : __( 'Search Events', 'events-search-addon-for-the-events-calendar' );
+            $show_events  = isset( $attributes['show-events'] ) ? absint( $attributes['show-events'] ) : 10;
+            $disable_past = isset( $attributes['disable-past-events'] ) ? sanitize_key( $attributes['disable-past-events'] ) : 'false';
+            $layout       = isset( $attributes['layout'] ) && in_array( $attributes['layout'], array( 'small', 'medium', 'large' ), true ) ? sanitize_key( $attributes['layout'] ) : 'medium';
+            $content_type = isset( $attributes['content-type'] ) && in_array( $attributes['content-type'], array( 'basic', 'advance' ), true ) ? $attributes['content-type'] : 'advance';
 		
 			$generate_html = ecsa_generate_html( $placeholder, $show_events, $disable_past, $content_type, $layout );
 		
@@ -275,7 +275,7 @@ if ( ! class_exists( 'EventsCalendarSearchAddon' ) ) :
 		public function ecsa_register_scripts() {
 			if ( ! is_admin() ) {
 				$nonceVal= wp_create_nonce('ajax-nonce');
-				wp_register_style( 'ecsa-styles', ECSA_URL . 'assets/css/ecsa-styles.min.css', ECSA_VERSION, 'all' );
+				wp_register_style( 'ecsa-styles', ECSA_URL . 'assets/css/ecsa-styles.min.css', array(), ECSA_VERSION, 'all' );
 				wp_register_script( 'ecsa-typeahead', ECSA_URL . 'assets/js/typeahead.bundle.min.js', array( 'jquery' ), ECSA_VERSION, true );
 				wp_register_script( 'ecsa-handlebars', ECSA_URL . 'assets/js/handlebars-v4.0.11.js', array( 'jquery' ), ECSA_VERSION, true );
 				wp_register_script( 'ecsa-script', ECSA_URL . 'assets/js/ecsa-script.min.js', array( 'jquery' ), ECSA_VERSION, true );
