@@ -5,7 +5,7 @@ Tags: the events calendar, event calendar, events, live search, ajax search
 Requires at least: 5.0
 Tested up to: 7.0
 Requires PHP: 5.6
-Stable tag: 1.3.5
+Stable tag: 1.3.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -146,6 +146,9 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 1. AJAX-based Events Search Bar for The Events Calendar
 
 == Changelog ==
+
+= 1.3.6 | JUN 15, 2026 =
+* Improved: Cleaned up the notice registration logic for better readability.
 
 = 1.3.5 | JUN 1, 2026 =
 * Improved: Code improvements and optimization.
