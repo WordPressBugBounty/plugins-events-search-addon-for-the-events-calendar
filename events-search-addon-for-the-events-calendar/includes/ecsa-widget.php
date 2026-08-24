@@ -1,11 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit;
-// Register and load the widget
-function ecsa_load_widget() {
-	register_widget( 'EventsCalendarSearchAddonWidget' );
-}
-
-add_action( 'widgets_init', 'ecsa_load_widget' );
+// Registration lives in Plugin::register_widget() on widgets_init — nothing in
+// this file may run at include time.
 
 // Creating the widget
 //phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedClassFound
@@ -14,12 +10,14 @@ class EventsCalendarSearchAddonWidget extends WP_Widget {
 	// this function registers widget with WordPress
 	function __construct() {
 		parent::__construct(
-		// Base ID of your widget
+		// Base ID — IMMUTABLE. Saved widget instances are keyed on it, so
+		// changing it orphans every live 1.3.6 instance.
 			'EventsCalendarSearchAddonWidget',
 			// Widget name will appear in UI
-			__( 'Events Search Addon', 'events-search-addon-for-the-events-calendar' ),
-			// Widget description
-			array( 'description' => __( 'Events Search Addon For The Events Calendar', 'events-search-addon-for-the-events-calendar' ) )
+			__( 'Events Search (Legacy)', 'events-search-addon-for-the-events-calendar' ),
+			// Widget description. Kept registered so saved instances keep
+			// rendering; steered toward the shortcode for new placements.
+			array( 'description' => __( 'Legacy — use the [events-calendar-search] shortcode instead. Existing widgets keep working.', 'events-search-addon-for-the-events-calendar' ) )
 		);
 	}
 
@@ -37,53 +35,38 @@ class EventsCalendarSearchAddonWidget extends WP_Widget {
 		if ( ! empty( $title ) ) {
 			echo wp_kses_post( $args['before_title'] . $title . $args['after_title'] );
 		}
-		$allowed_html = array(
-			'input'  => array(
-				'type'        => array(),
-				'class'       => array(),
-				'name'        => array(),
-				'value'       => array(),
-				'id'          => array(),
-				'placeholder' => array(),
-				'readonly'    => array(),
-			),
 
-			'div'    => array(
-				'class'                => array(),
-				'id'                   => array(),
-				'data-no-up-result'    => array(),
-				'data-no-past-result'  => array(),
-				'data-show-events'     => array(),
-				'data-disable-past'    => array(),
-				'data-up-ev-heading'   => array(),
-				'data-past-ev-heading' => array(),
-				'data-sug-style-full'  => array(),
+		/*
+		 * TEC gate: render nothing rather than a dead search box on a site where
+		 * The Events Calendar is inactive — same as the shortcode. class_exists-
+		 * guarded so a partial deploy degrades quietly.
+		 */
+		if ( class_exists( '\CoolPlugins\EventsSearch\Tec\Tec' ) && ! \CoolPlugins\EventsSearch\Tec\Tec::available() ) {
+			echo wp_kses_post( $args['after_widget'] );
+			return;
+		}
 
-			),
-			'span'   => array(
-				'class' => array(),
-				'id'    => array(),
-			),
-			'img'    => array(
-				'src'   => array(),
-				'class' => array(),
-				'id'    => array(),
-			),
-			'script' => array(
-				'class' => array(),
-				'id'    => array(),
-				'type'  => array(),
-			),
-			'a'      => array(
-				'class' => array(),
-				'id'    => array(),
-				'href'  => array(),
-			),
+		/*
+		 * v2 is the only engine: render through the SAME v2 path as the shortcode
+		 * (Shortcode::render owns assets/config/SSR and returns escaped markup), so
+		 * the widget can never drift from the shortcode. A sidebar wants a compact
+		 * search navigator, so force a search-only typeahead bar; the saved legacy
+		 * instance keys supply its placeholder/count/time defaults, mapped to v2
+		 * config through Compat\Legacy_Map inside the shortcode.
+		 */
+		if ( class_exists( '\CoolPlugins\EventsSearch\Shortcode\Shortcode' ) ) {
+			echo \CoolPlugins\EventsSearch\Shortcode\Shortcode::render( array( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Shortcode::render() returns escaped SSR markup.
+				'mode'                => 'bar',
+				'typeahead'           => 'dropdown',
+				'facets'              => 'search',
+				'placeholder'         => $placeholder,
+				'show-events'         => $show_events,
+				'disable-past-events' => $disable_past_events,
+				'content-type'        => $style_full,
+				'layout'              => $layout,
+			) );
+		}
 
-		);
-		// echo "5";
-		echo wp_kses( ecsa_generate_html( $placeholder, $show_events, $disable_past_events, $style_full, $layout ), $allowed_html );
-		// echo "6";
 		echo wp_kses_post( $args['after_widget'] );
 	}
 

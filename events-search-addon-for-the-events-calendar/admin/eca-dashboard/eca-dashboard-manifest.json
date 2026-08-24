@@ -1,0 +1,546 @@
+{
+  "schemaVersion": "1.0.0",
+  "manifestVersion": "2026.08.13.4",
+  "strings": {
+    "howtoTitle": "Quick Overview",
+    "installFreeTitle": "Install {addon}",
+    "installFreeText": "First, install this free addon to use its features with The Events Calendar.",
+    "installProTitle": "{addonPro}",
+    "installProText": "Included in {addonPro} — {feature} and more.",
+    "cta": {
+      "viewDocs": "View Docs",
+      "installFree": "Install Free",
+      "installActivate": "Install & Activate",
+      "getPro": "Get Pro",
+      "upgradePro": "Upgrade to Pro",
+      "activatePro": "Activate Pro",
+      "viewDemo": "View Demo",
+      "viewDemos": "View Demos",
+      "settings": "Settings",
+      "openSettings": "Open settings",
+      "viewTemplate": "View Template",
+      "activate": "Activate",
+      "leaveReview": "Submit a review",
+      "proOwnedNote": "You already own Pro — just activate it.",
+      "recommendedTitle": "Recommended Add-ons",
+      "recommendedDesc": "Install the recommended add-on plugins to get the complete experience.",
+      "recommendedCta": "Install Recommended Add-ons",
+      "recommendedDone": "All recommended add-ons have been installed and activated successfully.",
+      "modalOk": "OK",
+      "modalRetry": "Retry"
+    },
+    "recommendedAddons": {
+      "title": "Recommended Add-ons",
+      "desc": "Install the recommended add-on plugins to get the complete experience.",
+      "cta": "Install Recommended Add-ons",
+      "done": "All recommended add-ons have been installed and activated successfully."
+    },
+    "staticFallbackNote": "Prefer to stay free? Install Event Single Page Builder and use its ready-made static templates.",
+    "shortcodeInBuilderNote": "Already using Events Shortcodes? Reuse your existing events shortcode in {editor}."
+  },
+  "review": {
+    "icon": "star-filled",
+    "title": "Enjoying {addon}? Share Your Experience!",
+    "desc": "Please consider leaving a review on WordPress.org. It means a lot to us and helps us continue improving the plugin.",
+    "cta": "Submit a review"
+  },
+  "header": {
+    "docsUrl": "https://eventscalendaraddons.com/docs/",
+    "supportUrl": "https://eventscalendaraddons.com/support/"
+  },
+  "addons": {
+    "esb": {
+      "name": "Events Shortcodes",
+      "proName": "Events Shortcodes Pro",
+      "icon": "events-addons-icons/events-shortcodes-icon.svg",
+      "utmSource": "ect_plugin",
+      "orgUrl": "https://wordpress.org/plugins/template-events-calendar/",
+      "reviewUrl": "https://wordpress.org/support/plugin/template-events-calendar/reviews/",
+      "proUrl": "https://eventscalendaraddons.com/plugin/events-shortcodes-pro/",
+      "docsUrl": "https://eventscalendaraddons.com/docs/events-shortcodes-pro/",
+      "demoUrl": "https://eventscalendaraddons.com/demos/events-shortcodes-pro/",
+      "videoId": "uL3ToWGncbM"
+    },
+    "widgets": {
+      "name": "Events Widgets for Elementor",
+      "proName": "Events Widgets Pro",
+      "icon": "events-addons-icons/events-widgets-icon.svg",
+      "utmSource": "ecteb_plugin",
+      "orgUrl": "https://wordpress.org/plugins/events-widgets-for-elementor-and-the-events-calendar/",
+      "reviewUrl": "https://wordpress.org/support/plugin/events-widgets-for-elementor-and-the-events-calendar/reviews/",
+      "proUrl": "https://eventscalendaraddons.com/plugin/events-widgets-pro/",
+      "docsUrl": "https://eventscalendaraddons.com/docs/events-widgets-pro/",
+      "demoUrl": "https://eventscalendaraddons.com/demos/events-widgets-pro/",
+      "videoId": "2m74nSrEo0g"
+    },
+    "divi": {
+      "name": "Events Calendar Modules for Divi",
+      "proName": "Events Calendar Modules for Divi Pro",
+      "icon": "events-addons-icons/events-calendar-modules-for-divi.svg",
+      "utmSource": "ecmd_plugin",
+      "orgUrl": "https://wordpress.org/plugins/events-calendar-modules-for-divi/",
+      "reviewUrl": "https://wordpress.org/support/plugin/events-calendar-modules-for-divi/reviews/",
+      "proUrl": "https://eventscalendaraddons.com/plugin/the-events-calendar-modules-for-divi/",
+      "docsUrl": "https://eventscalendaraddons.com/docs/events-calendar-modules-for-divi/",
+      "demoUrl": "https://eventscalendaraddons.com/demos/the-events-calendar-modules-for-divi/",
+      "videoId": "Z9s-7RgxZu8"
+    },
+    "spb": {
+      "name": "Event Single Page Builder",
+      "proName": "Event Single Page Builder Pro",
+      "icon": "events-addons-icons/event-single-page-icon.svg",
+      "utmSource": "epta_plugin",
+      "orgUrl": "https://wordpress.org/plugins/event-page-templates-addon-for-the-events-calendar/",
+      "reviewUrl": "https://wordpress.org/support/plugin/event-page-templates-addon-for-the-events-calendar/reviews/",
+      "proUrl": "https://eventscalendaraddons.com/plugin/event-single-page-builder-pro/",
+      "docsUrl": "https://eventscalendaraddons.com/docs/event-single-page-builder-pro/",
+      "demoUrl": "https://eventscalendaraddons.com/demos/event-single-page-builder-pro/",
+      "videoId": "50FBrcqoB-M"
+    },
+    "speakers": {
+      "name": "Events Speakers & Sponsors",
+      "proName": "Events Speakers & Sponsors",
+      "icon": "events-addons-icons/events-speakers-sponsors-icon.svg",
+      "utmSource": "esas_plugin",
+      "proUrl": "https://eventscalendaraddons.com/plugin/events-speakers-and-sponsors/",
+      "docsUrl": "https://eventscalendaraddons.com/docs/events-speakers-and-sponsors/",
+      "demoUrl": "https://eventscalendaraddons.com/demos/events-speakers-sponsors/",
+      "videoId": "X4s-dOAHYhw"
+    },
+    "search": {
+      "name": "Events Search & Filter Bar",
+      "proName": "Events Search & Filter Pro",
+      "icon": "events-addons-icons/events-search-icon.svg",
+      "utmSource": "ecsa_plugin",
+      "orgUrl": "https://wordpress.org/plugins/events-search-addon-for-the-events-calendar/",
+      "proUrl": "https://eventscalendaraddons.com/plugin/events-search-filter-bar-pro/",
+      "docsUrl": "https://eventscalendaraddons.com/docs/",
+      "reviewUrl": "https://wordpress.org/support/plugin/events-search-addon-for-the-events-calendar/reviews/",
+      "demoUrl": "https://eventscalendaraddons.com/demos/events-search-and-filters-pro/"
+    },
+    "countdown": {
+      "name": "Event Countdown",
+      "icon": "events-addons-icons/event-countdown-icon.svg",
+      "utmSource": "tecc_plugin",
+      "orgUrl": "https://wordpress.org/plugins/countdown-for-the-events-calendar/",
+      "reviewUrl": "https://wordpress.org/support/plugin/countdown-for-the-events-calendar/reviews/",
+      "demoUrl": "https://eventscalendaraddons.com/demos/event-countdown/"
+    }
+  },
+  "editors": {
+    "elementor": {
+      "label": "Elementor",
+      "icon": "helping-folder/elementor-icon.png"
+    },
+    "divi": {
+      "label": "Divi",
+      "icon": "helping-folder/divi-icon.png"
+    },
+    "bricks": {
+      "label": "Bricks Builder",
+      "icon": "helping-folder/bricks-icon.png"
+    },
+    "wpbakery": {
+      "label": "WPBakery",
+      "icon": "helping-folder/wpbakery-icon.png"
+    },
+    "block": {
+      "label": "Block Editor",
+      "icon": "helping-folder/gutenberg-icon.png"
+    }
+  },
+  "sections": {
+    "listings": {
+      "subtitle": "Choose Your Preferred Method to Display Events",
+      "subtitleSingle": "Learn How to Display Events in List, Grid & More Layouts",
+      "desc": "Select an option below to learn how to display events in list, grid, carousel and more layouts.",
+      "jobLabel": "Events List, Grid, Carousel Layouts",
+      "jobSub": "Create a better-looking events listing page.",
+      "jobIcon": "grid-view",
+      "order": [
+        "elementor",
+        "divi",
+        "bricks",
+        "wpbakery",
+        "shortcode",
+        "block"
+      ],
+      "tabs": {
+        "elementor": {
+          "label": "Elementor Widget",
+          "shortLabel": "Elementor",
+          "icon": "helping-folder/elementor-icon.png",
+          "driver": "widgets",
+          "capability": "free",
+          "tabDesc": "Drag & drop widget",
+          "description": "Follow the steps below to create event lists, grids, carousels and more layouts with Elementor widgets.",
+          "feature": "advanced Elementor layouts",
+          "installText": "First, install this addon to display events in list, grid and more layouts with Elementor.",
+          "steps": [
+            "Add new or edit a page with Elementor where you want to display events.",
+            "Search for <strong>Events Widget</strong> in Elementor and drag it onto your page.",
+            "Choose a layout and customize the display and style settings.",
+            "Publish or update the page to view events in your selected layout and style."
+          ],
+          "stepsPro": [
+            "Add new or edit a page with Elementor where you want to display events.",
+            "Search for <strong>Events Loop Widget</strong> in Elementor and drag it onto your page.",
+            "Choose a layout, select a loop item template and customize the style settings.",
+            "Publish or update the page to view events in your selected layout and style."
+          ]
+        },
+        "divi": {
+          "label": "Divi Module",
+          "shortLabel": "Divi",
+          "icon": "helping-folder/divi-icon.png",
+          "driver": "divi",
+          "capability": "free",
+          "tabDesc": "For Divi Builder",
+          "description": "Show events in list, grid, carousel and more layouts with drag-and-drop Events Calendar modules for Divi.",
+          "feature": "advanced Divi layouts",
+          "installText": "Use native Divi modules to display events in list, grid and more layouts.",
+          "noteEditor": "Divi Builder",
+          "steps": [
+            "Open or create a page with Divi Builder where you want to show events.",
+            "Find <strong>Events Layout</strong> in the Divi modules list and insert it on the page.",
+            "Select your preferred layout and adjust the module display and design options.",
+            "Save or publish the page to see your events in the chosen layout."
+          ]
+        },
+        "bricks": {
+          "label": "Bricks Element",
+          "shortLabel": "Bricks",
+          "icon": "helping-folder/bricks-icon.png",
+          "driver": "esb",
+          "capability": "free",
+          "tabDesc": "For Bricks Builder",
+          "description": "Show events inside Bricks Builder using the Events element from Shortcodes & Blocks.",
+          "feature": "advanced Bricks styling",
+          "steps": [
+            "Add new or edit a page in Bricks Builder to display events.",
+            "Search for <strong>Events Widget</strong> in Bricks Builder and add it to your page.",
+            "Choose a layout and customize the display and style settings.",
+            "Publish or update the page to view your events in the selected layout."
+          ]
+        },
+        "wpbakery": {
+          "label": "WPBakery Element",
+          "shortLabel": "WPBakery",
+          "icon": "helping-folder/wpbakery-icon.png",
+          "driver": "esb",
+          "capability": "free",
+          "tabDesc": "For WPBakery Editor",
+          "description": "Add the Events Calendar shortcode generator module inside WPBakery Page Builder and publish your listing.",
+          "feature": "WPBakery shortcode layouts",
+          "steps": [
+            "Edit a page with WPBakery Page Builder.",
+            "Add the <strong>Events Calendar Shortcode</strong> element.",
+            "Configure the layout and publish."
+          ]
+        },
+        "shortcode": {
+          "label": "Shortcode",
+          "shortLabel": "Shortcode",
+          "icon": "helping-folder/shortcode-icon.png",
+          "driver": "esb",
+          "capability": "free",
+          "tabDesc": "Paste it anywhere",
+          "description": "Use a shortcode on any page or post to display events in list, grid and other layouts.",
+          "feature": "advanced layouts, styles & filters",
+          "steps": [
+            "Add new or edit the page where you want to display your events.",
+            "Search <strong>Events Shortcodes</strong> in the Block Editor or paste <strong>[events-calendar-templates]</strong> shortcode.",
+            "Choose layout and styles in the Block Editor, or add attributes manually to your shortcode.",
+            "Publish or update the page to view your event listing in the selected layout."
+          ],
+          "stepsClassic": [
+            "Open or create a page in the Classic Editor where you want to display events.",
+            "Click the <strong>Events Shortcodes</strong> button, configure the options and insert the shortcode.",
+            "You can also paste <strong>[events-calendar-templates]</strong> shortcode manually and customize its attributes.",
+            "Publish or update the page to view your events in the selected layout and style."
+          ]
+        },
+        "block": {
+          "label": "Events Block",
+          "shortLabel": "Block",
+          "icon": "helping-folder/gutenberg-icon.png",
+          "driver": "esb",
+          "capability": "free",
+          "tabDesc": "For Block Editor",
+          "description": "Add the Events block in the WordPress editor and pick a layout — grid, list, carousel and more.",
+          "feature": "advanced layouts, styles & filters",
+          "steps": [
+            "Add new or edit a page in the Block Editor to display events.",
+            "Search for <strong>Events Block</strong> in the Block Editor and add it to your page.",
+            "Choose a layout and customize the display and style settings.",
+            "Publish or update the page to view your events in the selected layout."
+          ]
+        }
+      }
+    },
+    "singlePage": {
+      "subtitle": "Choose How to Customize Your Single Event Page",
+      "subtitleSingle": "Improve Your Single Event Page Design",
+      "desc": "Select an option below to learn how to design and customize your single event page template.",
+      "jobLabel": "Event Single Page Builder",
+      "jobSub": "Custom templates for single event pages.",
+      "jobIcon": "media-document",
+      "order": [
+        "elementorTpl",
+        "diviTpl",
+        "static"
+      ],
+      "tabs": {
+        "elementorTpl": {
+          "label": "Elementor Templates",
+          "shortLabel": "Elementor",
+          "icon": "helping-folder/elementor-icon.png",
+          "driver": "spb",
+          "capability": "pro",
+          "tabDesc": "Design Using Elementor",
+          "description": "Learn how to design and customize single event page templates using Elementor template builder.",
+          "feature": "dynamic Elementor templates",
+          "installText": "Install this addon to design and customize single event page templates with Elementor.",
+          "steps": [
+            "Go to <strong>Events Addons → Event Page Templates</strong> and add a new template or edit an existing one.",
+            "Choose what you want to customize, such as <strong>single event</strong> pages or event <strong>category archive</strong> pages.",
+            "Choose a pre-made template, set the display conditions and save or publish it.",
+            "Once applied to single event pages, edit the template in Elementor to customize it further."
+          ]
+        },
+        "diviTpl": {
+          "label": "Divi Templates",
+          "shortLabel": "Divi",
+          "icon": "helping-folder/divi-icon.png",
+          "driver": "divi",
+          "capability": "pro",
+          "tabDesc": "Design in Divi Builder",
+          "description": "Learn how to design and customize single event page templates using Divi builder.",
+          "feature": "Divi single-page templates",
+          "installText": "You must install this addon to design or customize single event page templates with Divi.",
+          "steps": [
+            "Make sure you are using <strong>Divi 5</strong>, as single event page customization is supported in Divi 5.",
+            "Go to <strong>Divi → Theme Builder</strong> and here you will find some single event page templates.",
+            "Edit a template settings and select <strong>Use on → Events</strong> to apply it to single event pages.",
+            "Edit the template’s custom body in Divi Builder to customize its layout and styles as needed."
+          ]
+        },
+        "static": {
+          "label": "Static Templates",
+          "shortLabel": "Static",
+          "icon": "events-addons-icons/event-single-page-icon.svg",
+          "driver": "spb",
+          "capability": "free",
+          "tabDesc": "Ready-made designs",
+          "description": "Learn how to design and customize your single event page using beautiful ready-made templates in just a few clicks.",
+          "feature": "premium & builder templates",
+          "steps": [
+            "Go to <strong>Events Addons → Event Page Templates</strong> and add new or edit a template.",
+            "Choose a pre-made template layout for your single event page.",
+            "Set display conditions, colors and other style options.",
+            "Save and publish the template to apply the new event page design."
+          ]
+        }
+      }
+    },
+    "other": {
+      "subtitle": "More Addons for The Events Calendar",
+      "subtitleSingle": "More Addons for The Events Calendar",
+      "desc": "Extend your event website with advanced addons like search & filter bar, event countdowns, speakers & sponsors and more.",
+      "jobLabel": "Filters, Countdown & More",
+      "jobSub": "More addons for The Events Calendar",
+      "jobIcon": "admin-plugins",
+      "order": [
+        "speakers",
+        "countdown",
+        "search"
+      ],
+      "cards": {
+        "speakers": {
+          "label": "Events Speakers & Sponsors",
+          "driver": "speakers",
+          "capability": "pro",
+          "icon": "events-addons-icons/events-speakers-sponsors-icon.svg",
+          "desc": "Add speaker and sponsor sections directly inside your single event pages.",
+          "note": "Works with Single Page Builder and Elementor.",
+          "settingsLabel": "Open settings",
+          "settingsIcon": "admin-generic"
+        },
+        "countdown": {
+          "label": "Event Countdown",
+          "driver": "countdown",
+          "capability": "free",
+          "icon": "events-addons-icons/event-countdown-icon.svg",
+          "desc": "Display upcoming events with a countdown timer to create urgency and boost visibility.",
+          "settingsLabel": "Open settings"
+        },
+        "search": {
+          "label": "Events Search & Filter Bar",
+          "driver": "search",
+          "capability": "free",
+          "icon": "events-addons-icons/events-search-icon.svg",
+          "desc": "Add an event search and filter bar anywhere via shortcode to help visitors find events faster.",
+          "settingsLabel": "Open settings"
+        }
+      }
+    }
+  },
+  "hero": {
+    "power": {
+      "title": "Manage your Events Calendar Addons",
+      "desc": "Everything for The Events Calendar in one place — jump into a workflow, tweak settings, or extend to another builder."
+    },
+    "elementorPro": {
+      "title": "The Events Calendar + Elementor Addons",
+      "desc": "Create event list, grid and carousel layouts, design custom single event pages and add more features for better integration of The Events Calendar with Elementor."
+    },
+    "elementorPush": {
+      "title": "The Events Calendar + Elementor Addons",
+      "desc": "Create event list, grid and carousel layouts, design custom single event pages and add more features for better integration of The Events Calendar with Elementor."
+    },
+    "divi": {
+      "title": "The Events Calendar Addons + Divi Modules",
+      "desc": "Native Divi modules for event listings — and Pro templates to design single event pages right inside Divi."
+    },
+    "covered": {
+      "title": "The Events Calendar Addons",
+      "desc": "Create event list, grid and carousel layouts, design custom single event page templates and add more features to The Events Calendar."
+    },
+    "singleOnly": {
+      "title": "The Events Calendar Addons",
+      "desc": "Customize single event page templates, create better event listings and add more features to The Events Calendar."
+    },
+    "default": {
+      "title": "The Events Calendar Addons",
+      "desc": "Create better event listings, customize event page templates and extend The Events Calendar with more features."
+    },
+    "speakers": {
+      "title": "The Events Calendar Addons",
+      "desc": "Create better event listings, customize event page templates and extend The Events Calendar with more features."
+    }
+  },
+  "premium": {
+    "title": "Upgrade with Premium Addons",
+    "order": [
+      "widgets",
+      "esb",
+      "spb",
+      "divi",
+      "speakers",
+      "search"
+    ],
+    "cards": {
+      "widgets": {
+        "name": "Events Widgets Pro",
+        "icon": "events-addons-icons/events-widgets-icon.svg",
+        "desc": "Use Elementor widgets to display events in list, grid, carousel and more layouts."
+      },
+      "esb": {
+        "name": "Events Shortcodes Pro",
+        "icon": "events-addons-icons/events-shortcodes-icon.svg",
+        "desc": "Show events in list, grid and more layouts anywhere using shortcodes or blocks."
+      },
+      "spb": {
+        "name": "Event Single Page Builder Pro",
+        "icon": "events-addons-icons/event-single-page-icon.svg",
+        "desc": "Replace the default single event page with custom and improved page templates."
+      },
+      "divi": {
+        "name": "Events Calendar Modules for Divi Pro",
+        "icon": "events-addons-icons/events-calendar-modules-for-divi.svg",
+        "desc": "Use Divi modules for better event listings and custom single event page designs."
+      },
+      "speakers": {
+        "name": "Events Speakers & Sponsors",
+        "icon": "events-addons-icons/events-speakers-sponsors-icon.svg",
+        "desc": "Add speaker and sponsor sections directly inside your single event pages."
+      },
+      "search": {
+        "name": "Events Search & Filter Pro",
+        "icon": "events-addons-icons/events-search-icon.svg",
+        "desc": "Add an advanced event search and filter bar anywhere via shortcode."
+      }
+    }
+  },
+  "hostOverrides": {
+    "widgets": {
+      "review": {
+        "desc": "Please consider leaving a review on WordPress.org. It means a lot to us and helps us continue improving the plugin."
+      },
+      "sections": {
+        "listings": {
+          "subtitle": "Display Events in List, Grid & More Layouts with Elementor",
+          "subtitleSingle": "Display Events in List, Grid & More Layouts with Elementor",
+          "tabs": {
+            "elementor": {
+              "stepsPro": [
+                "Add new or edit a page with Elementor where you want to display events.",
+                "Search for <strong>Events Loop Widget</strong> in Elementor and drag it onto your page.",
+                "Choose a layout, select a loop item template and customize the style settings.",
+                "Publish or update the page to view events in your selected layout and style."
+              ]
+            }
+          }
+        }
+      },
+      "hero": {
+        "power": {
+          "title": "The Events Calendar Addons for Elementor",
+          "desc": "Create event list, grid and carousel layouts, design custom single event pages and add more features for better integration of The Events Calendar with Elementor."
+        },
+        "elementorPro": {
+          "title": "The Events Calendar Addons for Elementor",
+          "desc": "Create event list, grid and carousel layouts, design custom single event pages and add more features for better integration of The Events Calendar with Elementor."
+        },
+        "elementorPush": {
+          "title": "The Events Calendar Addons for Elementor",
+          "desc": "Create event list, grid and carousel layouts, design custom single event pages and add more features for better integration of The Events Calendar with Elementor."
+        },
+        "default": {
+          "title": "Elementor Addons for The Events Calendar",
+          "desc": "Create event list, grid and carousel layouts, design custom single event pages and add more features for better integration of The Events Calendar with Elementor."
+        }
+      }
+    },
+    "divi": {
+      "review": {
+        "desc": "Please consider leaving a review on WordPress.org. It means a lot to us and helps us continue improving the plugin."
+      },
+      "sections": {
+        "listings": {
+          "subtitle": "Display Events in List, Grid & More Layouts with Divi Modules",
+          "subtitleSingle": "Display Events in List, Grid & More Layouts with Divi Modules",
+          "tabs": {
+            "divi": {
+              "steps": [
+                "Add new or edit a page with Divi Builder where you want to display events.",
+                "Search for <strong>Events Layout</strong> in Divi modules and add it to your page.",
+                "Choose a layout and customize the display and style settings in the module.",
+                "Publish or update the page to view events in your selected layout and style."
+              ]
+            }
+          }
+        }
+      },
+      "hero": {
+        "power": {
+          "title": "Build Events with Divi",
+          "desc": "Create and customize event listings directly inside Divi Builder using native event modules."
+        },
+        "divi": {
+          "title": "The Events Calendar Addons for Divi Builder",
+          "desc": "Create event list, grid and carousel layouts, design custom single event pages and add more features for better integration of The Events Calendar with Divi builder."
+        },
+        "default": {
+          "title": "Build Events with Divi",
+          "desc": "Create and customize event listings directly inside Divi Builder using native event modules."
+        }
+      }
+    },
+    "spb": {
+      "review": {
+        "desc": "Please consider leaving a review on WordPress.org. It means a lot to us and helps us continue improving the plugin."
+      }
+    }
+  }
+}

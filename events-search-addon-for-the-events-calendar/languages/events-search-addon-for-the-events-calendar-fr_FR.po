@@ -1,0 +1,1413 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: events-search-addon-for-the-events-calendar\n"
+"Report-Msgid-Bugs-To: https://cool-plugins.com/support/\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_FR\n"
+"Language-Team: French (France)\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: ship/build-translations.php\n"
+
+#. Plugin Name of the plugin
+#: events-calendar-search-addon.php
+#: admin/settings/class-ecsa-settings-page.php:480
+msgid "Events Search & Filter Bar for The Events Calendar"
+msgstr "Events Search & Filter Bar for The Events Calendar"
+
+#. Plugin URI of the plugin
+#: events-calendar-search-addon.php
+msgid "https://eventscalendaraddons.com/"
+msgstr "https://eventscalendaraddons.com/"
+
+#. Description of the plugin
+#: events-calendar-search-addon.php
+msgid "<a href=\"https://wordpress.org/plugins/the-events-calendar/\">📅 The Events Calendar Addon</a> - Add a fast search box and date filter to your events, anywhere on your site, with a simple shortcode."
+msgstr "<a href=\"https://wordpress.org/plugins/the-events-calendar/\">📅 Extension pour The Events Calendar</a> - Ajoutez un champ de recherche rapide et un filtre par date à vos événements, partout sur votre site, avec un simple code court."
+
+#. Author of the plugin
+#: events-calendar-search-addon.php
+msgid "Cool Plugins"
+msgstr "Cool Plugins"
+
+#. Author URI of the plugin
+#: events-calendar-search-addon.php
+msgid "https://coolplugins.net/?utm_source=ecsa_plugin&utm_medium=inside&utm_campaign=author_page&utm_content=plugins_list"
+msgstr "https://coolplugins.net/?utm_source=ecsa_plugin&utm_medium=inside&utm_campaign=author_page&utm_content=plugins_list"
+
+#. translators: 1: minimum required The Events Calendar version number, 2: opening anchor tag linking to the plugin installer, 3: closing anchor tag.
+#: admin/class-ecsa-notices.php:254
+#, php-format
+msgid "Events Search &amp; Filterbar for The Events Calendar needs The Events Calendar %1$s or later to be installed and active. Nothing is displayed on your site until then. %2$sInstall The Events Calendar%3$s"
+msgstr "Events Search &amp; Filterbar for The Events Calendar nécessite que The Events Calendar %1$s ou une version ultérieure soit installé et activé. En attendant, rien ne s’affiche sur votre site. %2$sInstaller The Events Calendar%3$s"
+
+#. translators: 1: opening anchor tag linking to the plugin installer, 2: closing anchor tag.
+#: admin/class-ecsa-notices.php:262
+#, php-format
+msgid "Events Search &amp; Filterbar for The Events Calendar needs The Events Calendar to be installed and active. Nothing is displayed on your site until then. %1$sInstall The Events Calendar%2$s"
+msgstr "Events Search &amp; Filterbar for The Events Calendar nécessite que The Events Calendar soit installé et activé. En attendant, rien ne s’affiche sur votre site. %1$sInstaller The Events Calendar%2$s"
+
+#: admin/cpfm-feedback/cpfm-feedback-notice.php:224
+msgid "Help Improve Plugins"
+msgstr "Aidez-nous à améliorer nos extensions"
+
+#: admin/cpfm-feedback/cpfm-feedback-notice.php:250
+msgid " More info"
+msgstr " En savoir plus"
+
+#: admin/cpfm-feedback/cpfm-feedback-notice.php:254
+#: admin/settings/class-ecsa-settings-page.php:2217
+msgid "Opt in to receive email updates about security improvements, new features, helpful tutorials, and occasional special offers. We'll collect:"
+msgstr "Acceptez de recevoir par e-mail des informations sur les améliorations de sécurité, les nouvelles fonctionnalités, des tutoriels utiles et, à l’occasion, des offres spéciales. Nous collecterons :"
+
+#: admin/cpfm-feedback/cpfm-feedback-notice.php:256
+#: admin/settings/class-ecsa-settings-page.php:2219
+msgid "Your website home URL and WordPress admin email."
+msgstr "L’URL d’accueil de votre site et l’adresse e-mail d’administration WordPress."
+
+#: admin/cpfm-feedback/cpfm-feedback-notice.php:257
+msgid "To check plugin compatibility, we will collect the following: list of active plugins and themes, PHP, MySQL and WordPress versions, memory limit, whether the site is multisite, and the site language. "
+msgstr "Pour vérifier la compatibilité de l’extension, nous collecterons les éléments suivants : liste des extensions et thèmes actifs, versions de PHP, MySQL et WordPress, limite de mémoire, si le site est multisite, et la langue du site. "
+
+#: admin/cpfm-feedback/cpfm-feedback-notice.php:258
+msgid "Click here"
+msgstr "Cliquez ici"
+
+#: admin/cpfm-feedback/cpfm-feedback-notice.php:264
+msgid "Yes, I Agree"
+msgstr "Oui, j’accepte"
+
+#: admin/cpfm-feedback/cpfm-feedback-notice.php:265
+msgid "No, Thanks"
+msgstr "Non, merci"
+
+#: admin/cpfm-feedback/cron/class-cron.php:216
+msgid "Once every 30 days"
+msgstr "Une fois tous les 30 jours"
+
+#: admin/settings/class-ecsa-settings-page.php:300
+msgid "Events Search & Filter Bar Settings"
+msgstr "Réglages d’Events Search & Filter Bar"
+
+#: admin/settings/class-ecsa-settings-page.php:301
+msgid "Search & Filter Bar"
+msgstr "Search & Filter Bar"
+
+#: admin/settings/class-ecsa-settings-page.php:481
+msgid "The settings data layer could not be loaded. Try reinstalling the plugin."
+msgstr "La couche de données des réglages n’a pas pu être chargée. Essayez de réinstaller l’extension."
+
+#: admin/settings/class-ecsa-settings-page.php:507
+#: admin/settings/class-ecsa-settings-page.php:602
+msgid "Events Search & Filter Bar"
+msgstr "Events Search & Filter Bar"
+
+#: admin/settings/class-ecsa-settings-page.php:603
+msgid "Customize how visitors search and filter events, choose where results appear, then generate shortcodes to display them anywhere on your site."
+msgstr "Personnalisez la façon dont les visiteurs recherchent et filtrent les événements, choisissez où les résultats s’affichent, puis générez les codes courts pour les afficher partout sur votre site."
+
+#: admin/settings/class-ecsa-settings-page.php:662
+msgid "How to add the search bar"
+msgstr "Comment ajouter la barre de recherche"
+
+#: admin/settings/class-ecsa-settings-page.php:664
+msgid "Add advanced search bar anywhere"
+msgstr "Ajoutez une barre de recherche avancée partout"
+
+#: admin/settings/class-ecsa-settings-page.php:665
+msgid "Generate shortcode, then paste it in any page."
+msgstr "Générez le code court, puis collez-le dans n’importe quelle page."
+
+#: admin/settings/class-ecsa-settings-page.php:691
+#: includes/class-ecsa-plugin.php:773
+msgid "Get Pro"
+msgstr "Passer à Pro"
+
+#: admin/settings/class-ecsa-settings-page.php:751
+msgid "Your theme’s Events List template does not include the filter-bar area, so Events Search injected the bar above the list instead. It still works; a theme update may be needed for perfect placement."
+msgstr "Le modèle de liste d’événements de votre thème ne prévoit pas de zone pour la barre de filtres : Events Search a donc inséré la barre au-dessus de la liste. Cela fonctionne quand même ; une mise à jour du thème peut être nécessaire pour un placement parfait."
+
+#: admin/settings/class-ecsa-settings-page.php:814
+msgid "You are not allowed to change these settings."
+msgstr "Vous n’avez pas l’autorisation de modifier ces réglages."
+
+#: admin/settings/class-ecsa-settings-page.php:875
+msgid "Saved as your site default. Next, add the bar to a page: copy a shortcode from the panel on the right and paste it into any page, post, or widget."
+msgstr "Enregistré comme réglage par défaut de votre site. Ajoutez maintenant la barre à une page : copiez un code court dans le panneau de droite et collez-le dans n’importe quelle page, article ou widget."
+
+#: admin/settings/class-ecsa-settings-page.php:1007
+msgid "Search cache cleared."
+msgstr "Cache de recherche vidé."
+
+#: admin/settings/class-ecsa-settings-page.php:1015
+msgid "The search cache component is not available."
+msgstr "Le composant de cache de recherche n’est pas disponible."
+
+#: admin/settings/class-ecsa-settings-page.php:1266
+msgid "Setup"
+msgstr "Configuration"
+
+#: admin/settings/class-ecsa-settings-page.php:1267
+#: includes/render/class-ecsa-renderer.php:706
+msgid "Filters"
+msgstr "Filtres"
+
+#: admin/settings/class-ecsa-settings-page.php:1268
+msgid "Bar design"
+msgstr "Apparence de la barre"
+
+#: admin/settings/class-ecsa-settings-page.php:1269
+msgid "Results"
+msgstr "Résultats"
+
+#: admin/settings/class-ecsa-settings-page.php:1291
+msgid "Editor sections"
+msgstr "Sections de l’éditeur"
+
+#: admin/settings/class-ecsa-settings-page.php:1442
+msgid "Add location search to the bar"
+msgstr "Ajouter la recherche par localisation à la barre"
+
+#: admin/settings/class-ecsa-settings-page.php:1485
+msgid "What to display?"
+msgstr "Qu’afficher ?"
+
+#: admin/settings/class-ecsa-settings-page.php:1496
+msgid "Show the search box on its own, or with filters beside it."
+msgstr "Affichez le champ de recherche seul, ou accompagné de filtres."
+
+#: admin/settings/class-ecsa-settings-page.php:1511
+msgid "Search box only"
+msgstr "Champ de recherche seul"
+
+#: admin/settings/class-ecsa-settings-page.php:1512
+msgid "Search box with filters"
+msgstr "Champ de recherche avec filtres"
+
+#: admin/settings/class-ecsa-settings-page.php:1593
+#: admin/settings/class-ecsa-settings-page.php:1626
+msgid "Where should search results appear?"
+msgstr "Où les résultats de recherche doivent-ils s’afficher ?"
+
+#: admin/settings/class-ecsa-settings-page.php:1643
+msgid "Show live event suggestions in a dropdown instantly as visitors type in the search bar."
+msgstr "Affichez instantanément des suggestions d’événements dans un menu déroulant pendant la saisie dans la barre de recherche."
+
+#: admin/settings/class-ecsa-settings-page.php:1647
+msgid "Show search results by placing the results shortcode below the search bar or anywhere on the same page."
+msgstr "Affichez les résultats de recherche en plaçant le code court des résultats sous la barre de recherche ou n’importe où sur la même page."
+
+#: admin/settings/class-ecsa-settings-page.php:1696
+msgid "Customize Default Events Page? - /events/"
+msgstr "Personnaliser la page d’événements par défaut ? - /events/"
+
+#: admin/settings/class-ecsa-settings-page.php:1717
+msgid "Keep the default events page unchanged. You can use search bar on other pages via shortcode."
+msgstr "Laissez la page d’événements par défaut inchangée. Vous pouvez utiliser la barre de recherche sur d’autres pages via un code court."
+
+#: admin/settings/class-ecsa-settings-page.php:1721
+msgid "Replace only the default search and filter bar. Event results below will continue using the default layout."
+msgstr "Remplacez uniquement la barre de recherche et de filtres par défaut. Les résultats d’événements en dessous conservent la mise en page par défaut."
+
+#: admin/settings/class-ecsa-settings-page.php:1749
+msgid "e.g. Upcoming Events"
+msgstr "ex. Événements à venir"
+
+#: admin/settings/class-ecsa-settings-page.php:1944
+msgid "Demo preview with dummy sample events"
+msgstr "Aperçu de démo avec des événements fictifs"
+
+#: admin/settings/class-ecsa-settings-page.php:1963
+msgid "Copy the shortcodes shown below the preview"
+msgstr "Copier les codes courts affichés sous l’aperçu"
+
+#: admin/settings/class-ecsa-settings-page.php:1964
+msgid "Copy Shortcode for Real View"
+msgstr "Copier le code court du rendu réel"
+
+#: admin/settings/class-ecsa-settings-page.php:2014
+msgid "Shortcode"
+msgstr "Code court"
+
+#: admin/settings/class-ecsa-settings-page.php:2018
+msgid "Search bar shortcode"
+msgstr "Code court de la barre de recherche"
+
+#: admin/settings/class-ecsa-settings-page.php:2019
+msgid "Copy the search bar shortcode"
+msgstr "Copier le code court de la barre de recherche"
+
+#: admin/settings/class-ecsa-settings-page.php:2024
+msgid "Results shortcode"
+msgstr "Code court des résultats"
+
+#: admin/settings/class-ecsa-settings-page.php:2025
+msgid "Copy the results shortcode"
+msgstr "Copier le code court des résultats"
+
+#: admin/settings/class-ecsa-settings-page.php:2029
+msgid "Paste the search bar on a page that should search, then add the results shortcode below it."
+msgstr "Collez la barre de recherche sur la page qui doit permettre la recherche, puis ajoutez le code court des résultats en dessous."
+
+#: admin/settings/class-ecsa-settings-page.php:2047
+msgid "Save as default settings"
+msgstr "Enregistrer comme réglages par défaut"
+
+#: admin/settings/class-ecsa-settings-page.php:2050
+msgid "Copy both shortcodes"
+msgstr "Copier les deux codes courts"
+
+#: admin/settings/class-ecsa-settings-page.php:2058
+msgid " Save as default to apply these settings to the default events listing page and use them as the default values whenever search & filter bar shortcodes are used without attributes."
+msgstr " Enregistrez comme réglages par défaut pour appliquer ces réglages à la page de liste des événements par défaut et les utiliser comme valeurs par défaut lorsque les codes courts de la barre de recherche et de filtres sont utilisés sans attributs."
+
+#: admin/settings/class-ecsa-settings-page.php:2115
+msgid "Copy"
+msgstr "Copier"
+
+#: admin/settings/class-ecsa-settings-page.php:2138
+msgid "Clear search cache"
+msgstr "Vider le cache de recherche"
+
+#: admin/settings/class-ecsa-settings-page.php:2140
+msgid "Deletes cached results and filter counts. Safe any time — the cache rebuilds on the next search."
+msgstr "Supprime les résultats et les compteurs de filtres mis en cache. Sans risque à tout moment : le cache se reconstruit à la recherche suivante."
+
+#: admin/settings/class-ecsa-settings-page.php:2212
+#: includes/class-ecsa-plugin.php:644
+msgid "Help us make this plugin more compatible with your site by sharing non-sensitive site data."
+msgstr "Aidez-nous à rendre cette extension plus compatible avec votre site en partageant des données non sensibles."
+
+#: admin/settings/class-ecsa-settings-page.php:2213
+msgid "See terms"
+msgstr "Voir les conditions"
+
+#: admin/settings/class-ecsa-settings-page.php:2217
+msgid "Click Here"
+msgstr "Cliquez ici"
+
+#: admin/settings/class-ecsa-settings-page.php:2220
+msgid "To check plugin compatibility, we will collect the following: list of active plugins and themes, server type, MySQL version, WordPress version, memory limit, site language and database prefix."
+msgstr "Pour vérifier la compatibilité de l’extension, nous collecterons les éléments suivants : liste des extensions et thèmes actifs, type de serveur, version de MySQL, version de WordPress, limite de mémoire, langue du site et préfixe de la base de données."
+
+#: admin/settings/class-ecsa-settings-page.php:2366
+#: includes/render/class-ecsa-renderer.php:268
+#: includes/render/class-ecsa-renderer.php:425
+msgid "Search events"
+msgstr "Rechercher des événements"
+
+#: admin/settings/class-ecsa-settings-page.php:2408
+msgid "Colours"
+msgstr "Couleurs"
+
+#: admin/settings/class-ecsa-settings-page.php:2422
+msgid "Customize these colors used across the search bar and results."
+msgstr "Personnalisez les couleurs utilisées dans la barre de recherche et les résultats."
+
+#: admin/settings/class-ecsa-settings-page.php:2460
+msgid "Theme presets"
+msgstr "Préréglages"
+
+#: admin/settings/class-ecsa-settings-page.php:2945
+msgid "Behind a Filters button"
+msgstr "Derrière un bouton Filtres"
+
+#: admin/settings/class-ecsa-settings-page.php:2946
+msgid "Under the bar"
+msgstr "Sous la barre"
+
+#: admin/settings/class-ecsa-settings-page.php:2949
+msgid "Modern"
+msgstr "Moderne"
+
+#: admin/settings/class-ecsa-settings-page.php:2952
+msgid "Separate results page"
+msgstr "Page de résultats séparée"
+
+#: admin/settings/class-ecsa-settings-page.php:2955
+msgid "Replace all - filters & results"
+msgstr "Tout remplacer - filtres et résultats"
+
+#: admin/settings/class-ecsa-settings-page.php:2958
+msgid "Category"
+msgstr "Catégorie"
+
+#: admin/settings/class-ecsa-settings-page.php:2959
+msgid "Tag"
+msgstr "Étiquette"
+
+#: admin/settings/class-ecsa-settings-page.php:2960
+#: admin/settings/class-ecsa-settings-page.php:3893
+msgid "Venue"
+msgstr "Lieu"
+
+#: admin/settings/class-ecsa-settings-page.php:2961
+msgid "Organizer"
+msgstr "Organisateur"
+
+#: admin/settings/class-ecsa-settings-page.php:2962
+msgid "Location"
+msgstr "Localisation"
+
+#: admin/settings/class-ecsa-settings-page.php:2965
+msgid "Description"
+msgstr "Description"
+
+#: admin/settings/class-ecsa-settings-page.php:2966
+msgid "Venue name"
+msgstr "Nom du lieu"
+
+#: admin/settings/class-ecsa-settings-page.php:2967
+msgid "Organizer name"
+msgstr "Nom de l’organisateur"
+
+#. translators: 1: the name of a locked option, e.g. "Modern". 2: the name of the setting it belongs to, e.g. "Card design".
+#: admin/settings/class-ecsa-settings-page.php:3020
+#, php-format
+msgid "%1$s (%2$s) — available in Pro. Opens the pricing page in a new tab."
+msgstr "%1$s (%2$s) — disponible dans Pro. Ouvre la page des tarifs dans un nouvel onglet."
+
+#. translators: %s: the name of a locked setting, e.g. "Location search in the bar".
+#: admin/settings/class-ecsa-settings-page.php:3036
+#, php-format
+msgid "%s — available in Pro. Opens the pricing page in a new tab."
+msgstr "%s — disponible dans Pro. Ouvre la page des tarifs dans un nouvel onglet."
+
+#. translators: short badge shown on options that require the Pro plugin.
+#: admin/settings/class-ecsa-settings-page.php:3062
+msgid "Pro"
+msgstr "Pro"
+
+#. translators: %s: filter name.
+#: admin/settings/class-ecsa-settings-page.php:3415
+#, php-format
+msgid "Move up: %s"
+msgstr "Monter : %s"
+
+#. translators: %s: filter name.
+#: admin/settings/class-ecsa-settings-page.php:3420
+#, php-format
+msgid "Move down: %s"
+msgstr "Descendre : %s"
+
+#: admin/settings/class-ecsa-settings-page.php:3662
+msgid "Events Page Title"
+msgstr "Titre de la page des événements"
+
+#: admin/settings/class-ecsa-settings-page.php:3663
+msgid "Optional heading shown above the search bar on the events page. Leave blank to show none."
+msgstr "Titre facultatif affiché au-dessus de la barre de recherche sur la page des événements. Laissez vide pour n’en afficher aucun."
+
+#: admin/settings/class-ecsa-settings-page.php:3666
+msgid "Placeholder text"
+msgstr "Texte indicatif"
+
+#: admin/settings/class-ecsa-settings-page.php:3668
+msgid "Shown in the empty search box. Blank uses the default."
+msgstr "Affiché dans le champ de recherche vide. Laissez vide pour utiliser le texte par défaut."
+
+#: admin/settings/class-ecsa-settings-page.php:3674
+msgid "Match search keyword in"
+msgstr "Rechercher le mot-clé dans"
+
+#: admin/settings/class-ecsa-settings-page.php:3676
+msgid "Choose where to match the visitor search keyword to find events."
+msgstr "Choisissez où rechercher le mot-clé saisi par le visiteur pour trouver les événements."
+
+#: admin/settings/class-ecsa-settings-page.php:3679
+msgid "Choose filters to show in the bar"
+msgstr "Choisissez les filtres à afficher dans la barre"
+
+#: admin/settings/class-ecsa-settings-page.php:3681
+msgid "Drag to reorder and toggle which filters appear in the bar."
+msgstr "Glissez-déposez pour réorganiser et activez les filtres qui apparaissent dans la barre."
+
+#: admin/settings/class-ecsa-settings-page.php:3684
+msgid "Where should filters appear?"
+msgstr "Où les filtres doivent-ils s’afficher ?"
+
+#: admin/settings/class-ecsa-settings-page.php:3687
+msgid "Choose where and how visitors will see the event filters."
+msgstr "Choisissez où et comment les visiteurs verront les filtres d’événements."
+
+#: admin/settings/class-ecsa-settings-page.php:3695
+msgid "Filter controls style"
+msgstr "Style des contrôles de filtre"
+
+#: admin/settings/class-ecsa-settings-page.php:3701
+msgid "Search bar frame"
+msgstr "Cadre de la barre de recherche"
+
+#: admin/settings/class-ecsa-settings-page.php:3702
+msgid "Choose whether to show the search button inside or outside."
+msgstr "Indiquez si le bouton de recherche doit s’afficher à l’intérieur ou à l’extérieur de la barre."
+
+#: admin/settings/class-ecsa-settings-page.php:3705
+msgid "Main colour"
+msgstr "Couleur principale"
+
+#: admin/settings/class-ecsa-settings-page.php:3706
+msgid "The search button and active filters."
+msgstr "Le bouton de recherche et les filtres actifs."
+
+#: admin/settings/class-ecsa-settings-page.php:3709
+msgid "Text colour"
+msgstr "Couleur du texte"
+
+#: admin/settings/class-ecsa-settings-page.php:3710
+msgid "Labels and typed text in the bar."
+msgstr "Les libellés et le texte saisi dans la barre."
+
+#: admin/settings/class-ecsa-settings-page.php:3713
+msgid "Background"
+msgstr "Arrière-plan"
+
+#: admin/settings/class-ecsa-settings-page.php:3714
+msgid "The bar surface and its dropdown panels."
+msgstr "La surface de la barre et ses panneaux déroulants."
+
+#: admin/settings/class-ecsa-settings-page.php:3717
+msgid "Search button style"
+msgstr "Style du bouton de recherche"
+
+#: admin/settings/class-ecsa-settings-page.php:3719
+msgid "“None” removes the button — visitors press Enter instead."
+msgstr "« Aucun » supprime le bouton — les visiteurs utilisent alors la touche Entrée."
+
+#: admin/settings/class-ecsa-settings-page.php:3722
+msgid "Custom size and rounding"
+msgstr "Taille et arrondi personnalisés"
+
+#: admin/settings/class-ecsa-settings-page.php:3723
+msgid "Off uses the built-in sizes and corners. On lets you set the sliders below."
+msgstr "« Désactivé » utilise les tailles et les arrondis intégrés. « Activé » vous permet de régler les curseurs ci-dessous."
+
+#: admin/settings/class-ecsa-settings-page.php:3726
+msgid "Bar size"
+msgstr "Taille de la barre"
+
+#: admin/settings/class-ecsa-settings-page.php:3727
+msgid "Scales the whole bar: height, text and spacing."
+msgstr "Met à l’échelle toute la barre : hauteur, texte et espacement."
+
+#: admin/settings/class-ecsa-settings-page.php:3730
+msgid "Corner rounding"
+msgstr "Arrondi des angles"
+
+#: admin/settings/class-ecsa-settings-page.php:3731
+msgid "Applies to the box, buttons and result cards."
+msgstr "S’applique au champ, aux boutons et aux cartes de résultats."
+
+#: admin/settings/class-ecsa-settings-page.php:3735
+#: includes/render/class-ecsa-renderer.php:1337
+msgid "Results view"
+msgstr "Affichage des résultats"
+
+#: admin/settings/class-ecsa-settings-page.php:3736
+msgid "The view results open in. Visitors can switch it."
+msgstr "L’affichage utilisé à l’ouverture des résultats. Les visiteurs peuvent en changer."
+
+#: admin/settings/class-ecsa-settings-page.php:3739
+msgid "Card design"
+msgstr "Style de carte"
+
+#: admin/settings/class-ecsa-settings-page.php:3740
+msgid "Clean keeps the full date on the card’s text line."
+msgstr "« Épuré » conserve la date complète sur la ligne de texte de la carte."
+
+#: admin/settings/class-ecsa-settings-page.php:3743
+msgid "Columns"
+msgstr "Colonnes"
+
+#: admin/settings/class-ecsa-settings-page.php:3744
+msgid "Cards side by side on a wide screen. Narrow screens use fewer."
+msgstr "Cartes côte à côte sur un écran large. Les écrans étroits en affichent moins."
+
+#: admin/settings/class-ecsa-settings-page.php:3747
+msgid "Card size"
+msgstr "Taille des cartes"
+
+#: admin/settings/class-ecsa-settings-page.php:3748
+msgid "Scales text and spacing inside each card."
+msgstr "Met à l’échelle le texte et l’espacement dans chaque carte."
+
+#: admin/settings/class-ecsa-settings-page.php:3751
+msgid "Items to show inside card"
+msgstr "Éléments à afficher dans la carte"
+
+#: admin/settings/class-ecsa-settings-page.php:3753
+msgid "Choose which event details to show on each result card."
+msgstr "Choisissez les détails de l’événement à afficher sur chaque carte de résultat."
+
+#: admin/settings/class-ecsa-settings-page.php:3756
+msgid "Date format"
+msgstr "Format de date"
+
+#: admin/settings/class-ecsa-settings-page.php:3758
+msgid "“Site default” follows Settings → General."
+msgstr "« Par défaut du site » suit Réglages → Général."
+
+#: admin/settings/class-ecsa-settings-page.php:3761
+msgid "Results per page"
+msgstr "Résultats par page"
+
+#: admin/settings/class-ecsa-settings-page.php:3763
+msgid "How many events load at a time. 1 to 50."
+msgstr "Nombre d’événements chargés à la fois. De 1 à 50."
+
+#: admin/settings/class-ecsa-settings-page.php:3766
+msgid "Default sort"
+msgstr "Tri par défaut"
+
+#: admin/settings/class-ecsa-settings-page.php:3767
+msgid "The starting order. Visitors can change it."
+msgstr "L’ordre initial. Les visiteurs peuvent le modifier."
+
+#: admin/settings/class-ecsa-settings-page.php:3770
+msgid "Events to show"
+msgstr "Événements à afficher"
+
+#: admin/settings/class-ecsa-settings-page.php:3771
+msgid "Upcoming events, past events, or all."
+msgstr "Événements à venir, événements passés ou tous."
+
+#: admin/settings/class-ecsa-settings-page.php:3774
+msgid "Recurring events"
+msgstr "Événements récurrents"
+
+#: admin/settings/class-ecsa-settings-page.php:3775
+msgid "For a repeating event: its next date only, or every match."
+msgstr "Pour un événement récurrent : uniquement sa prochaine date, ou toutes les occurrences correspondantes."
+
+#: admin/settings/class-ecsa-settings-page.php:3787
+msgid "Do you want to customize the default events page search & filter bar and event results?"
+msgstr "Voulez-vous personnaliser la barre de recherche et de filtres ainsi que les résultats de la page d’événements par défaut ?"
+
+#: admin/settings/class-ecsa-settings-page.php:3822
+msgid "Ink blue"
+msgstr "Bleu encre"
+
+#: admin/settings/class-ecsa-settings-page.php:3823
+msgid "Deep teal"
+msgstr "Bleu canard"
+
+#: admin/settings/class-ecsa-settings-page.php:3824
+msgid "Crimson"
+msgstr "Cramoisi"
+
+#: admin/settings/class-ecsa-settings-page.php:3825
+msgid "Violet"
+msgstr "Violet"
+
+#. translators: preset name; “dark” means the bar sits on a dark background.
+#: admin/settings/class-ecsa-settings-page.php:3827
+msgid "Lime (dark)"
+msgstr "Vert citron (sombre)"
+
+#. translators: preset name; “dark” means the bar sits on a dark background.
+#: admin/settings/class-ecsa-settings-page.php:3829
+msgid "Amber (dark)"
+msgstr "Ambre (sombre)"
+
+#: admin/settings/class-ecsa-settings-page.php:3845
+#: admin/settings/class-ecsa-settings-page.php:3891
+msgid "Title"
+msgstr "Titre"
+
+#: admin/settings/class-ecsa-settings-page.php:3848
+msgid "Keyword search"
+msgstr "Recherche par mot-clé"
+
+#: admin/settings/class-ecsa-settings-page.php:3849
+#: admin/settings/class-ecsa-settings-page.php:3892
+msgid "Date"
+msgstr "Date"
+
+#: admin/settings/class-ecsa-settings-page.php:3857
+msgid "Inside the bar"
+msgstr "Dans la barre"
+
+#: admin/settings/class-ecsa-settings-page.php:3858
+msgid "Always expanded"
+msgstr "Toujours dépliés"
+
+#: admin/settings/class-ecsa-settings-page.php:3863
+msgid "Separate"
+msgstr "Séparé"
+
+#: admin/settings/class-ecsa-settings-page.php:3864
+msgid "Joined"
+msgstr "Accolé"
+
+#: admin/settings/class-ecsa-settings-page.php:3867
+msgid "Off"
+msgstr "Désactivé"
+
+#: admin/settings/class-ecsa-settings-page.php:3868
+msgid "On"
+msgstr "Activé"
+
+#: admin/settings/class-ecsa-settings-page.php:3871
+msgid "Solid"
+msgstr "Plein"
+
+#: admin/settings/class-ecsa-settings-page.php:3872
+msgid "Solid icon"
+msgstr "Icône pleine"
+
+#: admin/settings/class-ecsa-settings-page.php:3873
+msgid "Outline"
+msgstr "Contour"
+
+#: admin/settings/class-ecsa-settings-page.php:3874
+msgid "Icon"
+msgstr "Icône"
+
+#: admin/settings/class-ecsa-settings-page.php:3875
+#: admin/settings/class-ecsa-settings-page.php:3882
+msgid "Text"
+msgstr "Texte"
+
+#: admin/settings/class-ecsa-settings-page.php:3876
+msgid "None"
+msgstr "Aucun"
+
+#: admin/settings/class-ecsa-settings-page.php:3890
+msgid "Image"
+msgstr "Image"
+
+#: admin/settings/class-ecsa-settings-page.php:3894
+msgid "Cost"
+msgstr "Prix"
+
+#: admin/settings/class-ecsa-settings-page.php:3905
+msgid "Typing dropdown suggestions"
+msgstr "Suggestions dans un menu déroulant"
+
+#: admin/settings/class-ecsa-settings-page.php:3906
+msgid "Below search bar"
+msgstr "Sous la barre de recherche"
+
+#: admin/settings/class-ecsa-settings-page.php:3914
+msgid "Don't change anything"
+msgstr "Ne rien changer"
+
+#: admin/settings/class-ecsa-settings-page.php:3915
+msgid "Replace search & filters only"
+msgstr "Remplacer uniquement la recherche et les filtres"
+
+#: admin/settings/class-ecsa-settings-page.php:3918
+msgid "Grid"
+msgstr "Grille"
+
+#: admin/settings/class-ecsa-settings-page.php:3919
+msgid "List"
+msgstr "Liste"
+
+#: admin/settings/class-ecsa-settings-page.php:3922
+msgid "Clean"
+msgstr "Épuré"
+
+#: admin/settings/class-ecsa-settings-page.php:3925
+#: includes/render/class-ecsa-renderer.php:1960
+msgid "Date (soonest first)"
+msgstr "Date (les plus proches d’abord)"
+
+#: admin/settings/class-ecsa-settings-page.php:3926
+#: includes/render/class-ecsa-renderer.php:1961
+msgid "Date (latest first)"
+msgstr "Date (les plus lointaines d’abord)"
+
+#: admin/settings/class-ecsa-settings-page.php:3927
+#: includes/render/class-ecsa-renderer.php:1962
+msgid "Title (A–Z)"
+msgstr "Titre (A–Z)"
+
+#: admin/settings/class-ecsa-settings-page.php:3930
+msgid "Upcoming"
+msgstr "À venir"
+
+#: admin/settings/class-ecsa-settings-page.php:3931
+msgid "Past"
+msgstr "Passés"
+
+#: admin/settings/class-ecsa-settings-page.php:3932
+#: assets/js/v2/ecsa-frontend.js:1880
+msgid "All"
+msgstr "Tous"
+
+#: admin/settings/class-ecsa-settings-page.php:3935
+msgid "Next date only"
+msgstr "Prochaine date uniquement"
+
+#: admin/settings/class-ecsa-settings-page.php:3936
+msgid "All dates"
+msgstr "Toutes les dates"
+
+#: admin/settings/class-ecsa-settings-page.php:3961
+msgid "Site default"
+msgstr "Par défaut du site"
+
+#. translators: %s: an example date rendered with the site's own date/time format.
+#: admin/settings/class-ecsa-settings-page.php:3968
+#, php-format
+msgid "Site default — %s"
+msgstr "Par défaut du site — %s"
+
+#: includes/class-ecsa-plugin.php:426
+msgid "The plugin isn't working"
+msgstr "L’extension ne fonctionne pas"
+
+#: includes/class-ecsa-plugin.php:427
+msgid "Which problem did you run into? We read every reply."
+msgstr "Quel problème avez-vous rencontré ? Nous lisons toutes les réponses."
+
+#: includes/class-ecsa-plugin.php:430
+msgid "It didn't do what I expected"
+msgstr "Elle n’a pas fait ce que j’attendais"
+
+#: includes/class-ecsa-plugin.php:431
+msgid "What were you hoping it would do?"
+msgstr "Qu’attendiez-vous de cette extension ?"
+
+#: includes/class-ecsa-plugin.php:434
+msgid "I found a better plugin"
+msgstr "J’ai trouvé une meilleure extension"
+
+#: includes/class-ecsa-plugin.php:435
+msgid "Mind sharing which one?"
+msgstr "Pouvez-vous nous dire laquelle ?"
+
+#: includes/class-ecsa-plugin.php:438
+msgid "It's a temporary deactivation"
+msgstr "C’est une désactivation temporaire"
+
+#: includes/class-ecsa-plugin.php:442
+msgid "Another reason"
+msgstr "Une autre raison"
+
+#: includes/class-ecsa-plugin.php:443
+msgid "Please tell us more"
+msgstr "Dites-nous-en plus"
+
+#: includes/class-ecsa-plugin.php:448
+msgid "Before you go…"
+msgstr "Avant de partir…"
+
+#. translators: %s: plugin name (bold).
+#: includes/class-ecsa-plugin.php:450
+#, php-format
+msgid "What made you deactivate %s? Your answer helps us fix it."
+msgstr "Pourquoi avez-vous désactivé %s ? Votre réponse nous aide à corriger le problème."
+
+#: includes/class-ecsa-plugin.php:451
+msgid "Submit & Deactivate"
+msgstr "Envoyer et désactiver"
+
+#: includes/class-ecsa-plugin.php:452
+msgid "Skip & Deactivate"
+msgstr "Ignorer et désactiver"
+
+#: includes/class-ecsa-plugin.php:453
+msgid "Deactivating…"
+msgstr "Désactivation en cours…"
+
+#: includes/class-ecsa-plugin.php:454
+msgid "Please choose a reason."
+msgstr "Veuillez choisir une raison."
+
+#: includes/class-ecsa-plugin.php:455
+#: includes/class-ecsa-plugin.php:502
+#: includes/class-ecsa-plugin.php:625
+msgid "Close"
+msgstr "Fermer"
+
+#. translators: %s: company name.
+#: includes/class-ecsa-plugin.php:457
+#, php-format
+msgid "A plugin by %s"
+msgstr "Une extension de %s"
+
+#: includes/class-ecsa-plugin.php:460
+msgid "Submitting shares your reason plus your site URL, admin email and basic environment details (PHP, WordPress, active plugins). Skip & Deactivate sends nothing."
+msgstr "L’envoi partage votre raison ainsi que l’URL de votre site, l’adresse e-mail d’administration et des informations de base sur votre environnement (PHP, WordPress, extensions actives). « Ignorer et désactiver » n’envoie rien."
+
+#: includes/class-ecsa-plugin.php:498
+msgid "Events Search & Filterbar 2.0 major update is here."
+msgstr "La mise à jour majeure Events Search & Filterbar 2.0 est disponible."
+
+#: includes/class-ecsa-plugin.php:499
+msgid "The plugin has been rewritten completely, with new features and designs."
+msgstr "L’extension a été entièrement réécrite, avec de nouvelles fonctionnalités et de nouveaux designs."
+
+#: includes/class-ecsa-plugin.php:500
+msgid "See new settings"
+msgstr "Voir les nouveaux réglages"
+
+#: includes/class-ecsa-plugin.php:501
+msgid "Dismiss"
+msgstr "Ignorer"
+
+#. translators: %s: plugin name.
+#: includes/class-ecsa-plugin.php:609
+#, php-format
+msgid "Do you like the %s plugin?"
+msgstr "Aimez-vous l’extension %s ?"
+
+#: includes/class-ecsa-plugin.php:612
+msgid "Yes, I like it"
+msgstr "Oui, je l’aime bien"
+
+#: includes/class-ecsa-plugin.php:613
+msgid "Not good, dismiss"
+msgstr "Pas terrible, ignorer"
+
+#: includes/class-ecsa-plugin.php:614
+msgid "Ask me later"
+msgstr "Me le rappeler plus tard"
+
+#: includes/class-ecsa-plugin.php:615
+msgid "That is great to hear! A quick review on WordPress.org would really help us."
+msgstr "Ravis de l’entendre ! Un court avis sur WordPress.org nous aiderait beaucoup."
+
+#: includes/class-ecsa-plugin.php:616
+msgid "Submit review"
+msgstr "Laisser un avis"
+
+#: includes/class-ecsa-plugin.php:617
+msgid "I do not like it, dismiss"
+msgstr "Je ne l’aime pas, ignorer"
+
+#: includes/class-ecsa-plugin.php:618
+msgid "Do you like this plugin?"
+msgstr "Aimez-vous cette extension ?"
+
+#. translators: %s: plugin name.
+#: includes/class-ecsa-plugin.php:621
+#, php-format
+msgid "Enjoying %s?"
+msgstr "%s vous plaît ?"
+
+#: includes/class-ecsa-plugin.php:624
+msgid "A short review helps other event organisers find it."
+msgstr "Un court avis aide d’autres organisateurs d’événements à la découvrir."
+
+#: includes/class-ecsa-plugin.php:643
+msgid "Cool Plugins Events Addons"
+msgstr "Cool Plugins Events Addons"
+
+#: includes/class-ecsa-plugin.php:747
+msgid "Settings"
+msgstr "Réglages"
+
+#. translators: %s: the search keyword.
+#: includes/display/class-ecsa-tec-views.php:1107
+#, php-format
+msgid "Search: %s"
+msgstr "Recherche : %s"
+
+#: includes/display/class-ecsa-tec-views.php:1188
+msgid "Active filters"
+msgstr "Filtres actifs"
+
+#. translators: %s: the filter being removed.
+#. translators: %s: the filter label being removed.
+#: includes/display/class-ecsa-tec-views.php:1194
+#: includes/render/class-ecsa-renderer.php:1932
+#: assets/js/v2/ecsa-frontend.js:5500
+#, php-format,js-format
+msgid "Remove filter: %s"
+msgstr "Retirer le filtre : %s"
+
+#: includes/display/class-ecsa-tec-views.php:1203
+#: includes/render/class-ecsa-renderer.php:1942
+#: assets/js/v2/ecsa-frontend.js:5513
+msgid "Clear all"
+msgstr "Tout effacer"
+
+#: includes/display/class-ecsa-tec-views.php:1244
+#: includes/render/class-ecsa-renderer.php:3156
+msgid "Today"
+msgstr "Aujourd’hui"
+
+#: includes/display/class-ecsa-tec-views.php:1245
+#: includes/render/class-ecsa-renderer.php:3157
+msgid "Tomorrow"
+msgstr "Demain"
+
+#: includes/display/class-ecsa-tec-views.php:1246
+#: includes/render/class-ecsa-renderer.php:3158
+msgid "This weekend"
+msgstr "Ce week-end"
+
+#: includes/display/class-ecsa-tec-views.php:1247
+#: includes/render/class-ecsa-renderer.php:3159
+msgid "This week"
+msgstr "Cette semaine"
+
+#: includes/display/class-ecsa-tec-views.php:1248
+#: includes/render/class-ecsa-renderer.php:3160
+msgid "Next week"
+msgstr "La semaine prochaine"
+
+#: includes/display/class-ecsa-tec-views.php:1249
+#: includes/render/class-ecsa-renderer.php:3161
+msgid "This month"
+msgstr "Ce mois-ci"
+
+#: includes/display/class-ecsa-tec-views.php:1250
+#: includes/render/class-ecsa-renderer.php:3162
+msgid "Next month"
+msgstr "Le mois prochain"
+
+#: includes/display/class-ecsa-tec-views.php:1251
+msgid "Custom dates"
+msgstr "Dates personnalisées"
+
+#: includes/ecsa-activation-guard.php:415
+msgid "You are already using Events Search & Filter Bar Pro, which includes everything the free version does. The free plugin was not activated — there is no need to run both."
+msgstr "Vous utilisez déjà Events Search & Filter Bar Pro, qui inclut tout ce que propose la version gratuite. L’extension gratuite n’a pas été activée — il est inutile d’utiliser les deux."
+
+#: includes/ecsa-activation-guard.php:423
+msgid "Events Search & Filter Bar Pro is already active, so the free Events Search & Filter Bar is not running — both use the same shortcodes and settings, and only one can run at a time. You can safely deactivate the free plugin."
+msgstr "Events Search & Filter Bar Pro est déjà actif, donc la version gratuite d’Events Search & Filter Bar ne fonctionne pas — les deux utilisent les mêmes codes courts et les mêmes réglages, et une seule peut fonctionner à la fois. Vous pouvez désactiver l’extension gratuite en toute sécurité."
+
+#: includes/ecsa-widget.php:17
+msgid "Events Search (Legacy)"
+msgstr "Recherche d’événements (ancien)"
+
+#: includes/ecsa-widget.php:20
+msgid "Legacy — use the [events-calendar-search] shortcode instead. Existing widgets keep working."
+msgstr "Ancien widget — utilisez plutôt le code court [events-calendar-search]. Les widgets existants continuent de fonctionner."
+
+#: includes/ecsa-widget.php:106
+msgid "Events Search"
+msgstr "Recherche d’événements"
+
+#: includes/ecsa-widget.php:113
+msgid "Title :"
+msgstr "Titre :"
+
+#: includes/ecsa-widget.php:118
+msgid "Placeholder :"
+msgstr "Texte indicatif :"
+
+#: includes/ecsa-widget.php:123
+msgid "Show Events :"
+msgstr "Événements à afficher :"
+
+#: includes/ecsa-widget.php:128
+msgid "Disable Past Events :"
+msgstr "Désactiver les événements passés :"
+
+#: includes/ecsa-widget.php:136
+msgid "Layout :"
+msgstr "Mise en page :"
+
+#: includes/query/class-ecsa-criteria.php:266
+msgid "Search terms must be at least two characters."
+msgstr "La recherche doit contenir au moins deux caractères."
+
+#: includes/query/class-ecsa-criteria.php:270
+#: includes/rest/class-ecsa-rest-controller.php:522
+#: includes/rest/class-ecsa-rest-controller.php:1078
+msgid "Search terms must be 60 characters or fewer."
+msgstr "La recherche ne doit pas dépasser 60 caractères."
+
+#: includes/query/class-ecsa-criteria.php:280
+msgid "Please include at least one letter or number in your search."
+msgstr "Veuillez inclure au moins une lettre ou un chiffre dans votre recherche."
+
+#: includes/query/class-ecsa-criteria.php:290
+msgid "That page is too far into the results. Please narrow your filters instead."
+msgstr "Cette page est trop loin dans les résultats. Affinez plutôt vos filtres."
+
+#: includes/query/class-ecsa-criteria.php:295
+msgid "A custom date range needs a start or an end date."
+msgstr "Une plage personnalisée nécessite une date de début ou une date de fin."
+
+#: includes/render/class-ecsa-renderer.php:461
+msgid "Search"
+msgstr "Rechercher"
+
+#: includes/render/class-ecsa-renderer.php:472
+msgid "enter"
+msgstr "Entrée"
+
+#: includes/render/class-ecsa-renderer.php:559
+#: includes/render/class-ecsa-renderer.php:957
+#: includes/render/class-ecsa-renderer.php:1141
+msgid "Apply"
+msgstr "Appliquer"
+
+#: includes/render/class-ecsa-renderer.php:750
+#: includes/render/class-ecsa-renderer.php:1114
+msgid "When"
+msgstr "Quand"
+
+#: includes/render/class-ecsa-renderer.php:844
+msgid "From"
+msgstr "Du"
+
+#: includes/render/class-ecsa-renderer.php:851
+msgid "To"
+msgstr "Au"
+
+#. translators: %d: number of selected filter options.
+#: includes/render/class-ecsa-renderer.php:1021
+#: assets/js/v2/ecsa-frontend.js:1889
+#: assets/js/v2/ecsa-frontend.js:3690
+#, php-format,js-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d sélectionné"
+msgstr[1] "%d sélectionnés"
+
+#: includes/render/class-ecsa-renderer.php:1030
+msgid "Reset"
+msgstr "Réinitialiser"
+
+#: includes/render/class-ecsa-renderer.php:1258
+msgid "Search results"
+msgstr "Résultats de recherche"
+
+#: includes/render/class-ecsa-renderer.php:1290
+#: assets/js/v2/ecsa-frontend.js:5334
+msgid "Load more events"
+msgstr "Charger plus d’événements"
+
+#: includes/render/class-ecsa-renderer.php:1333
+msgid "Grid view"
+msgstr "Vue grille"
+
+#: includes/render/class-ecsa-renderer.php:1334
+msgid "List view"
+msgstr "Vue liste"
+
+#: includes/render/class-ecsa-renderer.php:1499
+msgid "View event"
+msgstr "Voir l’événement"
+
+#. translators: %s: the search keyword.
+#: includes/render/class-ecsa-renderer.php:1741
+#: assets/js/v2/ecsa-frontend.js:2534
+#: assets/js/v2/ecsa-frontend.js:2552
+#, php-format,js-format
+msgid "No events match “%s”."
+msgstr "Aucun événement ne correspond à « %s »."
+
+#: includes/render/class-ecsa-renderer.php:1744
+msgid "Clear search"
+msgstr "Effacer la recherche"
+
+#: includes/render/class-ecsa-renderer.php:1767
+msgid "Search past events too"
+msgstr "Rechercher aussi dans les événements passés"
+
+#: includes/render/class-ecsa-renderer.php:1783
+msgid "No events match those filters"
+msgstr "Aucun événement ne correspond à ces filtres"
+
+#: includes/render/class-ecsa-renderer.php:1785
+msgid "Clear all filters"
+msgstr "Effacer tous les filtres"
+
+#: includes/render/class-ecsa-renderer.php:1804
+#: assets/js/v2/ecsa-frontend.js:2549
+msgid "There are no upcoming events."
+msgstr "Il n’y a aucun événement à venir."
+
+#: includes/render/class-ecsa-renderer.php:1805
+msgid "Browse past events"
+msgstr "Parcourir les événements passés"
+
+#: includes/render/class-ecsa-renderer.php:1812
+msgid "Create your first event"
+msgstr "Créer votre premier événement"
+
+#: includes/render/class-ecsa-renderer.php:1815
+msgid "No events found."
+msgstr "Aucun événement trouvé."
+
+#: includes/render/class-ecsa-renderer.php:1822
+msgid "We couldn’t load events. Please try again."
+msgstr "Impossible de charger les événements. Veuillez réessayer."
+
+#: includes/render/class-ecsa-renderer.php:1823
+msgid "Try again"
+msgstr "Réessayer"
+
+#: includes/render/class-ecsa-renderer.php:1857
+msgid "Try widening the date range, or removing one of the filters."
+msgstr "Essayez d’élargir la plage de dates ou de retirer l’un des filtres."
+
+#: includes/render/class-ecsa-renderer.php:1858
+msgid "Try removing one of the filters."
+msgstr "Essayez de retirer l’un des filtres."
+
+#: includes/render/class-ecsa-renderer.php:2000
+msgid "Sort"
+msgstr "Trier"
+
+#: includes/render/class-ecsa-renderer.php:2119
+#: assets/js/v2/ecsa-frontend.js:5408
+msgid "No events found"
+msgstr "Aucun événement trouvé"
+
+#. translators: 1: first result number, 2: last result number, 3: total. All three are emphasised.
+#: includes/render/class-ecsa-renderer.php:2134
+#: assets/js/v2/ecsa-frontend.js:5416
+#, php-format,js-format
+msgid "Showing %1$s–%2$s of %3$s"
+msgstr "Affichage de %1$s–%2$s sur %3$s"
+
+#. translators: 1: first result number, 2: last result number. Both are emphasised.
+#: includes/render/class-ecsa-renderer.php:2143
+#: assets/js/v2/ecsa-frontend.js:5424
+#, php-format,js-format
+msgid "Showing %1$s–%2$s"
+msgstr "Affichage de %1$s–%2$s"
+
+#: includes/render/class-ecsa-renderer.php:3142
+#: assets/js/v2/ecsa-frontend.js:5446
+msgid "Past events"
+msgstr "Événements passés"
+
+#: includes/render/class-ecsa-renderer.php:3143
+#: assets/js/v2/ecsa-frontend.js:5449
+msgid "Past and upcoming"
+msgstr "Passés et à venir"
+
+#: includes/render/class-ecsa-renderer.php:3155
+msgid "Any time"
+msgstr "À tout moment"
+
+#: includes/render/class-ecsa-renderer.php:3166
+msgid "Custom range"
+msgstr "Plage personnalisée"
+
+#: includes/rest/class-ecsa-preview-controller.php:148
+msgid "Preview is unavailable."
+msgstr "L’aperçu n’est pas disponible."
+
+#: includes/rest/class-ecsa-preview-controller.php:260
+msgid "Summer Jazz Night"
+msgstr "Soirée jazz d’été"
+
+#: includes/rest/class-ecsa-preview-controller.php:261
+msgid "Beginner Pottery Workshop"
+msgstr "Atelier de poterie pour débutants"
+
+#: includes/rest/class-ecsa-preview-controller.php:262
+msgid "City Marathon"
+msgstr "Marathon de la ville"
+
+#: includes/rest/class-ecsa-preview-controller.php:263
+msgid "Open-Air Film Screening"
+msgstr "Projection de film en plein air"
+
+#: includes/rest/class-ecsa-preview-controller.php:264
+msgid "Farmers Market"
+msgstr "Marché de producteurs"
+
+#: includes/rest/class-ecsa-preview-controller.php:265
+msgid "Community Book Club"
+msgstr "Club de lecture du quartier"
+
+#: includes/rest/class-ecsa-preview-controller.php:268
+msgid "Main Hall"
+msgstr "Grande salle"
+
+#: includes/rest/class-ecsa-preview-controller.php:269
+msgid "Studio B"
+msgstr "Studio B"
+
+#: includes/rest/class-ecsa-preview-controller.php:270
+msgid "The Park"
+msgstr "Le Parc"
+
+#: includes/rest/class-ecsa-preview-controller.php:272
+msgid "Free"
+msgstr "Gratuit"
+
+#: includes/rest/class-ecsa-rate-limit.php:115
+msgid "Too many searches in a short time. Please wait a moment and try again."
+msgstr "Trop de recherches en peu de temps. Veuillez patienter un instant, puis réessayer."
+
+#: includes/rest/class-ecsa-rest-controller.php:686
+msgid "The Events Calendar is not active, so events cannot be searched."
+msgstr "The Events Calendar n’est pas activé : impossible de rechercher des événements."
+
+#: includes/rest/class-ecsa-rest-controller.php:704
+msgid "Event search is temporarily unavailable."
+msgstr "La recherche d’événements est temporairement indisponible."
+
+#: includes/rest/class-ecsa-rest-controller.php:867
+msgid "Search keyword."
+msgstr "Mot-clé de recherche."
+
+#: includes/rest/class-ecsa-rest-controller.php:881
+msgid "Date range preset."
+msgstr "Préréglage de plage de dates."
+
+#: includes/rest/class-ecsa-rest-controller.php:888
+msgid "Range start, YYYY-MM-DD. Used only with the custom preset."
+msgstr "Début de la plage, AAAA-MM-JJ. Utilisé uniquement avec le préréglage personnalisé."
+
+#: includes/rest/class-ecsa-rest-controller.php:889
+msgid "Range end, YYYY-MM-DD. Used only with the custom preset."
+msgstr "Fin de la plage, AAAA-MM-JJ. Utilisée uniquement avec le préréglage personnalisé."
+
+#: includes/rest/class-ecsa-rest-controller.php:891
+msgid "Time window."
+msgstr "Fenêtre temporelle."
+
+#: includes/rest/class-ecsa-rest-controller.php:909
+msgid "Which fields a keyword search matches."
+msgstr "Champs sur lesquels porte la recherche par mot-clé."
+
+#: includes/rest/class-ecsa-rest-controller.php:934
+msgid "Result order."
+msgstr "Ordre des résultats."
+
+#: includes/rest/class-ecsa-rest-controller.php:942
+msgid "Whether recurring events collapse to their next occurrence."
+msgstr "Indique si les événements récurrents sont regroupés sur leur prochaine occurrence."
+
+#: includes/rest/class-ecsa-rest-controller.php:950
+msgid "Whether totals count events or occurrences."
+msgstr "Indique si les totaux comptent les événements ou les occurrences."
+
+#: includes/rest/class-ecsa-rest-controller.php:958
+msgid "Result layout."
+msgstr "Mise en page des résultats."
+
+#: includes/rest/class-ecsa-rest-controller.php:966
+msgid "Page number."
+msgstr "Numéro de page."
+
+#: includes/rest/class-ecsa-rest-controller.php:974
+msgid "Results per page. Zero returns only the total."
+msgstr "Résultats par page. Zéro renvoie uniquement le total."
+
+#: includes/rest/class-ecsa-rest-controller.php:1000
+msgid "Search keyword. Required."
+msgstr "Mot-clé de recherche. Obligatoire."
+
+#: includes/rest/class-ecsa-rest-controller.php:1010
+msgid "How many suggestions to return."
+msgstr "Nombre de suggestions à renvoyer."
+
+#: includes/rest/class-ecsa-rest-controller.php:1070
+msgid "The search keyword must be text."
+msgstr "Le mot-clé de recherche doit être du texte."
+
+#: includes/rest/class-ecsa-rest-controller.php:1113
+msgid "Dates must be a real calendar date in YYYY-MM-DD format."
+msgstr "Les dates doivent être des dates réelles du calendrier, au format AAAA-MM-JJ."
+
+#: includes/settings/class-ecsa-settings.php:925
+msgid "Filters need somewhere to show results. Set “Where should search results appear?” to “Below search bar”."
+msgstr "Les filtres ont besoin d’un endroit où afficher les résultats. Réglez « Où les résultats de recherche doivent-ils s’afficher ? » sur « Sous la barre de recherche »."
+
+#: admin/settings/assets/ecsa-admin-settings.js:2570
+msgid "Copied"
+msgstr "Copié"
+
+#: admin/settings/assets/ecsa-admin-settings.js:2579
+msgid "Copied to clipboard."
+msgstr "Copié dans le presse-papiers."
+
+#: admin/settings/assets/ecsa-admin-settings.js:2593
+msgid "Could not copy — select the shortcode and copy it manually."
+msgstr "Copie impossible — sélectionnez le code court et copiez-le manuellement."
+
+#: assets/js/v2/ecsa-frontend.js:1235
+msgid "No matching event. Try a different search."
+msgstr "Aucun événement correspondant. Essayez une autre recherche."
+
+#: assets/js/v2/ecsa-frontend.js:1939
+msgid "Event suggestions"
+msgstr "Suggestions d’événements"
+
+#: assets/js/v2/ecsa-frontend.js:2179
+msgid "Keep typing to search events…"
+msgstr "Continuez à saisir pour rechercher des événements…"
+
+#: assets/js/v2/ecsa-frontend.js:2239
+#: assets/js/v2/ecsa-frontend.js:2279
+msgid "Searching…"
+msgstr "Recherche en cours…"
+
+#: assets/js/v2/ecsa-frontend.js:2525
+msgid "Type to search events…"
+msgstr "Commencez à saisir pour rechercher des événements…"
+
+#. translators: 1: the search keyword. 2: number of upcoming events offered instead.
+#: assets/js/v2/ecsa-frontend.js:2610
+#, js-format
+msgid "No events match “%1$s”. Showing %2$d upcoming event instead."
+msgid_plural "No events match “%1$s”. Showing %2$d upcoming events instead."
+msgstr[0] "Aucun événement ne correspond à « %1$s ». %2$d événement à venir est affiché à la place."
+msgstr[1] "Aucun événement ne correspond à « %1$s ». %2$d événements à venir sont affichés à la place."
+
+#. translators: %s: search keyword.
+#: assets/js/v2/ecsa-frontend.js:2803
+#, js-format
+msgid "See all results for “%s”"
+msgstr "Voir tous les résultats pour « %s »"
+
+#. translators: 1: number of results, 2: search keyword.
+#: assets/js/v2/ecsa-frontend.js:2809
+#, js-format
+msgid "See all %1$d result for “%2$s”"
+msgid_plural "See all %1$d results for “%2$s”"
+msgstr[0] "Voir %1$d résultat pour « %2$s »"
+msgstr[1] "Voir les %1$d résultats pour « %2$s »"
+
+#: assets/js/v2/ecsa-frontend.js:3450
+msgid "No matches"
+msgstr "Aucune correspondance"
+
+#. translators: %d: page number.
+#: assets/js/v2/ecsa-frontend.js:5306
+#, js-format
+msgid "Page %d"
+msgstr "Page %d"
+
+#. translators: %d: the display cap.
+#: assets/js/v2/ecsa-frontend.js:5803
+#, js-format
+msgid "More than %d results available."
+msgstr "Plus de %d résultats disponibles."
+
+#. translators: %d: number of results.
+#: assets/js/v2/ecsa-frontend.js:5812
+#, js-format
+msgid "%d result available."
+msgid_plural "%d results available."
+msgstr[0] "%d résultat disponible."
+msgstr[1] "%d résultats disponibles."
+
+#. translators: %d: number of newly loaded events.
+#: assets/js/v2/ecsa-frontend.js:5825
+#, js-format
+msgid "%d more event loaded."
+msgid_plural "%d more events loaded."
+msgstr[0] "%d événement supplémentaire chargé."
+msgstr[1] "%d événements supplémentaires chargés."
+
+#. translators: 1: events shown so far, 2: total events.
+#: assets/js/v2/ecsa-frontend.js:5830
+#, js-format
+msgid "%1$d of %2$s shown."
+msgstr "Affichage de %1$d sur %2$s."
+
+#: assets/js/v2/ecsa-frontend.js:6235
+msgid "Other Upcoming Events"
+msgstr "Autres événements à venir"
+
+#: assets/js/v2/ecsa-frontend.js:6237
+msgid "Events"
+msgstr "Événements"
