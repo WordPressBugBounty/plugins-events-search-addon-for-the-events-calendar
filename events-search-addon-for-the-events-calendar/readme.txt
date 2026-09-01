@@ -1,11 +1,11 @@
 === Events Search & Filter Bar for The Events Calendar ===
 Contributors: satindersingh, narinder-singh, coolplugins, eventscalendaraddons
 Donate link: https://donate.stripe.com/5kQdR92iBevO75WbPm6c00i
-Tags: event calendar, events calendar, event search, event filter, event manager
+Tags: event calendar, the events calendar, filter, search, events
 Requires at least: 6.3
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -271,13 +271,16 @@ Yes. Every string in the plugin — including the ones rendered by JavaScript �
 You can report security bugs through the Patchstack Vulnerability Disclosure Program. The Patchstack team helps validate, triage, and handle any security vulnerabilities. [Report a security vulnerability](https://patchstack.com/database/vdp/events-search-addon-for-the-events-calendar).
 
 == Screenshots ==
-1. The event search bar with the date filter and the events grid below it.
-2. The type-ahead event suggestions dropdown.
-3. The bar on The Events Calendar's own events page, in place of its own controls.
-4. The settings panel: design controls on the left, live preview on the right.
-5. The Results section — events grid or list, card fields, and the shortcodes ready to copy.
+
+1. The Events Calendar Search and Filterbar
+2. Events search box with date filters
+3. Search & filter bar style settings
 
 == Changelog ==
+
+= 2.0.1 | SEP 01, 2026 =
+* Improved: Code Improvements & Optimization.
+* Tested up to: The Events Calendar 6.17.3.1.
 
 = 2.0.0 | AUG 24, 2026 =
 * New: Complete rewrite — a real front-end event search bar for The Events Calendar, rendered on the server.

@@ -62,13 +62,14 @@ if ( ! class_exists( 'CPFM_Deactivation_Feedback' ) ) {
 					'plugin_name' => '',
 					'version'     => '',
 					'api'         => '',
-					'site_key'    => '27',
+					'site_key'    => '',
 
 					// Per-host option names. A SHARED module must never hardcode
 					// one plugin's keys — vendored into a sibling they would read
 					// the wrong row, or nothing at all.
 					'install_date_option'    => '',
 					'initial_version_option' => '',
+					'onboarding_data'        => '',
 
 
 					/*
@@ -376,7 +377,16 @@ if ( ! class_exists( 'CPFM_Deactivation_Feedback' ) ) {
 			 * changes with it. "Skip & Deactivate" sends nothing at all, which is
 			 * what makes submitting a genuine choice.
 			 */
-			$env =CPFM_Environment::cpfm_environment();
+			$env = CPFM_Environment::cpfm_environment();
+
+			$extra_details = isset( $env['extra_details'] ) && is_array( $env['extra_details'] ) ? $env['extra_details'] : array();
+
+			if ( ! empty( $cfg['onboarding_data'] ) ) {
+				$onboarding = get_option( (string) $cfg['onboarding_data'], array() );
+				$extra_details['onboarding_data'] = ( is_array( $onboarding ) && $onboarding ) ? $onboarding : array();
+			} else {
+				$extra_details['onboarding_data'] = array();
+			}
 
 			$body = array(
 				'plugin_name'    => sanitize_text_field( $cfg['plugin_name'] ),
@@ -387,7 +397,7 @@ if ( ! class_exists( 'CPFM_Deactivation_Feedback' ) ) {
 				'domain'         => $site_url,
 				'site_id'        => $site_id,
 				'server_info'    => wp_json_encode( $env['server_info'] ),
-				'extra_details'  => wp_json_encode( $env['extra_details'] ),
+				'extra_details'  => wp_json_encode( $extra_details ),
 			);
 
 			// Which version they FIRST installed - the 30-day cron already sends

@@ -3,7 +3,7 @@
  * Plugin Name: Events Search & Filter Bar for The Events Calendar
  * Description: <a href="https://wordpress.org/plugins/the-events-calendar/">📅 The Events Calendar Addon</a> - Add a fast search box and date filter to your events, anywhere on your site, with a simple shortcode.
  * Plugin URI: https://eventscalendaraddons.com/
- * Version: 2.0.0
+ * Version: 2.0.1
  * Requires at least: 6.3
  * Requires PHP: 7.4
  * Author: Cool Plugins
@@ -34,7 +34,7 @@ if ( defined( 'ECSA_VERSION' ) ) {
 	return;
 }
 
-define( 'ECSA_VERSION', '2.0.0' );
+define( 'ECSA_VERSION', '2.0.1' );
 define( 'ECSA_FILE', __FILE__ );
 define( 'ECSA_PATH', plugin_dir_path( ECSA_FILE ) );
 define( 'ECSA_URL', plugin_dir_url( ECSA_FILE ) );
