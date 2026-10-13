@@ -1438,6 +1438,32 @@ if ( ! class_exists( __NAMESPACE__ . '\Query_Engine' ) ) {
 		}
 
 		/**
+		 * Plain display text from a WordPress string that may carry HTML entities.
+		 *
+		 * Titles, venues and costs often arrive as `&#8211;`, `&#038;` or
+		 * `&euro;` from the database or TEC template tags. Decode once here so
+		 * SSR (`esc_html`) and the REST/JS rebuild path both receive real
+		 * characters instead of entity codes that render literally.
+		 *
+		 * @since 2.0.3
+		 * @param mixed $value Raw value.
+		 * @return string
+		 */
+		private static function display_text( $value ) {
+			if ( ! is_scalar( $value ) ) {
+				return '';
+			}
+
+			$text = trim( wp_strip_all_tags( (string) $value ) );
+
+			if ( '' === $text ) {
+				return '';
+			}
+
+			return wp_specialchars_decode( $text, ENT_QUOTES );
+		}
+
+		/**
 		 * Build one payload item.
 		 *
 		 * `event_id` is ALWAYS the real `wp_posts.ID`, obtained through TEC's
@@ -1484,8 +1510,8 @@ if ( ! class_exists( __NAMESPACE__ . '\Query_Engine' ) ) {
 			$GLOBALS['post'] = $event; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited -- reset in hydrate().
 			setup_postdata( $event );
 
-			$title   = (string) get_the_title( $event );
-			$excerpt = (string) get_the_excerpt( $event );
+			$title   = self::display_text( get_the_title( $event ) );
+			$excerpt = self::display_text( get_the_excerpt( $event ) );
 
 			$url = get_permalink( $occurrence );
 
@@ -1504,7 +1530,7 @@ if ( ! class_exists( __NAMESPACE__ . '\Query_Engine' ) ) {
 				'start'         => self::event_date( $occurrence, 'start' ),
 				'end'           => self::event_date( $occurrence, 'end' ),
 				'all_day'       => self::is_all_day( $occurrence ),
-				'venue'         => ( '' === $venue ) ? null : $venue,
+				'venue'         => ( '' === $venue ) ? null : self::display_text( $venue ),
 				'thumbnail'     => ( is_string( $thumbnail ) && '' !== $thumbnail ) ? $thumbnail : null,
 				'excerpt'       => $excerpt,
 				// Cost travels WITH the item so a live REST update can paint the
@@ -1532,8 +1558,7 @@ if ( ! class_exists( __NAMESPACE__ . '\Query_Engine' ) ) {
 				return null;
 			}
 
-			$cost = tribe_get_cost( $event_id, true );
-			$cost = is_scalar( $cost ) ? trim( wp_strip_all_tags( (string) $cost ) ) : '';
+			$cost = self::display_text( tribe_get_cost( $event_id, true ) );
 
 			return ( '' === $cost ) ? null : $cost;
 		}

@@ -98,6 +98,29 @@
 		} );
 	}
 
+	/**
+	 * Decode HTML entities in plain text from the REST payload.
+	 *
+	 * Titles and costs may arrive as `&#8211;` or `&euro;`; `textContent` prints
+	 * those literally unless we decode first.
+	 */
+	function decodeEntities( value ) {
+		if ( null == value || '' === value ) {
+			return '';
+		}
+
+		var text = String( value );
+
+		if ( -1 === text.indexOf( '&' ) ) {
+			return text;
+		}
+
+		var node = document.createElement( 'textarea' );
+		node.innerHTML = text;
+
+		return node.value;
+	}
+
 	function rawSpeak( message ) {
 		if ( ! message ) {
 			return;
@@ -1614,7 +1637,7 @@
 		}
 
 		var title = el( 'span', 'ecsa-dropdown__title ecsa-suggestion__title' );
-		title.textContent = ( item && item.title ) ? String( item.title ) : '';
+		title.textContent = decodeEntities( item && item.title ? item.title : '' );
 		li.appendChild( title );
 
 		var metaBits = [];
@@ -1625,7 +1648,7 @@
 			}
 		}
 		if ( item && item.venue ) {
-			var where = String( item.venue ).trim();
+			var where = decodeEntities( item.venue ).trim();
 			if ( where ) {
 				metaBits.push( where );
 			}
@@ -3360,7 +3383,7 @@
 
 		if ( fields.title ) {
 			var title = el( 'h3', 'ecsa-card__title' );
-			title.textContent = ( item && item.title ) ? String( item.title ) : '';
+			title.textContent = decodeEntities( item && item.title ? item.title : '' );
 			body.appendChild( title );
 		}
 
@@ -3378,13 +3401,13 @@
 		}
 		if ( item && item.venue && fields.venue ) {
 			var venue = el( 'p', 'ecsa-card__venue' );
-			venue.textContent = String( item.venue );
+			venue.textContent = decodeEntities( item.venue );
 			prependCardIcon( venue, 'venue' );
 			body.appendChild( venue );
 		}
 		if ( item && item.cost && fields.cost ) {
 			var cost = el( 'p', 'ecsa-card__cost' );
-			cost.textContent = String( item.cost );
+			cost.textContent = decodeEntities( item.cost );
 			prependCardIcon( cost, 'cost' );
 			body.appendChild( cost );
 		}

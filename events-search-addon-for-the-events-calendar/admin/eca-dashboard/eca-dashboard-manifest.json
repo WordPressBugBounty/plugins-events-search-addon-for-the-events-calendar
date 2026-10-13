@@ -216,6 +216,9 @@
           "tabDesc": "For Bricks Builder",
           "description": "Show events inside Bricks Builder using the Events element from Shortcodes & Blocks.",
           "feature": "advanced Bricks styling",
+          "docsUrl": "https://eventscalendaraddons.com/doc/display-events-bricks-theme-builder/",
+          "demoUrl": "https://eventscalendaraddons.com/bricks/list/",
+          "demoUrlPro": "https://eventscalendaraddons.com/bricks/grid/",
           "steps": [
             "Add new or edit a page in Bricks Builder to display events.",
             "Search for <strong>Events Widget</strong> in Bricks Builder and add it to your page.",

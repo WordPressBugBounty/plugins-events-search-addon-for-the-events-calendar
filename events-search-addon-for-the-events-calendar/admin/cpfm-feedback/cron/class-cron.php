@@ -245,6 +245,10 @@ if ( ! class_exists( 'CPFM_Usage_Cron' ) ) {
 
 			$server_info   = isset( $env['server_info'] ) && is_array( $env['server_info'] ) ? $env['server_info'] : array();
 			$extra_details = isset( $env['extra_details'] ) && is_array( $env['extra_details'] ) ? $env['extra_details'] : array();
+
+			// Registration key this plugin used in cpfm_register() (e.g. 'twae').
+			$extra_details['plugin_id'] = sanitize_key( $id );
+			
 			$site_url      = get_site_url();
 
 			$install_date = $config['install_date_option'] ? get_option( $config['install_date_option'] ) : '';

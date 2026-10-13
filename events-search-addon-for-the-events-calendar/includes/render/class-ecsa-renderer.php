@@ -1236,7 +1236,7 @@ if ( ! class_exists( __NAMESPACE__ . '\Renderer' ) ) {
 				// JavaScript, and without this it would re-format every date in the
 				// browser's own idea of a date and silently undo the setting.
 				. ' data-ecsa-date-format="' . esc_attr( $date_format ) . '"'
-				// The two RESULTS-SHAPE keys this region publishes:
+				// The RESULTS-SHAPE keys this region publishes:
 				//
 				//   data-ecsa-view      which layout is on screen RIGHT NOW. The
 				//                       visitor toggle swaps this (and the list's
@@ -1253,8 +1253,12 @@ if ( ! class_exists( __NAMESPACE__ . '\Renderer' ) ) {
 				//                       region's markup states, for a theme or an
 				//                       integration that has to know which card DOM
 				//                       it is looking at.
+				//   data-ecsa-card-fields
+				//                       which card pieces the JavaScript should
+				//                       paint when appending a live-loaded page.
 				. ' data-ecsa-view="' . esc_attr( $view ) . '"'
 				. ' data-ecsa-template="' . esc_attr( $template ) . '"'
+				. ' data-ecsa-card-fields="' . esc_attr( implode( ',', $card_fields ) ) . '"'
 				. ' role="region" aria-label="' . esc_attr__( 'Search results', 'events-search-addon-for-the-events-calendar' ) . '" aria-busy="false">';
 
 			$html .= '<div class="ecsa-results__bar">';
@@ -1438,12 +1442,12 @@ if ( ! class_exists( __NAMESPACE__ . '\Renderer' ) ) {
 		private static function card( array $item, array $card_fields, $date_format = 'site', $template = 'clean' ) {
 			unset( $template );
 
-			$title   = isset( $item['title'] ) ? (string) $item['title'] : '';
+			$title   = isset( $item['title'] ) ? self::display_text( $item['title'] ) : '';
 			$url     = isset( $item['url'] ) ? (string) $item['url'] : '';
 			$start   = isset( $item['start'] ) ? (string) $item['start'] : '';
 			$end     = isset( $item['end'] ) ? (string) $item['end'] : '';
 			$all_day = ! empty( $item['all_day'] );
-			$venue   = isset( $item['venue'] ) ? (string) $item['venue'] : '';
+			$venue   = isset( $item['venue'] ) ? self::display_text( $item['venue'] ) : '';
 			$thumb   = isset( $item['thumbnail'] ) ? (string) $item['thumbnail'] : '';
 			$eid     = isset( $item['event_id'] ) ? (int) $item['event_id'] : 0;
 
@@ -1482,7 +1486,7 @@ if ( ! class_exists( __NAMESPACE__ . '\Renderer' ) ) {
 				// the server render, the settings preview and the live-updated
 				// card identical. Fall back to a TEC lookup for callers that
 				// hand us an item without one.
-				$cost = isset( $item['cost'] ) && is_scalar( $item['cost'] ) ? trim( (string) $item['cost'] ) : '';
+				$cost = isset( $item['cost'] ) ? self::display_text( $item['cost'] ) : '';
 
 				if ( '' === $cost ) {
 					$cost = self::event_cost( $eid );
@@ -1605,9 +1609,28 @@ if ( ! class_exists( __NAMESPACE__ . '\Renderer' ) ) {
 				return '';
 			}
 
-			// TEC may wrap the symbol in markup; the card renders plain text, so
-			// flatten it here and escape at the point of echo.
-			return trim( wp_strip_all_tags( (string) $cost ) );
+			return self::display_text( $cost );
+		}
+
+		/**
+		 * Plain display text from a value that may carry HTML entities.
+		 *
+		 * @since 2.0.3
+		 * @param mixed $value Raw value.
+		 * @return string
+		 */
+		private static function display_text( $value ) {
+			if ( ! is_scalar( $value ) ) {
+				return '';
+			}
+
+			$text = trim( wp_strip_all_tags( (string) $value ) );
+
+			if ( '' === $text ) {
+				return '';
+			}
+
+			return wp_specialchars_decode( $text, ENT_QUOTES );
 		}
 
 		/**
