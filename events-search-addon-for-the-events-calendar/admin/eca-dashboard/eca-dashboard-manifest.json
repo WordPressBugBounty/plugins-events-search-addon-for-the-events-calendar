@@ -264,17 +264,19 @@
           ]
         },
         "block": {
-          "label": "Events Block",
+          "label": "Event Loop Builder",
           "shortLabel": "Block",
           "icon": "helping-folder/gutenberg-icon.png",
           "driver": "esb",
           "capability": "free",
           "tabDesc": "For Block Editor",
-          "description": "Add the Events block in the WordPress editor and pick a layout — grid, list, carousel and more.",
+          "description": "Add the Event Loop Builder in the WordPress editor and pick a layout — grid, list, carousel and more.",
           "feature": "advanced layouts, styles & filters",
+          "videoId": "53a8fLTC1bY",
+          "videoIdPro": "yN6NTG44MAc",
           "steps": [
             "Add new or edit a page in the Block Editor to display events.",
-            "Search for <strong>Events Block</strong> in the Block Editor and add it to your page.",
+            "Search for <strong>Event Loop Builder</strong> in the Block Editor and add it to your page.",
             "Choose a layout and customize the display and style settings.",
             "Publish or update the page to view your events in the selected layout."
           ]

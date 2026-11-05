@@ -154,9 +154,10 @@
       var ownedNote = null;
       var proAct = proPluginAction(cfg.driver);
       // Tab-level docs/demo URLs override the driver addon (e.g. Bricks keeps esb driver but own links).
-      // demoUrlPro is used when that tab's driver Pro is active (Bricks grid vs list).
+      // demoUrlPro / videoIdPro are used when that tab's driver Pro is active.
       var docsUrl = cfg.docsUrl || driver.docsUrl;
       var demoUrl = (driverPro && cfg.demoUrlPro) ? cfg.demoUrlPro : (cfg.demoUrl || driver.demoUrl);
+      var videoId = (driverPro && cfg.videoIdPro) ? cfg.videoIdPro : (cfg.videoId || driver.videoId);
 
       if (mode === 'HOWTO') {
         steps = { title: S.howtoTitle, items: howtoStepsForTab(tabId, cfg) };
@@ -218,7 +219,7 @@
         icon: cfg.icon, tabDesc: cfg.tabDesc, description: cfg.description,
         driver: cfg.driver, proBadge: (cap === 'pro' && mode === 'PROMO_PRO'),
         mode: mode,
-        video: { youtubeId: driver.videoId, thumb: thumb(driver.videoId) },
+        video: { youtubeId: videoId, thumb: thumb(videoId) },
         steps: steps, install: install, note: note, ownedNote: ownedNote, actions: actions
       };
     }
