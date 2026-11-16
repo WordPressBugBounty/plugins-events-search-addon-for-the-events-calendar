@@ -5,7 +5,7 @@ Tags: event calendar, the events calendar, filter, search, events
 Requires at least: 6.3
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 2.0.3
+Stable tag: 2.0.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -277,6 +277,10 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 3. Search & filter bar style settings
 
 == Changelog ==
+
+= 2.0.4 | NOV 16, 2026 =
+* Fixed: Saved Default sort, including Date (latest first), now applies to the event list and the settings preview.
+* Improved: With Events to show set to Past, the date filter hides Today, Tomorrow, This weekend, Next week, and Next month. Upcoming and All stay unchanged.
 
 = 2.0.3 | NOV 05, 2026 =
 * Improved: Updated the Event Loop Builder label and added Free and Pro tutorial videos to the Dashboard's Listing Method tab.

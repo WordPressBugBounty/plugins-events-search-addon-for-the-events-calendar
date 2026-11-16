@@ -895,6 +895,8 @@
 
 		cfg.template = enumValue( editor, 'template', TEMPLATES, SD.template || TEMPLATE_DEF );
 		cfg.per_page = intValue( editor, 'per_page', PER_PAGE_MIN, PER_PAGE_MAX, SD.per_page );
+		cfg.sort = enumValue( editor, 'sort', [ 'date_asc', 'date_desc', 'title' ], SD.sort || 'date_asc' );
+		cfg.time = enumValue( editor, 'time', [ 'upcoming', 'past', 'all' ], SD.time || 'upcoming' );
 
 		var sortC = readControl( byKey( editor, 'facets' ) );
 		var sortFacets = sortC ? sortC.list.slice() : slice( SD.facets );

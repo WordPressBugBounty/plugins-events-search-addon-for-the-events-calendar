@@ -174,6 +174,15 @@ if ( ! class_exists( __NAMESPACE__ . '\Preview_Controller' ) ) {
 			$config['preview_mode'] = true;
 
 			$criteria = self::sample_criteria();
+			if ( isset( $config['sort'] ) ) {
+				$criteria['sort'] = $config['sort'];
+			}
+			if ( isset( $config['time'] ) ) {
+				$criteria['time'] = $config['time'];
+			}
+			if ( ( isset( $config['sort'] ) || isset( $config['time'] ) ) && class_exists( 'CoolPlugins\EventsSearch\Query\Criteria' ) ) {
+				$criteria = \CoolPlugins\EventsSearch\Query\Criteria::normalize( $criteria );
+			}
 
 			$renderer = 'CoolPlugins\EventsSearch\Render\Renderer';
 			$design   = $renderer::design_attrs( $config );
@@ -317,6 +326,18 @@ if ( ! class_exists( __NAMESPACE__ . '\Preview_Controller' ) ) {
 					'venue'     => $venues[ $i % count( $venues ) ],
 					'thumbnail' => $thumbnail,
 					'cost'      => $costs[ $i % count( $costs ) ],
+				);
+			}
+
+			$sort = isset( $config['sort'] ) ? (string) $config['sort'] : 'date_asc';
+			if ( 'date_desc' === $sort ) {
+				$items = array_reverse( $items );
+			} elseif ( 'title' === $sort ) {
+				usort(
+					$items,
+					static function ( $a, $b ) {
+						return strcasecmp( (string) $a['title'], (string) $b['title'] );
+					}
 				);
 			}
 

@@ -2835,7 +2835,8 @@
 
 			search_fields: instance.criteria.search_fields,
 
-			time: instance.criteria.time
+			time: instance.criteria.time,
+			sort: instance.criteria.sort
 		};
 
 		this.seq = Core.createSequencer();

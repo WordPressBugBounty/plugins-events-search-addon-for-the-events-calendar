@@ -163,6 +163,15 @@ if ( ! class_exists( __NAMESPACE__ . '\Instance' ) ) {
 		const TIME_DEFAULT = 'upcoming';
 
 		/**
+		 * The results toolbar's starting order.
+		 *
+		 * The settings panel has always saved this, and the query engine already
+		 * orders by it, but nothing put the saved value on the instance — so the
+		 * seed stayed `date_asc`. A visitor's `?ecsa_sort=` still overlays it.
+		 */
+		const SORT_DEFAULT = 'date_asc';
+
+		/**
 		 * How many rows this instance's type-ahead dropdown asks for.
 		 *
 		 * v1.3.6's `show-events` is what this maps from: 1.3.6 had no results grid
@@ -461,6 +470,7 @@ if ( ! class_exists( __NAMESPACE__ . '\Instance' ) ) {
 			 * shipped constant all meet in one place.
 			 */
 			$time = self::pick_enum( $atts, 'time', $site_defaults, self::time_keys(), self::TIME_DEFAULT );
+			$sort = self::pick_enum( $atts, 'sort', $site_defaults, self::sort_keys(), self::SORT_DEFAULT );
 
 			/*
 			 * Filter-DISPLAY options (render-only presentation): they change how
@@ -630,6 +640,7 @@ if ( ! class_exists( __NAMESPACE__ . '\Instance' ) ) {
 				'role'                 => $role,
 				'typeahead'            => $typeahead,
 				'time'                 => $time,
+				'sort'                 => $sort,
 				'suggest_limit'        => $suggest_limit,
 				'results_mode'         => $results_mode,
 				'facets'               => $facets,
@@ -1016,6 +1027,20 @@ if ( ! class_exists( __NAMESPACE__ . '\Instance' ) ) {
 			}
 
 			return array( 'upcoming', 'past', 'all' );
+		}
+
+		/**
+		 * The sort allowlist, degrading to a literal when Criteria is absent.
+		 *
+		 * @since 2.0.3
+		 * @return string[]
+		 */
+		private static function sort_keys() {
+			if ( class_exists( 'CoolPlugins\EventsSearch\Query\Criteria' ) ) {
+				return Criteria::SORTS;
+			}
+
+			return array( 'date_asc', 'date_desc', 'title' );
 		}
 
 		/**

@@ -607,6 +607,10 @@ if ( ! class_exists( __NAMESPACE__ . '\Settings' ) ) {
 				// it, but nothing passed it to an instance, so the render seed's
 				// hard-coded `upcoming` won and the control did nothing.
 				'time'                 => $s['time'],
+				// The results toolbar's starting order. Saved since the schema
+				// existed, but never handed to an instance, so every query and
+				// the settings preview stayed on the shipped soonest-first order.
+				'sort'                 => $s['sort'],
 				'results_mode'         => $s['results_mode'],
 				'facets'               => $s['facets'],
 				'view'                 => $s['view'],

@@ -154,9 +154,9 @@ if ( ! class_exists( __NAMESPACE__ . '\Renderer' ) ) {
 				 * too but is admin-only and never a URL param, so it cannot be
 				 * overlaid and needs no branch.
 				 *
-				 * `sort` has no config key: the toolbar owns it at runtime and
-				 * nothing configures it, so a non-owner falls back to the criteria
-				 * default rather than to a setting that does not exist.
+				 * `sort` is a config key (the saved Default sort). A non-owner keeps
+				 * its own configured order; the URL owner's seed does too, and a
+				 * visitor's `?ecsa_sort` still overlays that seed.
 				 */
 				$defaults = Criteria::defaults();
 
@@ -747,6 +747,7 @@ if ( ! class_exists( __NAMESPACE__ . '\Renderer' ) ) {
 			// unrecognised still does.
 			$known          = array_merge( self::DATE_CHIPS, array( self::DATE_CUSTOM ) );
 			$checked_preset = in_array( $active, $known, true ) ? $active : 'any';
+			$chips          = self::visible_date_chips( $criteria );
 			$legend         = __( 'When', 'events-search-addon-for-the-events-calendar' );
 
 			// Criteria keeps `date_from`/`date_to` ONLY for the custom preset, so
@@ -756,7 +757,7 @@ if ( ! class_exists( __NAMESPACE__ . '\Renderer' ) ) {
 			$from      = ( $is_custom && isset( $criteria['date_from'] ) ) ? (string) $criteria['date_from'] : '';
 			$to        = ( $is_custom && isset( $criteria['date_to'] ) ) ? (string) $criteria['date_to'] : '';
 
-			return self::date_facet_dropdown( $instance_id, $checked_preset, $labels, $legend, $from, $to, $preview );
+			return self::date_facet_dropdown( $instance_id, $checked_preset, $labels, $legend, $from, $to, $preview, $chips );
 		}
 
 		/**
@@ -777,9 +778,9 @@ if ( ! class_exists( __NAMESPACE__ . '\Renderer' ) ) {
 		 *                               was.
 		 * @return string
 		 */
-		private static function date_chips_inner( $checked_preset, array $labels, $aria_label, $disabled, $with_custom = false ) {
-			$dis    = $disabled ? ' disabled' : '';
-			$chips  = self::DATE_CHIPS;
+		private static function date_chips_inner( $checked_preset, array $labels, $aria_label, $disabled, $with_custom = false, array $chips = null ) {
+			$dis   = $disabled ? ' disabled' : '';
+			$chips = null === $chips ? self::DATE_CHIPS : $chips;
 
 			if ( $with_custom ) {
 				$chips[] = self::DATE_CUSTOM;
@@ -875,7 +876,8 @@ if ( ! class_exists( __NAMESPACE__ . '\Renderer' ) ) {
 		 * @param string $to             Custom-range end (`Y-m-d`), or ''.
 		 * @return string
 		 */
-		private static function date_facet_dropdown( $instance_id, $checked_preset, array $labels, $legend, $from = '', $to = '', $preview = false ) {
+		private static function date_facet_dropdown( $instance_id, $checked_preset, array $labels, $legend, $from = '', $to = '', $preview = false, array $chips = null ) {
+			$chips = null === $chips ? self::DATE_CHIPS : $chips;
 			$panel_id    = $instance_id . '__date-panel';
 			$value_label = isset( $labels[ $checked_preset ] ) ? $labels[ $checked_preset ] : $checked_preset;
 			$is_custom   = ( self::DATE_CUSTOM === $checked_preset );
@@ -898,7 +900,7 @@ if ( ! class_exists( __NAMESPACE__ . '\Renderer' ) ) {
 			$html .= '<label class="ecsa-facet__nojs"' . ( $preview ? ' hidden' : '' ) . '>';
 			$html .= '<span class="ecsa-facet__legend">' . esc_html( $legend ) . '</span> ';
 			$html .= '<select name="ecsa_date" class="ecsa-facet__select">';
-			foreach ( self::DATE_CHIPS as $preset ) {
+			foreach ( $chips as $preset ) {
 				$html .= '<option value="' . esc_attr( $preset ) . '"' . selected( $preset, $checked_preset, false ) . '>'
 					. esc_html( isset( $labels[ $preset ] ) ? $labels[ $preset ] : $preset )
 					. '</option>';
@@ -941,7 +943,7 @@ if ( ! class_exists( __NAMESPACE__ . '\Renderer' ) ) {
 			// the panel as a portal popover.
 			$html .= '<fieldset class="ecsa-facet__panel ecsa-facet--date" id="' . esc_attr( $panel_id ) . '" hidden>';
 			$html .= '<legend class="ecsa-facet__legend">' . esc_html( $legend ) . '</legend>';
-			$html .= self::date_chips_inner( $checked_preset, $labels, $legend, true, true );
+			$html .= self::date_chips_inner( $checked_preset, $labels, $legend, true, true, $chips );
 			$html .= self::date_range_inputs( $instance_id, $from, $to, $is_custom );
 
 			/*
@@ -1140,7 +1142,7 @@ if ( ! class_exists( __NAMESPACE__ . '\Renderer' ) ) {
 			$apply = '<button type="submit" class="ecsa-facet__apply ecsa-expanded-apply" data-ecsa-apply="date">'
 				. esc_html__( 'Apply', 'events-search-addon-for-the-events-calendar' ) . '</button>';
 
-			$inner = self::date_chips_inner( $checked, $labels, $legend, false, true )
+			$inner = self::date_chips_inner( $checked, $labels, $legend, false, true, self::visible_date_chips( $criteria ) )
 				. '<div class="ecsa-expanded-range" data-ecsa-expanded-range>'
 					. self::date_range_inputs( $instance_id, $from, $to, true )
 					. $apply
@@ -2241,6 +2243,7 @@ if ( ! class_exists( __NAMESPACE__ . '\Renderer' ) ) {
 				// config key since Stage G: v1.3.6's `disable-past-events` maps
 				// onto it, and before that the seed below hard-coded `upcoming`.
 				'time'               => 'upcoming',
+				'sort'               => 'date_asc',
 				// How many rows the type-ahead asks the public route for.
 				'suggest_limit'      => 8,
 				// Suggestions only. A bar has never drawn results itself, so the
@@ -2339,6 +2342,7 @@ if ( ! class_exists( __NAMESPACE__ . '\Renderer' ) ) {
 			// Re-validated here as well as in Instance: normalize_config() is
 			// reached by direct callers that never passed through the front door.
 			$config['time']          = in_array( $config['time'], Criteria::TIMES, true ) ? $config['time'] : 'upcoming';
+			$config['sort']          = in_array( $config['sort'], Criteria::SORTS, true ) ? $config['sort'] : 'date_asc';
 			$config['suggest_limit'] = max( 1, min( 20, (int) $config['suggest_limit'] ) );
 			/*
 			 * ALLOWLIST #2 OF TWO for the placement. `Instance::RESULTS_MODES` is
@@ -2472,6 +2476,10 @@ if ( ! class_exists( __NAMESPACE__ . '\Renderer' ) ) {
 				// setting could ever reach the query. The URL still overlays it,
 				// so a visitor's `?ecsa_time=past` continues to win.
 				'time'          => isset( $config['time'] ) ? $config['time'] : 'upcoming',
+				// The saved Default sort. Absent from this seed, overlay filled
+				// Criteria's soonest-first default and the setting never reached
+				// the query. A visitor's `?ecsa_sort` still wins when present.
+				'sort'          => isset( $config['sort'] ) ? $config['sort'] : 'date_asc',
 				'per_page'      => (int) $config['per_page'],
 				'view'          => $config['view'],
 				// Admin-only scope: never a URL param, so it lives in the seed and
@@ -3165,6 +3173,41 @@ if ( ! class_exists( __NAMESPACE__ . '\Renderer' ) ) {
 				'past' => __( 'Past events', 'events-search-addon-for-the-events-calendar' ),
 				'all'  => __( 'Past and upcoming', 'events-search-addon-for-the-events-calendar' ),
 			);
+		}
+
+		/**
+		 * Date presets to offer for this results window.
+		 *
+		 * Upcoming and All keep the full list. Past is a list of events that
+		 * already ended, so the forward-looking presets are not offered:
+		 * Today, Tomorrow, This weekend, Next week and Next month. This week
+		 * and This month stay, because they still contain events that have
+		 * already happened. A preset already selected in the URL stays visible
+		 * so the control still shows what is applied.
+		 *
+		 * @since 2.0.3
+		 * @param array $criteria Normalized criteria.
+		 * @return string[]
+		 */
+		private static function visible_date_chips( array $criteria ) {
+			$chips = self::DATE_CHIPS;
+			$time  = isset( $criteria['time'] ) ? (string) $criteria['time'] : 'upcoming';
+
+			if ( 'past' !== $time ) {
+				return $chips;
+			}
+
+			$hidden = array( 'today', 'tomorrow', 'this_weekend', 'next_week', 'next_month' );
+			$active = isset( $criteria['date_preset'] ) ? (string) $criteria['date_preset'] : 'any';
+			$out    = array();
+
+			foreach ( $chips as $preset ) {
+				if ( ! in_array( $preset, $hidden, true ) || $preset === $active ) {
+					$out[] = $preset;
+				}
+			}
+
+			return $out;
 		}
 
 		/**
